@@ -14,9 +14,24 @@
                     <view key="view" contentMode="scaleToFill" id="ko2-7H-0Sw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yKp-MI-pGC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1Oj-lJ-DcB" firstAttribute="trailing" secondItem="yKp-MI-pGC" secondAttribute="trailing" id="7hi-QK-lPz"/>
+                            <constraint firstItem="1Oj-lJ-DcB" firstAttribute="bottom" secondItem="yKp-MI-pGC" secondAttribute="bottom" id="c3i-qd-Qb4"/>
+                            <constraint firstItem="yKp-MI-pGC" firstAttribute="top" secondItem="1Oj-lJ-DcB" secondAttribute="top" id="iaA-ee-Hmd"/>
+                            <constraint firstItem="yKp-MI-pGC" firstAttribute="leading" secondItem="1Oj-lJ-DcB" secondAttribute="leading" id="sLl-xp-T6F"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1Oj-lJ-DcB"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="yKp-MI-pGC" id="ROf-Hl-OS3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KA7-tZ-tlb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

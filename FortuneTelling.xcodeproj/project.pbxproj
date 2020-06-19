@@ -22,6 +22,9 @@
 		64FEF3D7249CD46700B77E59 /* UserInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3D6249CD46700B77E59 /* UserInputVC.swift */; };
 		64FEF3D9249CD47300B77E59 /* FortuneResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3D8249CD47300B77E59 /* FortuneResultVC.swift */; };
 		64FEF3DB249CD47D00B77E59 /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3DA249CD47D00B77E59 /* RecordVC.swift */; };
+		64FEF3DE249CDA8000B77E59 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3DC249CDA8000B77E59 /* RecordTableViewCell.swift */; };
+		64FEF3DF249CDA8000B77E59 /* RecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3DD249CDA8000B77E59 /* RecordTableViewCell.xib */; };
+		64FEF3E1249CDC0E00B77E59 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3E0249CDC0E00B77E59 /* UITableView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		64FEF3D6249CD46700B77E59 /* UserInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputVC.swift; sourceTree = "<group>"; };
 		64FEF3D8249CD47300B77E59 /* FortuneResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResultVC.swift; sourceTree = "<group>"; };
 		64FEF3DA249CD47D00B77E59 /* RecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
+		64FEF3DC249CDA8000B77E59 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
+		64FEF3DD249CDA8000B77E59 /* RecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTableViewCell.xib; sourceTree = "<group>"; };
+		64FEF3E0249CDC0E00B77E59 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		C44B9569722268C6A3B54413 /* Pods-FortuneTelling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FortuneTelling.debug.xcconfig"; path = "Target Support Files/Pods-FortuneTelling/Pods-FortuneTelling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +120,8 @@
 				64FEF3CB249CCEDE00B77E59 /* UserInput.storyboard */,
 				64FEF3CD249CCEE900B77E59 /* FortuneResult.storyboard */,
 				64FEF3CF249CCEF600B77E59 /* Record.storyboard */,
+				64FEF3DC249CDA8000B77E59 /* RecordTableViewCell.swift */,
+				64FEF3DD249CDA8000B77E59 /* RecordTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -134,6 +142,7 @@
 			children = (
 				64FEF3D2249CCF6400B77E59 /* UIStoryborad+Extension.swift */,
 				64FEF3D4249CD08800B77E59 /* UIImage+Extension.swift */,
+				64FEF3E0249CDC0E00B77E59 /* UITableView+Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -218,6 +227,7 @@
 				64FEF3CE249CCEE900B77E59 /* FortuneResult.storyboard in Resources */,
 				64FEF3BE249CB49100B77E59 /* LaunchScreen.storyboard in Resources */,
 				64FEF3BB249CB49100B77E59 /* Assets.xcassets in Resources */,
+				64FEF3DF249CDA8000B77E59 /* RecordTableViewCell.xib in Resources */,
 				64FEF3D0249CCEF600B77E59 /* Record.storyboard in Resources */,
 				64FEF3B6249CB49000B77E59 /* Main.storyboard in Resources */,
 				64FEF3CC249CCEDE00B77E59 /* UserInput.storyboard in Resources */,
@@ -275,10 +285,12 @@
 			files = (
 				64FEF3B3249CB49000B77E59 /* HBGTabBarViewController.swift in Sources */,
 				64FEF3DB249CD47D00B77E59 /* RecordVC.swift in Sources */,
+				64FEF3DE249CDA8000B77E59 /* RecordTableViewCell.swift in Sources */,
 				64FEF3B9249CB49000B77E59 /* FortuneTelling.xcdatamodeld in Sources */,
 				64FEF3D5249CD08800B77E59 /* UIImage+Extension.swift in Sources */,
 				64FEF3D3249CCF6400B77E59 /* UIStoryborad+Extension.swift in Sources */,
 				64FEF3D9249CD47300B77E59 /* FortuneResultVC.swift in Sources */,
+				64FEF3E1249CDC0E00B77E59 /* UITableView+Extension.swift in Sources */,
 				64FEF3D7249CD46700B77E59 /* UserInputVC.swift in Sources */,
 				64FEF3AF249CB49000B77E59 /* AppDelegate.swift in Sources */,
 			);
