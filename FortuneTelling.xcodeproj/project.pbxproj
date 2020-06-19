@@ -7,25 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DD1D56711EC223CA80B71BF /* Pods_FortuneTelling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034D80F57CEFF93B1811303E /* Pods_FortuneTelling.framework */; };
 		64FEF3AF249CB49000B77E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3AE249CB49000B77E59 /* AppDelegate.swift */; };
-		64FEF3B1249CB49000B77E59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3B0249CB49000B77E59 /* SceneDelegate.swift */; };
-		64FEF3B3249CB49000B77E59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3B2249CB49000B77E59 /* ViewController.swift */; };
+		64FEF3B3249CB49000B77E59 /* HBGTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3B2249CB49000B77E59 /* HBGTabBarViewController.swift */; };
 		64FEF3B6249CB49000B77E59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3B4249CB49000B77E59 /* Main.storyboard */; };
 		64FEF3B9249CB49000B77E59 /* FortuneTelling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3B7249CB49000B77E59 /* FortuneTelling.xcdatamodeld */; };
 		64FEF3BB249CB49100B77E59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3BA249CB49100B77E59 /* Assets.xcassets */; };
 		64FEF3BE249CB49100B77E59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3BC249CB49100B77E59 /* LaunchScreen.storyboard */; };
+		64FEF3CC249CCEDE00B77E59 /* UserInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3CB249CCEDE00B77E59 /* UserInput.storyboard */; };
+		64FEF3CE249CCEE900B77E59 /* FortuneResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3CD249CCEE900B77E59 /* FortuneResult.storyboard */; };
+		64FEF3D0249CCEF600B77E59 /* Record.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3CF249CCEF600B77E59 /* Record.storyboard */; };
+		64FEF3D3249CCF6400B77E59 /* UIStoryborad+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3D2249CCF6400B77E59 /* UIStoryborad+Extension.swift */; };
+		64FEF3D5249CD08800B77E59 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3D4249CD08800B77E59 /* UIImage+Extension.swift */; };
+		64FEF3D7249CD46700B77E59 /* UserInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3D6249CD46700B77E59 /* UserInputVC.swift */; };
+		64FEF3D9249CD47300B77E59 /* FortuneResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3D8249CD47300B77E59 /* FortuneResultVC.swift */; };
+		64FEF3DB249CD47D00B77E59 /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3DA249CD47D00B77E59 /* RecordVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		034D80F57CEFF93B1811303E /* Pods_FortuneTelling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FortuneTelling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C666386613114DD3E208017 /* Pods-FortuneTelling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FortuneTelling.release.xcconfig"; path = "Target Support Files/Pods-FortuneTelling/Pods-FortuneTelling.release.xcconfig"; sourceTree = "<group>"; };
 		64FEF3AB249CB49000B77E59 /* FortuneTelling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FortuneTelling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FEF3AE249CB49000B77E59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		64FEF3B0249CB49000B77E59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		64FEF3B2249CB49000B77E59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		64FEF3B2249CB49000B77E59 /* HBGTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBGTabBarViewController.swift; sourceTree = "<group>"; };
 		64FEF3B5249CB49000B77E59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64FEF3B8249CB49000B77E59 /* FortuneTelling.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FortuneTelling.xcdatamodel; sourceTree = "<group>"; };
 		64FEF3BA249CB49100B77E59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64FEF3BD249CB49100B77E59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64FEF3BF249CB49100B77E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64FEF3CB249CCEDE00B77E59 /* UserInput.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserInput.storyboard; sourceTree = "<group>"; };
+		64FEF3CD249CCEE900B77E59 /* FortuneResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FortuneResult.storyboard; sourceTree = "<group>"; };
+		64FEF3CF249CCEF600B77E59 /* Record.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Record.storyboard; sourceTree = "<group>"; };
+		64FEF3D2249CCF6400B77E59 /* UIStoryborad+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryborad+Extension.swift"; sourceTree = "<group>"; };
+		64FEF3D4249CD08800B77E59 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		64FEF3D6249CD46700B77E59 /* UserInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputVC.swift; sourceTree = "<group>"; };
+		64FEF3D8249CD47300B77E59 /* FortuneResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResultVC.swift; sourceTree = "<group>"; };
+		64FEF3DA249CD47D00B77E59 /* RecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
+		C44B9569722268C6A3B54413 /* Pods-FortuneTelling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FortuneTelling.debug.xcconfig"; path = "Target Support Files/Pods-FortuneTelling/Pods-FortuneTelling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD1D56711EC223CA80B71BF /* Pods_FortuneTelling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +63,8 @@
 			children = (
 				64FEF3AD249CB49000B77E59 /* FortuneTelling */,
 				64FEF3AC249CB49000B77E59 /* Products */,
+				827D03DFF4C0F3FDBB6F614B /* Pods */,
+				8DB77EB079C89A2F65BD1F68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +79,80 @@
 		64FEF3AD249CB49000B77E59 /* FortuneTelling */ = {
 			isa = PBXGroup;
 			children = (
+				64FEF3D1249CCF4300B77E59 /* Extension */,
+				64FEF3CA249CCCBD00B77E59 /* Controller */,
+				64FEF3C9249CCCAA00B77E59 /* View */,
+				64FEF3C7249CCC9C00B77E59 /* ViewModel */,
+				64FEF3C6249CCC9400B77E59 /* Model */,
 				64FEF3AE249CB49000B77E59 /* AppDelegate.swift */,
-				64FEF3B0249CB49000B77E59 /* SceneDelegate.swift */,
-				64FEF3B2249CB49000B77E59 /* ViewController.swift */,
-				64FEF3B4249CB49000B77E59 /* Main.storyboard */,
 				64FEF3BA249CB49100B77E59 /* Assets.xcassets */,
 				64FEF3BC249CB49100B77E59 /* LaunchScreen.storyboard */,
 				64FEF3BF249CB49100B77E59 /* Info.plist */,
 				64FEF3B7249CB49000B77E59 /* FortuneTelling.xcdatamodeld */,
 			);
 			path = FortuneTelling;
+			sourceTree = "<group>";
+		};
+		64FEF3C6249CCC9400B77E59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		64FEF3C7249CCC9C00B77E59 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		64FEF3C9249CCCAA00B77E59 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				64FEF3B4249CB49000B77E59 /* Main.storyboard */,
+				64FEF3CB249CCEDE00B77E59 /* UserInput.storyboard */,
+				64FEF3CD249CCEE900B77E59 /* FortuneResult.storyboard */,
+				64FEF3CF249CCEF600B77E59 /* Record.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		64FEF3CA249CCCBD00B77E59 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				64FEF3B2249CB49000B77E59 /* HBGTabBarViewController.swift */,
+				64FEF3D6249CD46700B77E59 /* UserInputVC.swift */,
+				64FEF3D8249CD47300B77E59 /* FortuneResultVC.swift */,
+				64FEF3DA249CD47D00B77E59 /* RecordVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		64FEF3D1249CCF4300B77E59 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				64FEF3D2249CCF6400B77E59 /* UIStoryborad+Extension.swift */,
+				64FEF3D4249CD08800B77E59 /* UIImage+Extension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		827D03DFF4C0F3FDBB6F614B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C44B9569722268C6A3B54413 /* Pods-FortuneTelling.debug.xcconfig */,
+				0C666386613114DD3E208017 /* Pods-FortuneTelling.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8DB77EB079C89A2F65BD1F68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				034D80F57CEFF93B1811303E /* Pods_FortuneTelling.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +162,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64FEF3C2249CB49100B77E59 /* Build configuration list for PBXNativeTarget "FortuneTelling" */;
 			buildPhases = (
+				46576A42110B19399321C6DC /* [CP] Check Pods Manifest.lock */,
 				64FEF3A7249CB49000B77E59 /* Sources */,
 				64FEF3A8249CB49000B77E59 /* Frameworks */,
 				64FEF3A9249CB49000B77E59 /* Resources */,
+				64FEF3C5249CCBFD00B77E59 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -128,23 +215,72 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64FEF3CE249CCEE900B77E59 /* FortuneResult.storyboard in Resources */,
 				64FEF3BE249CB49100B77E59 /* LaunchScreen.storyboard in Resources */,
 				64FEF3BB249CB49100B77E59 /* Assets.xcassets in Resources */,
+				64FEF3D0249CCEF600B77E59 /* Record.storyboard in Resources */,
 				64FEF3B6249CB49000B77E59 /* Main.storyboard in Resources */,
+				64FEF3CC249CCEDE00B77E59 /* UserInput.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46576A42110B19399321C6DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FortuneTelling-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64FEF3C5249CCBFD00B77E59 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		64FEF3A7249CB49000B77E59 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64FEF3B3249CB49000B77E59 /* ViewController.swift in Sources */,
+				64FEF3B3249CB49000B77E59 /* HBGTabBarViewController.swift in Sources */,
+				64FEF3DB249CD47D00B77E59 /* RecordVC.swift in Sources */,
 				64FEF3B9249CB49000B77E59 /* FortuneTelling.xcdatamodeld in Sources */,
+				64FEF3D5249CD08800B77E59 /* UIImage+Extension.swift in Sources */,
+				64FEF3D3249CCF6400B77E59 /* UIStoryborad+Extension.swift in Sources */,
+				64FEF3D9249CD47300B77E59 /* FortuneResultVC.swift in Sources */,
+				64FEF3D7249CD46700B77E59 /* UserInputVC.swift in Sources */,
 				64FEF3AF249CB49000B77E59 /* AppDelegate.swift in Sources */,
-				64FEF3B1249CB49000B77E59 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,10 +422,13 @@
 		};
 		64FEF3C3249CB49100B77E59 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C44B9569722268C6A3B54413 /* Pods-FortuneTelling.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2D5SP97CPJ;
 				INFOPLIST_FILE = FortuneTelling/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,10 +442,13 @@
 		};
 		64FEF3C4249CB49100B77E59 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C666386613114DD3E208017 /* Pods-FortuneTelling.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2D5SP97CPJ;
 				INFOPLIST_FILE = FortuneTelling/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
