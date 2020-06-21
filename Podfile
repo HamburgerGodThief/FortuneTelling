@@ -7,6 +7,6 @@ target 'FortuneTelling' do
 
   # Pods for FortuneTelling
   pod 'SwiftLint'
-
+  pod 'IQKeyboardManagerSwift'
 
 end

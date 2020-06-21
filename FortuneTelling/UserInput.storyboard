@@ -14,13 +14,131 @@
                     <view key="view" contentMode="scaleToFill" id="Cf0-2I-Wyn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mRi-Dq-wsP">
+                                <rect key="frame" x="103.5" y="84" width="207" height="207"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mRi-Dq-wsP" secondAttribute="height" multiplier="1:1" id="hgp-P1-TjE"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="姓" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qBo-et-O7N">
+                                <rect key="frame" x="125" y="327" width="229" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cI5-pA-l79">
+                                <rect key="frame" x="125" y="385" width="229" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請在下方選擇生辰" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5hu-22-IMc">
+                                <rect key="frame" x="125" y="498" width="229" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wao-Uo-IXK">
+                                <rect key="frame" x="125" y="443" width="229" height="32"/>
+                                <segments>
+                                    <segment title="男生"/>
+                                    <segment title="女生"/>
+                                </segments>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xcr-mi-hlX">
+                                <rect key="frame" x="100" y="552" width="214" height="32"/>
+                                <segments>
+                                    <segment title="西曆"/>
+                                    <segment title="農曆"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓氏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ii-d4-Nwy">
+                                <rect key="frame" x="60" y="333.5" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWC-nO-AIe">
+                                <rect key="frame" x="60" y="391.5" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性別" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5s-EU-Ttt">
+                                <rect key="frame" x="60" y="448" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生辰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4G-fU-cBo">
+                                <rect key="frame" x="60" y="504.5" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLr-sF-MFF">
+                                <rect key="frame" x="180" y="802" width="54" height="30"/>
+                                <state key="normal" title="計算"/>
+                                <connections>
+                                    <action selector="didTouchCalculateBtn:" destination="ZxJ-Ee-jej" eventType="touchUpInside" id="Rkz-fh-5i2"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="745" translatesAutoresizingMaskIntoConstraints="NO" id="xo2-ii-Nsy">
+                                <rect key="frame" x="0.0" y="599" width="414" height="187"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cI5-pA-l79" firstAttribute="top" secondItem="qBo-et-O7N" secondAttribute="bottom" constant="24" id="0Gt-7I-t0M"/>
+                            <constraint firstItem="5hu-22-IMc" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" id="0hN-kC-ggw"/>
+                            <constraint firstItem="mRi-Dq-wsP" firstAttribute="top" secondItem="7Y3-Nt-ftf" secondAttribute="top" constant="40" id="16t-RW-hZW"/>
+                            <constraint firstItem="Wao-Uo-IXK" firstAttribute="leading" secondItem="qBo-et-O7N" secondAttribute="leading" id="1BY-PK-Nwk"/>
+                            <constraint firstItem="O5s-EU-Ttt" firstAttribute="centerY" secondItem="Wao-Uo-IXK" secondAttribute="centerY" id="380-JR-Cnl"/>
+                            <constraint firstItem="5hu-22-IMc" firstAttribute="leading" secondItem="qBo-et-O7N" secondAttribute="leading" id="3pU-Uu-nkc"/>
+                            <constraint firstItem="xo2-ii-Nsy" firstAttribute="top" secondItem="Xcr-mi-hlX" secondAttribute="bottom" constant="16" id="5cQ-v0-4JK"/>
+                            <constraint firstItem="Wao-Uo-IXK" firstAttribute="top" secondItem="cI5-pA-l79" secondAttribute="bottom" constant="24" id="6Uk-zd-Ox1"/>
+                            <constraint firstItem="R4G-fU-cBo" firstAttribute="centerY" secondItem="5hu-22-IMc" secondAttribute="centerY" id="8HY-Cl-FHl"/>
+                            <constraint firstItem="8Ii-d4-Nwy" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="60" id="9ee-QR-3RE"/>
+                            <constraint firstItem="zLr-sF-MFF" firstAttribute="leading" secondItem="Cf0-2I-Wyn" secondAttribute="leading" constant="180" id="A7N-V8-a2v"/>
+                            <constraint firstItem="zLr-sF-MFF" firstAttribute="top" secondItem="xo2-ii-Nsy" secondAttribute="bottom" constant="16" id="Ajh-ja-w73"/>
+                            <constraint firstItem="R4G-fU-cBo" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="60" id="AwO-vs-37f"/>
+                            <constraint firstItem="mRi-Dq-wsP" firstAttribute="centerX" secondItem="Cf0-2I-Wyn" secondAttribute="centerX" id="CtQ-KU-XZ7"/>
+                            <constraint firstAttribute="trailing" secondItem="zLr-sF-MFF" secondAttribute="trailing" constant="180" id="Dih-N0-SnV"/>
+                            <constraint firstItem="5hu-22-IMc" firstAttribute="top" secondItem="Wao-Uo-IXK" secondAttribute="bottom" constant="24" id="F3O-0B-cpg"/>
+                            <constraint firstItem="O5s-EU-Ttt" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="60" id="GAa-pi-UZ6"/>
+                            <constraint firstItem="xo2-ii-Nsy" firstAttribute="trailing" secondItem="7Y3-Nt-ftf" secondAttribute="trailing" id="Goi-jh-5Af"/>
+                            <constraint firstItem="qBo-et-O7N" firstAttribute="leading" secondItem="8Ii-d4-Nwy" secondAttribute="trailing" constant="30" id="H9w-RQ-gME"/>
+                            <constraint firstItem="cI5-pA-l79" firstAttribute="leading" secondItem="qBo-et-O7N" secondAttribute="leading" id="ITV-1Z-dsf"/>
+                            <constraint firstItem="7Y3-Nt-ftf" firstAttribute="trailing" secondItem="Xcr-mi-hlX" secondAttribute="trailing" constant="100" id="P2f-bC-jgt"/>
+                            <constraint firstItem="Xcr-mi-hlX" firstAttribute="top" secondItem="5hu-22-IMc" secondAttribute="bottom" constant="20" id="TbQ-1C-ZqA"/>
+                            <constraint firstItem="7Y3-Nt-ftf" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" constant="60" id="U2E-nq-wOx"/>
+                            <constraint firstItem="8Ii-d4-Nwy" firstAttribute="centerY" secondItem="qBo-et-O7N" secondAttribute="centerY" id="c13-W9-Mtu"/>
+                            <constraint firstItem="xo2-ii-Nsy" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" id="cGm-oJ-LKF"/>
+                            <constraint firstItem="hWC-nO-AIe" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="60" id="e3V-Ab-OIj"/>
+                            <constraint firstItem="qBo-et-O7N" firstAttribute="top" secondItem="mRi-Dq-wsP" secondAttribute="bottom" constant="36" id="fLN-vt-z4L"/>
+                            <constraint firstItem="Xcr-mi-hlX" firstAttribute="centerX" secondItem="Cf0-2I-Wyn" secondAttribute="centerX" id="g80-er-C6Q"/>
+                            <constraint firstItem="Xcr-mi-hlX" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="100" id="mBr-pg-LV8"/>
+                            <constraint firstItem="Wao-Uo-IXK" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" id="npW-gs-fkO"/>
+                            <constraint firstItem="mRi-Dq-wsP" firstAttribute="width" secondItem="Cf0-2I-Wyn" secondAttribute="width" multiplier="0.5" id="nwT-py-4uq"/>
+                            <constraint firstItem="7Y3-Nt-ftf" firstAttribute="bottom" secondItem="zLr-sF-MFF" secondAttribute="bottom" constant="30" id="pOR-mA-AzJ"/>
+                            <constraint firstItem="hWC-nO-AIe" firstAttribute="centerY" secondItem="cI5-pA-l79" secondAttribute="centerY" id="syX-aE-K3R"/>
+                            <constraint firstItem="cI5-pA-l79" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" id="thM-Rq-f1U"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7Y3-Nt-ftf"/>
                     </view>
+                    <connections>
+                        <outlet property="birthSegControl" destination="Xcr-mi-hlX" id="z9N-ri-T1S"/>
+                        <outlet property="birthTextField" destination="5hu-22-IMc" id="AHK-gk-MMw"/>
+                        <outlet property="calculateBtn" destination="zLr-sF-MFF" id="LHL-Z2-1t2"/>
+                        <outlet property="datePicker" destination="xo2-ii-Nsy" id="KcL-3D-UBH"/>
+                        <outlet property="firstNameTextField" destination="cI5-pA-l79" id="pdF-sv-f3G"/>
+                        <outlet property="genderSegControl" destination="Wao-Uo-IXK" id="k4s-cg-4DO"/>
+                        <outlet property="lastNameTextField" destination="qBo-et-O7N" id="rjO-J8-a9l"/>
+                        <outlet property="logoImg" destination="mRi-Dq-wsP" id="mfw-P6-fhi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4E-gs-QfB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61" y="56"/>
+            <point key="canvasLocation" x="60.869565217391312" y="55.580357142857139"/>
         </scene>
     </scenes>
 </document>
