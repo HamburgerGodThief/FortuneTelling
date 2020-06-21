@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="J7N-cD-jrB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Fortune ResultVC-->
+        <scene sceneID="39K-kS-4aW">
+            <objects>
+                <viewController storyboardIdentifier="FortuneResultVC" id="J7N-cD-jrB" customClass="FortuneResultVC" customModule="FortuneTelling" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r37-cP-cOr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s2z-RG-GJE">
+                                <rect key="frame" x="0.0" y="205.5" width="414" height="656.5"/>
+                            </tableView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JU8-Qh-s8B">
+                                <rect key="frame" x="0.0" y="44" width="414" height="161.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="z8y-O1-PDA">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Onv-y7-dFQ" firstAttribute="trailing" secondItem="JU8-Qh-s8B" secondAttribute="trailing" id="6pP-oa-LCd"/>
+                            <constraint firstItem="Onv-y7-dFQ" firstAttribute="bottom" secondItem="s2z-RG-GJE" secondAttribute="bottom" id="OY3-QM-bJo"/>
+                            <constraint firstItem="JU8-Qh-s8B" firstAttribute="leading" secondItem="Onv-y7-dFQ" secondAttribute="leading" id="hg4-kf-quH"/>
+                            <constraint firstItem="JU8-Qh-s8B" firstAttribute="top" secondItem="Onv-y7-dFQ" secondAttribute="top" id="hkW-fL-B8r"/>
+                            <constraint firstItem="s2z-RG-GJE" firstAttribute="top" secondItem="JU8-Qh-s8B" secondAttribute="bottom" id="jBi-t0-TsH"/>
+                            <constraint firstItem="s2z-RG-GJE" firstAttribute="leading" secondItem="Onv-y7-dFQ" secondAttribute="leading" id="q2z-jd-U1n"/>
+                            <constraint firstItem="JU8-Qh-s8B" firstAttribute="height" secondItem="r37-cP-cOr" secondAttribute="height" multiplier="0.18" id="rJz-tF-MxS"/>
+                            <constraint firstItem="Onv-y7-dFQ" firstAttribute="trailing" secondItem="s2z-RG-GJE" secondAttribute="trailing" id="s5P-bR-wnc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Onv-y7-dFQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="JU8-Qh-s8B" id="AL7-ic-nzR"/>
+                        <outlet property="tableView" destination="s2z-RG-GJE" id="fff-Ru-LkX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hV9-Ib-Ale" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="60.869565217391312" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+</document>
