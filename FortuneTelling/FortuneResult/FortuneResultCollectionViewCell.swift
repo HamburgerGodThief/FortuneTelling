@@ -12,11 +12,15 @@ class FortuneResultCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var titleLbl: UILabel!
     
+    @IBOutlet weak var iconBtn: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         titleLbl.numberOfLines = 0
+        
+        iconBtn.isEnabled = false
         
     }
 

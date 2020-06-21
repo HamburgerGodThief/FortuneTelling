@@ -10,6 +10,16 @@ import UIKit
 
 class FortuneCommentTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var areaLbl: UILabel!
+    
+    @IBOutlet weak var heavenlyLbl: UILabel!
+    
+    @IBOutlet weak var heavenlyComment: UILabel!
+    
+    @IBOutlet weak var earthlyLbl: UILabel!
+    
+    @IBOutlet weak var earthlyComment: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

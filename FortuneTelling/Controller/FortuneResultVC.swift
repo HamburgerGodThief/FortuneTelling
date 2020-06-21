@@ -34,6 +34,8 @@ class FortuneResultVC: UIViewController {
             
             tableView.hbg_registerCellWithNib(identifier: String(describing: FortuneResultTableViewCell.self), bundle: nil)
             
+            tableView.hbg_registerCellWithNib(identifier: String(describing: FortuneCommentTableViewCell.self), bundle: nil)
+            
             tableView.rowHeight = UITableView.automaticDimension
             
             tableView.estimatedRowHeight = 180
@@ -60,9 +62,27 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
         
         guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: "FortuneResultCollectionViewCell", for: indexPath) as? FortuneResultCollectionViewCell else { return UICollectionViewCell() }
         
-        item.backgroundColor = .yellow
+        let title: [String] = ["生\n時", "生\n日", "生\n月", "生\n年", "大\n運", "流\n年", "流\n月", "流\n日", "流\n時",
+                               "壬\n戌", "戊\n申", "丙\n午", "丁\n未", "庚\n子", "甲\n辰", "乙\n亥", "辛\n巳", "乙\n未"]
         
-        item.titleLbl.text = "生\n年"
+//        item.backgroundColor = .yellow
+        
+        item.titleLbl.text = title[indexPath.item]
+        
+        switch indexPath.item {
+        case 4:
+            item.iconBtn.isHidden = false
+        case 5:
+            item.iconBtn.isHidden = false
+        case 6:
+            item.iconBtn.isHidden = false
+        case 7:
+            item.iconBtn.isHidden = false
+        case 8:
+            item.iconBtn.isHidden = false
+        default:
+            item.iconBtn.isHidden = true
+        }
         
         return item
         
@@ -84,6 +104,28 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "FortuneResult", bundle: nil)
+        guard let datePickerVC = storyboard.instantiateViewController(withIdentifier: "DatePickerVC") as? DatePickerVC else { return }
+        
+        switch indexPath.item {
+        case 4:
+            present(datePickerVC, animated: true, completion: nil)
+        case 5:
+            present(datePickerVC, animated: true, completion: nil)
+        case 6:
+            present(datePickerVC, animated: true, completion: nil)
+        case 7:
+            present(datePickerVC, animated: true, completion: nil)
+        case 8:
+            present(datePickerVC, animated: true, completion: nil)
+        default:
+            return
+        }
+        
     }
     
 }
@@ -124,24 +166,49 @@ extension FortuneResultVC: UITableViewDelegate, UITableViewDataSource {
             
         } else {
         
-            return 20
+            return 3
             
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FortuneResultTableViewCell", for: indexPath) as? FortuneResultTableViewCell else { return UITableViewCell() }
-        
-        let title: [String] = ["目前時間", "本次大運開始", "下次大運開始"]
-        
         if indexPath.section == 0 {
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FortuneResultTableViewCell", for: indexPath) as? FortuneResultTableViewCell else { return UITableViewCell() }
+            
+            let title: [String] = ["目前時間", "本次大運開始", "下次大運開始"]
         
             cell.titleLbl.text = title[indexPath.row]
             
+            return cell
+            
+        } else {
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "FortuneCommentTableViewCell", for: indexPath) as? FortuneCommentTableViewCell else { return UITableViewCell() }
+            
+            let area: [String] = ["本命區塊", "動態區塊", "比較區塊"]
+            
+            let heavenly: String = "天干丁生己克癸"
+            
+            let heavenlyComment: String = "比星一。食星一。官破一。"
+            
+            let earthly: String = "天干丁生己克癸"
+            
+            let earthlyComment: String = "比星一。食星一。官破一。"
+            
+            cell.areaLbl.text = area[indexPath.row]
+            
+            cell.heavenlyLbl.text = heavenly
+            
+            cell.heavenlyComment.text = heavenlyComment
+            
+            cell.earthlyLbl.text = earthly
+            
+            cell.earthlyComment.text = earthlyComment
+            
+            return cell
         }
-        
-        return cell
         
     }
 

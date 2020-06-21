@@ -34,6 +34,7 @@
 		64FEF3EF249F7CA200B77E59 /* FortuneResulteTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3EE249F7CA200B77E59 /* FortuneResulteTableHeaderView.swift */; };
 		64FEF3F2249FD0DF00B77E59 /* FortuneCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3F0249FD0DF00B77E59 /* FortuneCommentTableViewCell.swift */; };
 		64FEF3F3249FD0DF00B77E59 /* FortuneCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3F1249FD0DF00B77E59 /* FortuneCommentTableViewCell.xib */; };
+		64FEF3F6249FDC9C00B77E59 /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3F5249FDC9C00B77E59 /* DatePickerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		64FEF3EE249F7CA200B77E59 /* FortuneResulteTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResulteTableHeaderView.swift; sourceTree = "<group>"; };
 		64FEF3F0249FD0DF00B77E59 /* FortuneCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneCommentTableViewCell.swift; sourceTree = "<group>"; };
 		64FEF3F1249FD0DF00B77E59 /* FortuneCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FortuneCommentTableViewCell.xib; sourceTree = "<group>"; };
+		64FEF3F5249FDC9C00B77E59 /* DatePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
 		C44B9569722268C6A3B54413 /* Pods-FortuneTelling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FortuneTelling.debug.xcconfig"; path = "Target Support Files/Pods-FortuneTelling/Pods-FortuneTelling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 				64FEF3B2249CB49000B77E59 /* HBGTabBarViewController.swift */,
 				64FEF3D6249CD46700B77E59 /* UserInputVC.swift */,
 				64FEF3D8249CD47300B77E59 /* FortuneResultVC.swift */,
+				64FEF3F5249FDC9C00B77E59 /* DatePickerVC.swift */,
 				64FEF3DA249CD47D00B77E59 /* RecordVC.swift */,
 			);
 			path = Controller;
@@ -342,6 +345,7 @@
 			files = (
 				64FEF3E7249F626400B77E59 /* UICollectionView+Extension.swift in Sources */,
 				64FEF3EA249F644300B77E59 /* FortuneResultCollectionViewCell.swift in Sources */,
+				64FEF3F6249FDC9C00B77E59 /* DatePickerVC.swift in Sources */,
 				64FEF3B3249CB49000B77E59 /* HBGTabBarViewController.swift in Sources */,
 				64FEF3DB249CD47D00B77E59 /* RecordVC.swift in Sources */,
 				64FEF3DE249CDA8000B77E59 /* RecordTableViewCell.swift in Sources */,

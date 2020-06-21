@@ -20,7 +20,7 @@
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JU8-Qh-s8B">
                                 <rect key="frame" x="0.0" y="44" width="414" height="161.5"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="z8y-O1-PDA">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -51,6 +51,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hV9-Ib-Ale" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="60.869565217391312" y="138.61607142857142"/>
+        </scene>
+        <!--Date PickerVC-->
+        <scene sceneID="IYG-aB-n0L">
+            <objects>
+                <viewController storyboardIdentifier="DatePickerVC" id="c0z-kw-V1e" customClass="DatePickerVC" customModule="FortuneTelling" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AoJ-ym-LGk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaa-dh-KZR">
+                                <rect key="frame" x="0.0" y="544" width="414" height="352"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iaa-dh-KZR" firstAttribute="top" secondItem="Sob-am-CsF" secondAttribute="top" constant="500" id="5hh-K5-hqx"/>
+                            <constraint firstItem="iaa-dh-KZR" firstAttribute="trailing" secondItem="Sob-am-CsF" secondAttribute="trailing" id="YuL-4I-COa"/>
+                            <constraint firstItem="iaa-dh-KZR" firstAttribute="leading" secondItem="Sob-am-CsF" secondAttribute="leading" id="ueR-zl-zlc"/>
+                            <constraint firstAttribute="bottom" secondItem="iaa-dh-KZR" secondAttribute="bottom" id="xjN-5c-2VS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sob-am-CsF"/>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="iaa-dh-KZR" id="NVG-1b-gus"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dYe-07-tI4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="139"/>
         </scene>
     </scenes>
 </document>
