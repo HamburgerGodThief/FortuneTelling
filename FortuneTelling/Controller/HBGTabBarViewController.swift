@@ -11,8 +11,6 @@ import UIKit
 private enum Tab {
     
     case userInput
-    
-    case fortuneResult
         
     case record
     
@@ -23,9 +21,7 @@ private enum Tab {
         switch self {
             
         case .userInput: controller = UIStoryboard.userInput.instantiateInitialViewController()!
-            
-        case .fortuneResult: controller = UIStoryboard.fortuneResult.instantiateInitialViewController()!
-                        
+                                    
         case .record: controller = UIStoryboard.record.instantiateInitialViewController()!
             
         }
@@ -44,21 +40,14 @@ private enum Tab {
             
         case .userInput:
             return UITabBarItem(
-                title: nil,
+                title: "資料輸入",
                 image: UIImage.asset(.Icons_36px_UserInput_Normal),
                 selectedImage: UIImage.asset(.Icons_36px_UserInput_Selected)
             )
             
-        case .fortuneResult:
-            return UITabBarItem(
-                title: nil,
-                image: UIImage.asset(.Icons_36px_FortuneResult_Normal),
-                selectedImage: UIImage.asset(.Icons_36px_FortuneResult_Selected)
-            )
-            
         case .record:
             return UITabBarItem(
-                title: nil,
+                title: "歷史紀錄",
                 image: UIImage.asset(.Icons_36px_Record_Normal),
                 selectedImage: UIImage.asset(.Icons_36px_Record_Selected)
             )
@@ -69,7 +58,7 @@ private enum Tab {
 
 class HBGTabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
-    private let tabs: [Tab] = [.userInput, .fortuneResult, .record]
+    private let tabs: [Tab] = [.userInput, .record]
     
     var orderObserver: NSKeyValueObservation!
     

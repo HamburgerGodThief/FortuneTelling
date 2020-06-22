@@ -28,9 +28,29 @@ class RecordVC: UIViewController {
         
     }
     
+    func navConfigure() {
+        
+        navigationController?.navigationBar.isTranslucent = false
+        
+        navigationController?.navigationBar.barTintColor = .systemTeal
+        
+        title = "歷史紀錄"
+        
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        navConfigure()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        
+        tabBarController?.tabBar.isHidden = false
         
     }
     
@@ -60,6 +80,14 @@ extension RecordVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //使用Navigator 跳轉至命盤結果
+        
+        let storyboard = UIStoryboard(name: "FortuneResult", bundle: nil)
+        guard let fortuneResultVC = storyboard.instantiateViewController(withIdentifier: "FortuneResultVC") as? FortuneResultVC else { return }
+        
+        tabBarController?.tabBar.isHidden = true
+        
+        navigationController?.pushViewController(fortuneResultVC, animated: true)
+        
     }
 
 }

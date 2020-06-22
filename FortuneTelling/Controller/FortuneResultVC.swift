@@ -44,9 +44,21 @@ class FortuneResultVC: UIViewController {
         
     }
     
+    func navConfigure() {
+        
+        navigationController?.navigationBar.isTranslucent = false
+        
+        navigationController?.navigationBar.barTintColor = .systemTeal
+        
+        title = "Bob Wang (男) 虛歲 56歲"
+        
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        navConfigure()
         
     }
     
@@ -64,9 +76,7 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
         
         let title: [String] = ["生\n時", "生\n日", "生\n月", "生\n年", "大\n運", "流\n年", "流\n月", "流\n日", "流\n時",
                                "壬\n戌", "戊\n申", "丙\n午", "丁\n未", "庚\n子", "甲\n辰", "乙\n亥", "辛\n巳", "乙\n未"]
-        
-//        item.backgroundColor = .yellow
-        
+                
         item.titleLbl.text = title[indexPath.item]
         
         switch indexPath.item {
