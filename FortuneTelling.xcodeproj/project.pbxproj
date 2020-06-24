@@ -35,6 +35,8 @@
 		64FEF3F2249FD0DF00B77E59 /* FortuneCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3F0249FD0DF00B77E59 /* FortuneCommentTableViewCell.swift */; };
 		64FEF3F3249FD0DF00B77E59 /* FortuneCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3F1249FD0DF00B77E59 /* FortuneCommentTableViewCell.xib */; };
 		64FEF3F6249FDC9C00B77E59 /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3F5249FDC9C00B77E59 /* DatePickerVC.swift */; };
+		64FEF3F824A0C4C400B77E59 /* BirthPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3F724A0C4C400B77E59 /* BirthPickerVC.swift */; };
+		64FEF3FB24A2EB5200B77E59 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3FA24A2EB5200B77E59 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +71,8 @@
 		64FEF3F0249FD0DF00B77E59 /* FortuneCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneCommentTableViewCell.swift; sourceTree = "<group>"; };
 		64FEF3F1249FD0DF00B77E59 /* FortuneCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FortuneCommentTableViewCell.xib; sourceTree = "<group>"; };
 		64FEF3F5249FDC9C00B77E59 /* DatePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
+		64FEF3F724A0C4C400B77E59 /* BirthPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthPickerVC.swift; sourceTree = "<group>"; };
+		64FEF3FA24A2EB5200B77E59 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		C44B9569722268C6A3B54413 /* Pods-FortuneTelling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FortuneTelling.debug.xcconfig"; path = "Target Support Files/Pods-FortuneTelling/Pods-FortuneTelling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				64FEF3B2249CB49000B77E59 /* HBGTabBarViewController.swift */,
-				64FEF3D6249CD46700B77E59 /* UserInputVC.swift */,
+				64FEF3F924A2DEFF00B77E59 /* UserInput */,
 				64FEF3D8249CD47300B77E59 /* FortuneResultVC.swift */,
 				64FEF3F5249FDC9C00B77E59 /* DatePickerVC.swift */,
 				64FEF3DA249CD47D00B77E59 /* RecordVC.swift */,
@@ -165,6 +169,7 @@
 				64FEF3D4249CD08800B77E59 /* UIImage+Extension.swift */,
 				64FEF3E0249CDC0E00B77E59 /* UITableView+Extension.swift */,
 				64FEF3E6249F626400B77E59 /* UICollectionView+Extension.swift */,
+				64FEF3FA24A2EB5200B77E59 /* UIColor+Extension.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -183,6 +188,15 @@
 				64FEF3F1249FD0DF00B77E59 /* FortuneCommentTableViewCell.xib */,
 			);
 			path = FortuneResult;
+			sourceTree = "<group>";
+		};
+		64FEF3F924A2DEFF00B77E59 /* UserInput */ = {
+			isa = PBXGroup;
+			children = (
+				64FEF3D6249CD46700B77E59 /* UserInputVC.swift */,
+				64FEF3F724A0C4C400B77E59 /* BirthPickerVC.swift */,
+			);
+			path = UserInput;
 			sourceTree = "<group>";
 		};
 		827D03DFF4C0F3FDBB6F614B /* Pods */ = {
@@ -346,12 +360,14 @@
 				64FEF3E7249F626400B77E59 /* UICollectionView+Extension.swift in Sources */,
 				64FEF3EA249F644300B77E59 /* FortuneResultCollectionViewCell.swift in Sources */,
 				64FEF3F6249FDC9C00B77E59 /* DatePickerVC.swift in Sources */,
+				64FEF3FB24A2EB5200B77E59 /* UIColor+Extension.swift in Sources */,
 				64FEF3B3249CB49000B77E59 /* HBGTabBarViewController.swift in Sources */,
 				64FEF3DB249CD47D00B77E59 /* RecordVC.swift in Sources */,
 				64FEF3DE249CDA8000B77E59 /* RecordTableViewCell.swift in Sources */,
 				64FEF3B9249CB49000B77E59 /* FortuneTelling.xcdatamodeld in Sources */,
 				64FEF3D5249CD08800B77E59 /* UIImage+Extension.swift in Sources */,
 				64FEF3EF249F7CA200B77E59 /* FortuneResulteTableHeaderView.swift in Sources */,
+				64FEF3F824A0C4C400B77E59 /* BirthPickerVC.swift in Sources */,
 				64FEF3D3249CCF6400B77E59 /* UIStoryborad+Extension.swift in Sources */,
 				64FEF3D9249CD47300B77E59 /* FortuneResultVC.swift in Sources */,
 				64FEF3E1249CDC0E00B77E59 /* UITableView+Extension.swift in Sources */,

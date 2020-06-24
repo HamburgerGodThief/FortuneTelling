@@ -32,7 +32,7 @@ class RecordVC: UIViewController {
         
         navigationController?.navigationBar.isTranslucent = false
         
-        navigationController?.navigationBar.barTintColor = .systemTeal
+        navigationController?.navigationBar.barTintColor = UIColor.assetColor(.MainColor)
         
         title = "歷史紀錄"
         

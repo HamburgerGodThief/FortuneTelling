@@ -23,54 +23,52 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="姓" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qBo-et-O7N">
-                                <rect key="frame" x="125" y="371" width="229" height="34"/>
+                                <rect key="frame" x="125" y="395" width="229" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cI5-pA-l79">
-                                <rect key="frame" x="125" y="429" width="229" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="請在下方選擇生辰" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5hu-22-IMc">
-                                <rect key="frame" x="125" y="542" width="229" height="34"/>
+                                <rect key="frame" x="125" y="453" width="229" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wao-Uo-IXK">
-                                <rect key="frame" x="125" y="487" width="229" height="32"/>
+                                <rect key="frame" x="125" y="511" width="229" height="32"/>
                                 <segments>
                                     <segment title="男生"/>
                                     <segment title="女生"/>
                                 </segments>
                             </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xcr-mi-hlX">
-                                <rect key="frame" x="100" y="596" width="214" height="32"/>
-                                <segments>
-                                    <segment title="西曆"/>
-                                    <segment title="農曆"/>
-                                </segments>
-                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3U7-J7-ULE">
+                                <rect key="frame" x="125" y="566" width="229" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="請輸入出生時間">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTouchBirthBtn:" destination="ZxJ-Ee-jej" eventType="touchUpInside" id="Ne8-SJ-eyN"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓氏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ii-d4-Nwy">
-                                <rect key="frame" x="60" y="377.5" width="35" height="21"/>
+                                <rect key="frame" x="60" y="401.5" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWC-nO-AIe">
-                                <rect key="frame" x="60" y="435.5" width="35" height="21"/>
+                                <rect key="frame" x="60" y="459.5" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性別" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5s-EU-Ttt">
-                                <rect key="frame" x="60" y="492" width="35" height="21"/>
+                                <rect key="frame" x="60" y="516" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生辰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4G-fU-cBo">
-                                <rect key="frame" x="60" y="548.5" width="35" height="21"/>
+                                <rect key="frame" x="60" y="572.5" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -82,41 +80,31 @@
                                     <action selector="didTouchCalculateBtn:" destination="ZxJ-Ee-jej" eventType="touchUpInside" id="Rkz-fh-5i2"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="745" translatesAutoresizingMaskIntoConstraints="NO" id="xo2-ii-Nsy">
-                                <rect key="frame" x="0.0" y="643" width="414" height="143"/>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cI5-pA-l79" firstAttribute="top" secondItem="qBo-et-O7N" secondAttribute="bottom" constant="24" id="0Gt-7I-t0M"/>
-                            <constraint firstItem="5hu-22-IMc" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" id="0hN-kC-ggw"/>
                             <constraint firstItem="mRi-Dq-wsP" firstAttribute="top" secondItem="7Y3-Nt-ftf" secondAttribute="top" constant="40" id="16t-RW-hZW"/>
                             <constraint firstItem="Wao-Uo-IXK" firstAttribute="leading" secondItem="qBo-et-O7N" secondAttribute="leading" id="1BY-PK-Nwk"/>
                             <constraint firstItem="O5s-EU-Ttt" firstAttribute="centerY" secondItem="Wao-Uo-IXK" secondAttribute="centerY" id="380-JR-Cnl"/>
-                            <constraint firstItem="5hu-22-IMc" firstAttribute="leading" secondItem="qBo-et-O7N" secondAttribute="leading" id="3pU-Uu-nkc"/>
-                            <constraint firstItem="xo2-ii-Nsy" firstAttribute="top" secondItem="Xcr-mi-hlX" secondAttribute="bottom" constant="16" id="5cQ-v0-4JK"/>
                             <constraint firstItem="Wao-Uo-IXK" firstAttribute="top" secondItem="cI5-pA-l79" secondAttribute="bottom" constant="24" id="6Uk-zd-Ox1"/>
-                            <constraint firstItem="R4G-fU-cBo" firstAttribute="centerY" secondItem="5hu-22-IMc" secondAttribute="centerY" id="8HY-Cl-FHl"/>
                             <constraint firstItem="8Ii-d4-Nwy" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="60" id="9ee-QR-3RE"/>
                             <constraint firstItem="zLr-sF-MFF" firstAttribute="leading" secondItem="Cf0-2I-Wyn" secondAttribute="leading" constant="180" id="A7N-V8-a2v"/>
-                            <constraint firstItem="zLr-sF-MFF" firstAttribute="top" secondItem="xo2-ii-Nsy" secondAttribute="bottom" constant="16" id="Ajh-ja-w73"/>
+                            <constraint firstItem="3U7-J7-ULE" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" id="AmF-ut-Jra"/>
                             <constraint firstItem="R4G-fU-cBo" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="60" id="AwO-vs-37f"/>
+                            <constraint firstItem="3U7-J7-ULE" firstAttribute="leading" secondItem="qBo-et-O7N" secondAttribute="leading" id="CYc-fR-8Wv"/>
                             <constraint firstItem="mRi-Dq-wsP" firstAttribute="centerX" secondItem="Cf0-2I-Wyn" secondAttribute="centerX" id="CtQ-KU-XZ7"/>
                             <constraint firstAttribute="trailing" secondItem="zLr-sF-MFF" secondAttribute="trailing" constant="180" id="Dih-N0-SnV"/>
-                            <constraint firstItem="5hu-22-IMc" firstAttribute="top" secondItem="Wao-Uo-IXK" secondAttribute="bottom" constant="24" id="F3O-0B-cpg"/>
                             <constraint firstItem="O5s-EU-Ttt" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="60" id="GAa-pi-UZ6"/>
-                            <constraint firstItem="xo2-ii-Nsy" firstAttribute="trailing" secondItem="7Y3-Nt-ftf" secondAttribute="trailing" id="Goi-jh-5Af"/>
                             <constraint firstItem="qBo-et-O7N" firstAttribute="leading" secondItem="8Ii-d4-Nwy" secondAttribute="trailing" constant="30" id="H9w-RQ-gME"/>
                             <constraint firstItem="cI5-pA-l79" firstAttribute="leading" secondItem="qBo-et-O7N" secondAttribute="leading" id="ITV-1Z-dsf"/>
-                            <constraint firstItem="7Y3-Nt-ftf" firstAttribute="trailing" secondItem="Xcr-mi-hlX" secondAttribute="trailing" constant="100" id="P2f-bC-jgt"/>
-                            <constraint firstItem="Xcr-mi-hlX" firstAttribute="top" secondItem="5hu-22-IMc" secondAttribute="bottom" constant="20" id="TbQ-1C-ZqA"/>
                             <constraint firstItem="7Y3-Nt-ftf" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" constant="60" id="U2E-nq-wOx"/>
+                            <constraint firstItem="3U7-J7-ULE" firstAttribute="centerY" secondItem="R4G-fU-cBo" secondAttribute="centerY" id="Wxo-lL-gUF"/>
                             <constraint firstItem="8Ii-d4-Nwy" firstAttribute="centerY" secondItem="qBo-et-O7N" secondAttribute="centerY" id="c13-W9-Mtu"/>
-                            <constraint firstItem="xo2-ii-Nsy" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" id="cGm-oJ-LKF"/>
                             <constraint firstItem="hWC-nO-AIe" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="60" id="e3V-Ab-OIj"/>
-                            <constraint firstItem="qBo-et-O7N" firstAttribute="top" secondItem="mRi-Dq-wsP" secondAttribute="bottom" constant="36" id="fLN-vt-z4L"/>
-                            <constraint firstItem="Xcr-mi-hlX" firstAttribute="centerX" secondItem="Cf0-2I-Wyn" secondAttribute="centerX" id="g80-er-C6Q"/>
-                            <constraint firstItem="Xcr-mi-hlX" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="100" id="mBr-pg-LV8"/>
+                            <constraint firstItem="3U7-J7-ULE" firstAttribute="height" secondItem="qBo-et-O7N" secondAttribute="height" id="ec0-1R-kJx"/>
+                            <constraint firstItem="3U7-J7-ULE" firstAttribute="top" secondItem="Wao-Uo-IXK" secondAttribute="bottom" constant="24" id="fIs-rg-1mb"/>
+                            <constraint firstItem="qBo-et-O7N" firstAttribute="top" secondItem="mRi-Dq-wsP" secondAttribute="bottom" constant="60" id="fLN-vt-z4L"/>
                             <constraint firstItem="Wao-Uo-IXK" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" id="npW-gs-fkO"/>
                             <constraint firstItem="mRi-Dq-wsP" firstAttribute="width" secondItem="Cf0-2I-Wyn" secondAttribute="width" multiplier="0.5" id="nwT-py-4uq"/>
                             <constraint firstItem="7Y3-Nt-ftf" firstAttribute="bottom" secondItem="zLr-sF-MFF" secondAttribute="bottom" constant="30" id="pOR-mA-AzJ"/>
@@ -127,10 +115,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="VBx-OI-l8H"/>
                     <connections>
-                        <outlet property="birthSegControl" destination="Xcr-mi-hlX" id="z9N-ri-T1S"/>
-                        <outlet property="birthTextField" destination="5hu-22-IMc" id="AHK-gk-MMw"/>
+                        <outlet property="birthBtn" destination="3U7-J7-ULE" id="OC6-c0-PQy"/>
                         <outlet property="calculateBtn" destination="zLr-sF-MFF" id="LHL-Z2-1t2"/>
-                        <outlet property="datePicker" destination="xo2-ii-Nsy" id="KcL-3D-UBH"/>
                         <outlet property="firstNameTextField" destination="cI5-pA-l79" id="pdF-sv-f3G"/>
                         <outlet property="genderSegControl" destination="Wao-Uo-IXK" id="k4s-cg-4DO"/>
                         <outlet property="lastNameTextField" destination="qBo-et-O7N" id="rjO-J8-a9l"/>
@@ -140,6 +126,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4E-gs-QfB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="971.01449275362324" y="55.580357142857139"/>
+        </scene>
+        <!--Birth PickerVC-->
+        <scene sceneID="VAl-ns-mvA">
+            <objects>
+                <viewController storyboardIdentifier="BirthPickerVC" id="K9Q-IO-tIX" customClass="BirthPickerVC" customModule="FortuneTelling" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IHH-vK-4JT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vuY-bk-Xob">
+                                <rect key="frame" x="0.0" y="680" width="414" height="216"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21t-v4-ksZ">
+                                <rect key="frame" x="0.0" y="626" width="414" height="54"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-pC-f3n">
+                                        <rect key="frame" x="12" y="12" width="31" height="30"/>
+                                        <state key="normal" title="陽曆">
+                                            <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTouchSolarBtn:" destination="K9Q-IO-tIX" eventType="touchUpInside" id="emg-UF-wNx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBj-7j-phC">
+                                        <rect key="frame" x="63" y="12" width="31" height="30"/>
+                                        <state key="normal" title="農曆">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTouchLunarBtn:" destination="K9Q-IO-tIX" eventType="touchUpInside" id="a8M-lG-nEE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEs-Af-r10">
+                                        <rect key="frame" x="353" y="10" width="37" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="確定">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTouchOkBtn:" destination="K9Q-IO-tIX" eventType="touchUpInside" id="C5L-n9-gsw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="KBj-7j-phC" firstAttribute="leading" secondItem="7sH-pC-f3n" secondAttribute="trailing" constant="20" id="7uw-9u-ufY"/>
+                                    <constraint firstItem="7sH-pC-f3n" firstAttribute="leading" secondItem="21t-v4-ksZ" secondAttribute="leading" constant="12" id="EG6-WQ-T0I"/>
+                                    <constraint firstAttribute="trailing" secondItem="uEs-Af-r10" secondAttribute="trailing" constant="24" id="OPt-g8-32D"/>
+                                    <constraint firstItem="7sH-pC-f3n" firstAttribute="centerY" secondItem="21t-v4-ksZ" secondAttribute="centerY" id="TEV-he-e0N"/>
+                                    <constraint firstItem="KBj-7j-phC" firstAttribute="centerY" secondItem="21t-v4-ksZ" secondAttribute="centerY" id="p3Z-Fl-Ej9"/>
+                                    <constraint firstItem="uEs-Af-r10" firstAttribute="centerY" secondItem="21t-v4-ksZ" secondAttribute="centerY" id="wiH-Bq-fF7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vuY-bk-Xob" firstAttribute="height" secondItem="IHH-vK-4JT" secondAttribute="height" multiplier="0.241071" id="3nE-Ho-9y1"/>
+                            <constraint firstItem="vuY-bk-Xob" firstAttribute="trailing" secondItem="k80-yk-jcF" secondAttribute="trailing" id="50z-ab-8cB"/>
+                            <constraint firstItem="vuY-bk-Xob" firstAttribute="top" secondItem="21t-v4-ksZ" secondAttribute="bottom" id="BMj-sy-mkV"/>
+                            <constraint firstItem="21t-v4-ksZ" firstAttribute="leading" secondItem="k80-yk-jcF" secondAttribute="leading" id="C0l-Nv-72m"/>
+                            <constraint firstAttribute="bottom" secondItem="vuY-bk-Xob" secondAttribute="bottom" id="Yfi-Gx-sgb"/>
+                            <constraint firstItem="vuY-bk-Xob" firstAttribute="leading" secondItem="k80-yk-jcF" secondAttribute="leading" id="kUT-dO-rZu"/>
+                            <constraint firstItem="21t-v4-ksZ" firstAttribute="height" secondItem="IHH-vK-4JT" secondAttribute="height" multiplier="0.0602679" id="mXX-AM-K8i"/>
+                            <constraint firstItem="21t-v4-ksZ" firstAttribute="trailing" secondItem="k80-yk-jcF" secondAttribute="trailing" id="wZA-p6-Xlf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k80-yk-jcF"/>
+                    </view>
+                    <connections>
+                        <outlet property="birthdayPickerView" destination="vuY-bk-Xob" id="5iV-Ad-cTS"/>
+                        <outlet property="lunarBtn" destination="KBj-7j-phC" id="7Il-oh-eAK"/>
+                        <outlet property="okBtn" destination="uEs-Af-r10" id="Pa7-Cd-Tgf"/>
+                        <outlet property="solarBtn" destination="7sH-pC-f3n" id="vWO-fG-UgJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VzQ-2E-VeW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1734.7826086956522" y="55.580357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wqd-K5-9f6">

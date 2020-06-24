@@ -48,7 +48,7 @@ class FortuneResultVC: UIViewController {
         
         navigationController?.navigationBar.isTranslucent = false
         
-        navigationController?.navigationBar.barTintColor = .systemTeal
+        navigationController?.navigationBar.barTintColor = UIColor.assetColor(.MainColor)
         
         title = "Bob Wang (男) 虛歲 56歲"
         
@@ -67,7 +67,7 @@ class FortuneResultVC: UIViewController {
 extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 18
+        return 27
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -75,6 +75,7 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
         guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: "FortuneResultCollectionViewCell", for: indexPath) as? FortuneResultCollectionViewCell else { return UICollectionViewCell() }
         
         let title: [String] = ["生\n時", "生\n日", "生\n月", "生\n年", "大\n運", "流\n年", "流\n月", "流\n日", "流\n時",
+                               "壬\n戌", "戊\n申", "丙\n午", "丁\n未", "庚\n子", "甲\n辰", "乙\n亥", "辛\n巳", "乙\n未",
                                "壬\n戌", "戊\n申", "丙\n午", "丁\n未", "庚\n子", "甲\n辰", "乙\n亥", "辛\n巳", "乙\n未"]
                 
         item.titleLbl.text = title[indexPath.item]
@@ -100,7 +101,7 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = floor(collectionView.frame.size.width - 110) / 9
-        let height = floor(collectionView.frame.size.height - 15) / 2
+        let height = floor(collectionView.frame.size.height - 15) / 3
         return CGSize(width: width, height: height)
     }
     

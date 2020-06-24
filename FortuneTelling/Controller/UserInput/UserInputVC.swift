@@ -18,28 +18,7 @@ class UserInputVC: UIViewController {
     
     @IBOutlet weak var genderSegControl: UISegmentedControl!
     
-    @IBOutlet weak var birthTextField: UITextField!
-    
-    @IBOutlet weak var birthSegControl: UISegmentedControl! {
-        
-        didSet {
-            
-            birthSegControl.addTarget(self, action: #selector(birthValueChanged), for: .valueChanged)
-            
-        }
-        
-    }
-    
-    @IBOutlet weak var datePicker: UIPickerView! {
-        
-        didSet {
-            
-            datePicker.delegate = self
-            
-            datePicker.dataSource = self
-            
-        }
-    }
+    @IBOutlet weak var birthBtn: UIButton!
     
     @IBOutlet weak var calculateBtn: UIButton!
     
@@ -53,11 +32,11 @@ class UserInputVC: UIViewController {
         
         firstNameTextField.placeholder = "請輸入名字"
         
-        birthTextField.textAlignment = .center
+        birthBtn.layer.borderColor = UIColor.lightGray.cgColor
         
-        birthTextField.placeholder = "請在下方選擇生辰"
+        birthBtn.layer.borderWidth = 1
         
-        birthTextField.isUserInteractionEnabled = false
+        birthBtn.layer.cornerRadius = 5
         
         calculateBtn.layer.borderColor = UIColor.black.cgColor
         
@@ -73,7 +52,7 @@ class UserInputVC: UIViewController {
         
         navigationController?.navigationBar.isTranslucent = false
         
-        navigationController?.navigationBar.barTintColor = .systemTeal
+        navigationController?.navigationBar.barTintColor = UIColor.assetColor(.MainColor)
         
         title = "資料輸入"
         
@@ -102,8 +81,6 @@ class UserInputVC: UIViewController {
         components.timeZone = TimeZone.init(secondsFromGMT: 60 * 60 * 8)
 
         let solarDate = solarCalendar.date(from: components)
-
-         
 
         //初始化農曆日曆
 
@@ -134,9 +111,13 @@ class UserInputVC: UIViewController {
         
     }
     
-    @objc func birthValueChanged() {
-                
-        datePicker.reloadAllComponents()
+    @IBAction func didTouchBirthBtn(_ sender: Any) {
+        
+        let storyboard = UIStoryboard.init(name: "UserInput", bundle: nil)
+        
+        guard let birthPickerVC = storyboard.instantiateViewController(withIdentifier: "BirthPickerVC") as? BirthPickerVC else { return }
+        
+        present(birthPickerVC, animated: true, completion: nil)
         
     }
     
@@ -156,26 +137,6 @@ class UserInputVC: UIViewController {
         
         tabBarController?.tabBar.isHidden = false
         
-    }
-    
-}
-
-extension UserInputVC: UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        
-        return 4
-        
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-        return 10
-        
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "2000年"
     }
     
 }
