@@ -37,6 +37,8 @@
 		64FEF3F6249FDC9C00B77E59 /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3F5249FDC9C00B77E59 /* DatePickerVC.swift */; };
 		64FEF3F824A0C4C400B77E59 /* BirthPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3F724A0C4C400B77E59 /* BirthPickerVC.swift */; };
 		64FEF3FB24A2EB5200B77E59 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3FA24A2EB5200B77E59 /* UIColor+Extension.swift */; };
+		64FEF3FD24A2EE8C00B77E59 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3FC24A2EE8C00B77E59 /* NSDate.swift */; };
+		64FEF3FF24A33F7000B77E59 /* BirthdayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3FE24A33F7000B77E59 /* BirthdayModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,8 @@
 		64FEF3F5249FDC9C00B77E59 /* DatePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
 		64FEF3F724A0C4C400B77E59 /* BirthPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthPickerVC.swift; sourceTree = "<group>"; };
 		64FEF3FA24A2EB5200B77E59 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		64FEF3FC24A2EE8C00B77E59 /* NSDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
+		64FEF3FE24A33F7000B77E59 /* BirthdayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayModel.swift; sourceTree = "<group>"; };
 		C44B9569722268C6A3B54413 /* Pods-FortuneTelling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FortuneTelling.debug.xcconfig"; path = "Target Support Files/Pods-FortuneTelling/Pods-FortuneTelling.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +130,8 @@
 		64FEF3C6249CCC9400B77E59 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				64FEF3FC24A2EE8C00B77E59 /* NSDate.swift */,
+				64FEF3FE24A33F7000B77E59 /* BirthdayModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -363,12 +369,14 @@
 				64FEF3FB24A2EB5200B77E59 /* UIColor+Extension.swift in Sources */,
 				64FEF3B3249CB49000B77E59 /* HBGTabBarViewController.swift in Sources */,
 				64FEF3DB249CD47D00B77E59 /* RecordVC.swift in Sources */,
+				64FEF3FF24A33F7000B77E59 /* BirthdayModel.swift in Sources */,
 				64FEF3DE249CDA8000B77E59 /* RecordTableViewCell.swift in Sources */,
 				64FEF3B9249CB49000B77E59 /* FortuneTelling.xcdatamodeld in Sources */,
 				64FEF3D5249CD08800B77E59 /* UIImage+Extension.swift in Sources */,
 				64FEF3EF249F7CA200B77E59 /* FortuneResulteTableHeaderView.swift in Sources */,
 				64FEF3F824A0C4C400B77E59 /* BirthPickerVC.swift in Sources */,
 				64FEF3D3249CCF6400B77E59 /* UIStoryborad+Extension.swift in Sources */,
+				64FEF3FD24A2EE8C00B77E59 /* NSDate.swift in Sources */,
 				64FEF3D9249CD47300B77E59 /* FortuneResultVC.swift in Sources */,
 				64FEF3E1249CDC0E00B77E59 /* UITableView+Extension.swift in Sources */,
 				64FEF3F2249FD0DF00B77E59 /* FortuneCommentTableViewCell.swift in Sources */,

@@ -117,6 +117,8 @@ class UserInputVC: UIViewController {
         
         guard let birthPickerVC = storyboard.instantiateViewController(withIdentifier: "BirthPickerVC") as? BirthPickerVC else { return }
         
+        birthPickerVC.delegate = self
+        
         present(birthPickerVC, animated: true, completion: nil)
         
     }
@@ -139,4 +141,16 @@ class UserInputVC: UIViewController {
         
     }
     
+}
+
+extension UserInputVC: BirthPickerVCDelegate {
+    
+    func passSelectedBirthday(birthPickerVC: BirthPickerVC) {
+        
+        let birthday = "\(birthPickerVC.selectedBirth.year)年 \(birthPickerVC.selectedBirth.month)月 \(birthPickerVC.selectedBirth.day)日 \(birthPickerVC.selectedBirth.hour)"
+        
+        birthBtn.setTitle(birthday, for: .normal)
+        
+    }
+
 }
