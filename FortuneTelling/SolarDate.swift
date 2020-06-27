@@ -1,5 +1,5 @@
 //
-//  NSDate.swift
+//  SolarDate.swift
 //  FortuneTelling
 //
 //  Created by Hamburger on 2020/6/24.
@@ -54,6 +54,42 @@ class SolarDateManager {
                                "23:00-00:00 晚子"]
         
         return hours
+    }
+    
+    func solarToLunar(year: Int, month: Int, day: Int) {
+        
+        let chineseCalendar = Calendar(identifier: .chinese)
+        
+        var gregorianCalendar = Calendar(identifier: .gregorian)
+        
+        gregorianCalendar.timeZone = TimeZone(secondsFromGMT: 0)!
+        
+        var gcomponents = DateComponents()
+        
+        gcomponents.era = 1
+        
+        gcomponents.year = year
+        
+        gcomponents.month = month
+        
+        gcomponents.isLeapMonth = true
+        
+        gcomponents.day = day
+
+        let solarInputDate = gregorianCalendar.date(from: gcomponents)!
+
+        let gFormatter = DateFormatter()
+        
+        gFormatter.dateFormat = "MM/dd/yyyy"
+        
+        gFormatter.calendar = chineseCalendar
+
+        print("\(gFormatter.string(from: solarInputDate))")
+        
+    }
+    
+    func lunarMonth() {
+        
     }
     
 }
