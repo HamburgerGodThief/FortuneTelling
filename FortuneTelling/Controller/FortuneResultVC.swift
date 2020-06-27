@@ -106,7 +106,7 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -162,9 +162,7 @@ extension FortuneResultVC: UITableViewDelegate, UITableViewDataSource {
             headerView.sectionTitleLbl.text = "五行合生剋"
             
         }
-        
-        headerView.backgroundColor = .systemTeal
-        
+                
         return headerView
         
     }

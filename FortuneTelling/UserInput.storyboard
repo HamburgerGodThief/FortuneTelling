@@ -23,24 +23,24 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="姓" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qBo-et-O7N">
-                                <rect key="frame" x="125" y="395" width="229" height="34"/>
+                                <rect key="frame" x="105" y="395" width="269" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cI5-pA-l79">
-                                <rect key="frame" x="125" y="453" width="229" height="34"/>
+                                <rect key="frame" x="105" y="453" width="269" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wao-Uo-IXK">
-                                <rect key="frame" x="125" y="511" width="229" height="32"/>
+                                <rect key="frame" x="105" y="511" width="269" height="32"/>
                                 <segments>
                                     <segment title="男生"/>
                                     <segment title="女生"/>
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3U7-J7-ULE">
-                                <rect key="frame" x="125" y="566" width="229" height="34"/>
+                                <rect key="frame" x="105" y="566" width="269" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="請輸入出生時間">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,25 +50,25 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓氏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ii-d4-Nwy">
-                                <rect key="frame" x="60" y="401.5" width="35" height="21"/>
+                                <rect key="frame" x="40" y="401.5" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWC-nO-AIe">
-                                <rect key="frame" x="60" y="459.5" width="35" height="21"/>
+                                <rect key="frame" x="40" y="459.5" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性別" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5s-EU-Ttt">
-                                <rect key="frame" x="60" y="516" width="35" height="21"/>
+                                <rect key="frame" x="40" y="516" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生辰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4G-fU-cBo">
-                                <rect key="frame" x="60" y="572.5" width="35" height="21"/>
+                                <rect key="frame" x="40" y="572.5" width="35" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -88,20 +88,20 @@
                             <constraint firstItem="Wao-Uo-IXK" firstAttribute="leading" secondItem="qBo-et-O7N" secondAttribute="leading" id="1BY-PK-Nwk"/>
                             <constraint firstItem="O5s-EU-Ttt" firstAttribute="centerY" secondItem="Wao-Uo-IXK" secondAttribute="centerY" id="380-JR-Cnl"/>
                             <constraint firstItem="Wao-Uo-IXK" firstAttribute="top" secondItem="cI5-pA-l79" secondAttribute="bottom" constant="24" id="6Uk-zd-Ox1"/>
-                            <constraint firstItem="8Ii-d4-Nwy" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="60" id="9ee-QR-3RE"/>
+                            <constraint firstItem="8Ii-d4-Nwy" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="40" id="9ee-QR-3RE"/>
                             <constraint firstItem="zLr-sF-MFF" firstAttribute="leading" secondItem="Cf0-2I-Wyn" secondAttribute="leading" constant="180" id="A7N-V8-a2v"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" id="AmF-ut-Jra"/>
-                            <constraint firstItem="R4G-fU-cBo" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="60" id="AwO-vs-37f"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="leading" secondItem="qBo-et-O7N" secondAttribute="leading" id="CYc-fR-8Wv"/>
                             <constraint firstItem="mRi-Dq-wsP" firstAttribute="centerX" secondItem="Cf0-2I-Wyn" secondAttribute="centerX" id="CtQ-KU-XZ7"/>
                             <constraint firstAttribute="trailing" secondItem="zLr-sF-MFF" secondAttribute="trailing" constant="180" id="Dih-N0-SnV"/>
-                            <constraint firstItem="O5s-EU-Ttt" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="60" id="GAa-pi-UZ6"/>
                             <constraint firstItem="qBo-et-O7N" firstAttribute="leading" secondItem="8Ii-d4-Nwy" secondAttribute="trailing" constant="30" id="H9w-RQ-gME"/>
                             <constraint firstItem="cI5-pA-l79" firstAttribute="leading" secondItem="qBo-et-O7N" secondAttribute="leading" id="ITV-1Z-dsf"/>
-                            <constraint firstItem="7Y3-Nt-ftf" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" constant="60" id="U2E-nq-wOx"/>
+                            <constraint firstItem="R4G-fU-cBo" firstAttribute="leading" secondItem="8Ii-d4-Nwy" secondAttribute="leading" id="KIS-Di-MSh"/>
+                            <constraint firstItem="hWC-nO-AIe" firstAttribute="leading" secondItem="8Ii-d4-Nwy" secondAttribute="leading" id="RmH-dn-yoL"/>
+                            <constraint firstItem="7Y3-Nt-ftf" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" constant="40" id="U2E-nq-wOx"/>
+                            <constraint firstItem="O5s-EU-Ttt" firstAttribute="leading" secondItem="8Ii-d4-Nwy" secondAttribute="leading" id="Uhj-rs-xYd"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="centerY" secondItem="R4G-fU-cBo" secondAttribute="centerY" id="Wxo-lL-gUF"/>
                             <constraint firstItem="8Ii-d4-Nwy" firstAttribute="centerY" secondItem="qBo-et-O7N" secondAttribute="centerY" id="c13-W9-Mtu"/>
-                            <constraint firstItem="hWC-nO-AIe" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="60" id="e3V-Ab-OIj"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="height" secondItem="qBo-et-O7N" secondAttribute="height" id="ec0-1R-kJx"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="top" secondItem="Wao-Uo-IXK" secondAttribute="bottom" constant="24" id="fIs-rg-1mb"/>
                             <constraint firstItem="qBo-et-O7N" firstAttribute="top" secondItem="mRi-Dq-wsP" secondAttribute="bottom" constant="60" id="fLN-vt-z4L"/>

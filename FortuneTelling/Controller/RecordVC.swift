@@ -32,7 +32,11 @@ class RecordVC: UIViewController {
         
         navigationController?.navigationBar.isTranslucent = false
         
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white ]
+        
         navigationController?.navigationBar.barTintColor = UIColor.assetColor(.MainColor)
+        
+        navigationController?.navigationBar.barStyle = .black
         
         title = "歷史紀錄"
         
