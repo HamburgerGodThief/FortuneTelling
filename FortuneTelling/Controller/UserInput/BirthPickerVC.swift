@@ -52,7 +52,7 @@ class BirthPickerVC: UIViewController {
     
     weak var delegate: BirthPickerVCDelegate?
     
-    var selectedBirth: BirthdayModel = BirthdayModel(year: "1911年", month: "1月", day: "1號", hour: "00:00-01:00 早子")
+    var selectedBirth: BirthdayModel = BirthdayModel(year: "1925年", month: "1月", day: "1號", hour: "00:00-01:00 早子")
     
     let solarManager = SolarDateManager()
     
@@ -175,7 +175,7 @@ class BirthPickerVC: UIViewController {
         
         lunarBtn.setTitleColor(.lightGray, for: .normal)
         
-        selectedBirth = BirthdayModel(year: "1911年", month: "1月", day: "1號", hour: "00:00-01:00 早子")
+        selectedBirth = BirthdayModel(year: "1925年", month: "1月", day: "1號", hour: "00:00-01:00 早子")
         
         solarDate()
         
@@ -191,7 +191,7 @@ class BirthPickerVC: UIViewController {
         
         lunarBtn.setTitleColor(UIColor.assetColor(.MainColor), for: .normal)
         
-        selectedBirth = BirthdayModel(year: "1911年", month: "正月", day: "初一", hour: "00:00-01:00 早子")
+        selectedBirth = BirthdayModel(year: "1925年", month: "正月", day: "初一", hour: "00:00-01:00 早子")
         
         lunarDate()
         

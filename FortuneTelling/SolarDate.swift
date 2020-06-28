@@ -10,7 +10,7 @@ import Foundation
 
 class SolarDateManager {
     
-    let startYear = 1911
+    let startYear = 1925
     
     func solarYears() -> [Int] {
                 
