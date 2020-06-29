@@ -54,6 +54,16 @@ class BirthPickerVC: UIViewController {
     
     var selectedBirth: BirthdayModel = BirthdayModel(year: "1925年", month: "1月", day: "1號", hour: "00:00-01:00 早子")
     
+    var selectedYear: String = "1925"
+    
+    var selectedMonth: String = "01"
+    
+    var selectedDay: String = "01"
+    
+    var selectedHour: String = "00:00"
+    
+    var selectedBirthString: String = ""
+    
     let solarManager = SolarDateManager()
     
     let lunarManager = LunarDateManager()
@@ -169,41 +179,101 @@ class BirthPickerVC: UIViewController {
         lunarHours()
     }
     
+    func lunarToSolar() -> String {
+        
+        let selectedYear = birthdayPickerView.selectedRow(inComponent: 0) + solarManager.startYear
+        
+        let selectedMonthIndex = birthdayPickerView.selectedRow(inComponent: 1)
+        
+        let lunarMonths = lunarManager.lunarMonths(gregorianYear: selectedYear)
+        
+        let selectedLunarMonth = lunarMonths[selectedMonthIndex]
+        
+        let selectedDay = birthdayPickerView.selectedRow(inComponent: 2) + 1
+        
+        if monthComponent[selectedMonthIndex].count == 3 {
+            
+            let solarDate = lunarManager.lunarToSolar(gregorianYear: selectedYear, lunarMonth: selectedMonthIndex, isLeapMonth: true, lunarDay: selectedDay)
+            
+            return "\(solarDate) \(selectedHour)"
+            
+        } else {
+            
+            let solarDate = lunarManager.lunarToSolar(gregorianYear: selectedYear, lunarMonth: selectedLunarMonth, isLeapMonth: false, lunarDay: selectedDay)
+            
+            return "\(solarDate) \(selectedHour)"
+            
+        }
+        
+    }
+    
+    func passBirthToPreVC() {
+        
+        if !isSolar {
+            
+            selectedBirthString = lunarToSolar()
+            
+        } else {
+            
+            selectedBirthString = "\(selectedYear)-\(selectedMonth)-\(selectedDay) \(selectedHour)"
+            
+        }
+        
+        delegate?.passSelectedBirthday(birthPickerVC: self)
+        
+    }
+    
     @IBAction func didTouchSolarBtn(_ sender: Any) {
+        
+        isSolar = true
+        
+        solarDate()
+        
+        birthdayPickerView.reloadAllComponents()
         
         solarBtn.setTitleColor(UIColor.assetColor(.MainColor), for: .normal)
         
         lunarBtn.setTitleColor(.lightGray, for: .normal)
         
-        selectedBirth = BirthdayModel(year: "1925年", month: "1月", day: "1號", hour: "00:00-01:00 早子")
+        let selectedYear = birthdayPickerView.selectedRow(inComponent: 0)
         
-        solarDate()
+        let selectedMonth = birthdayPickerView.selectedRow(inComponent: 1)
         
-        isSolar = true
+        let selectedDay = birthdayPickerView.selectedRow(inComponent: 2)
         
-        birthdayPickerView.reloadAllComponents()
+        let selectedHour = birthdayPickerView.selectedRow(inComponent: 3)
+        
+        selectedBirth = BirthdayModel(year: yearComponent[selectedYear], month: monthComponent[selectedMonth], day: dayComponent[selectedDay], hour: hourComponent[selectedHour])
         
     }
     
     @IBAction func didTouchLunarBtn(_ sender: Any) {
         
+        isSolar = false
+        
+        lunarDate()
+        
+        birthdayPickerView.reloadAllComponents()
+        
         solarBtn.setTitleColor(.lightGray, for: .normal)
         
         lunarBtn.setTitleColor(UIColor.assetColor(.MainColor), for: .normal)
         
-        selectedBirth = BirthdayModel(year: "1925年", month: "正月", day: "初一", hour: "00:00-01:00 早子")
+        let selectedYear = birthdayPickerView.selectedRow(inComponent: 0)
         
-        lunarDate()
+        let selectedMonth = birthdayPickerView.selectedRow(inComponent: 1)
         
-        isSolar = false
+        let selectedDay = birthdayPickerView.selectedRow(inComponent: 2)
         
-        birthdayPickerView.reloadAllComponents()
+        let selectedHour = birthdayPickerView.selectedRow(inComponent: 3)
+        
+        selectedBirth = BirthdayModel(year: yearComponent[selectedYear], month: monthComponent[selectedMonth], day: dayComponent[selectedDay], hour: hourComponent[selectedHour])
         
     }
     
     @IBAction func didTouchOkBtn(_ sender: Any) {
         
-        delegate?.passSelectedBirthday(birthPickerVC: self)
+        passBirthToPreVC()
         
         dismiss(animated: true, completion: nil)
         
@@ -221,7 +291,7 @@ class BirthPickerVC: UIViewController {
         
         super.viewWillDisappear(animated)
         
-        delegate?.passSelectedBirthday(birthPickerVC: self)
+        passBirthToPreVC()
         
         print(selectedBirth)
         
@@ -266,9 +336,11 @@ extension BirthPickerVC: UIPickerViewDataSource, UIPickerViewDelegate {
         switch component {
             
         case 0:
+            
+            selectedYear = String(yearComponent[row].prefix(4))
                         
             selectedBirth.year = yearComponent[row]
-                        
+                                    
             if isSolar {
                 
                 solarDate()
@@ -291,6 +363,8 @@ extension BirthPickerVC: UIPickerViewDataSource, UIPickerViewDelegate {
                 
                 solarDate()
                 
+                selectedMonth = monthComponent[row].substring(toIndex: monthComponent[row].length - 1)
+                
             } else {
                 
                 lunarDate()
@@ -303,7 +377,15 @@ extension BirthPickerVC: UIPickerViewDataSource, UIPickerViewDelegate {
             
             selectedBirth.day = dayComponent[row]
             
+            if isSolar {
+                                
+                selectedDay = dayComponent[row].substring(toIndex: dayComponent[row].length - 1)
+                
+            }
+            
         default:
+            
+            selectedHour = String(hourComponent[row].prefix(5))
                         
             selectedBirth.hour = hourComponent[row]
             

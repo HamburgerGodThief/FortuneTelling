@@ -22,6 +22,8 @@ class UserInputVC: UIViewController {
     
     @IBOutlet weak var calculateBtn: UIButton!
     
+    var userBirthString: String = ""
+    
     func layoutSetting() {
         
         lastNameTextField.textAlignment = .center
@@ -107,9 +109,12 @@ class UserInputVC: UIViewController {
     @IBAction func didTouchCalculateBtn(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "FortuneResult", bundle: nil)
+        
         guard let fortuneResultVC = storyboard.instantiateViewController(withIdentifier: "FortuneResultVC") as? FortuneResultVC else { return }
         
         tabBarController?.tabBar.isHidden = true
+        
+        fortuneResultVC.birthdayString = userBirthString
         
         navigationController?.pushViewController(fortuneResultVC, animated: true)
         
@@ -152,6 +157,8 @@ extension UserInputVC: BirthPickerVCDelegate {
     func passSelectedBirthday(birthPickerVC: BirthPickerVC) {
         
         let birthday = "\(birthPickerVC.selectedBirth.year) \(birthPickerVC.selectedBirth.month) \(birthPickerVC.selectedBirth.day) \(birthPickerVC.selectedBirth.hour)"
+        
+        userBirthString = birthPickerVC.selectedBirthString
         
         birthBtn.setTitle(birthday, for: .normal)
         

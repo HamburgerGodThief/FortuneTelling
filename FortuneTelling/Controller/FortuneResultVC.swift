@@ -44,6 +44,8 @@ class FortuneResultVC: UIViewController {
         
     }
     
+    var birthdayString: String = ""
+    
     func navConfigure() {
         
         navigationController?.navigationBar.isTranslucent = false
@@ -54,11 +56,32 @@ class FortuneResultVC: UIViewController {
         
     }
     
+    func calculateBirthHeavenEarthly() {
+        
+        let birthDate = YearHeavenEarthly.shared.timeStringToDate(inputTimeString: birthdayString)
+        
+        let birthYearHeavenEarthly = YearHeavenEarthly.shared.getBirthYearHeavenEarthly(inputDate: birthDate)
+        
+        let birthMonthHeavenEarthly = MonthHeavenEarthly.shared.getBirthMonthHeavenEarthly(inputDate: birthDate)
+        
+        let birthDateWithoutHour = birthdayString.substring(toIndex: birthdayString.length - 6)
+        
+        guard let birthDayHeavenEarthly = DayHeavenEarthly.shared.getDayHeavenEarthly(year_month_date: birthDateWithoutHour) else { return }
+        
+        print(birthYearHeavenEarthly)
+        
+        print(birthMonthHeavenEarthly)
+        
+        print(birthDayHeavenEarthly)
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         navConfigure()
+        
+        calculateBirthHeavenEarthly()
         
     }
     

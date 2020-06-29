@@ -10,8 +10,8 @@ identifier_name:
     - url
     - app
 file_length:
-  warning: 500
-  error: 800
+  warning: 600
+  error: 900
 type_body_length:
   - 500 # warning
   - 700 # error
