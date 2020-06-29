@@ -31,6 +31,12 @@ extension String {
         return self[0 ..< max(0, toIndex)]
         
     }
+    
+    func substring(fromIndex: Int, toIndex: Int) -> String {
+        
+        return self[min(fromIndex, length)..<toIndex]
+        
+    }
 
     subscript (range: Range<Int>) -> String {
         

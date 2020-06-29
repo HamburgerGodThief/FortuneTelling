@@ -68,11 +68,19 @@ class FortuneResultVC: UIViewController {
         
         guard let birthDayHeavenEarthly = DayHeavenEarthly.shared.getDayHeavenEarthly(year_month_date: birthDateWithoutHour) else { return }
         
+        let birthDateHour = birthdayString.substring(fromIndex: birthdayString.length - 5, toIndex: birthdayString.length)
+        
+        let birthHourEarthly = HourHeavenEarthly.shared.getHourEarthly(birthHour: birthDateHour)
+        
+        let birthHourHeaven = HourHeavenEarthly.shared.getHourHeaven(birthHourEarthly: birthHourEarthly, birthDayHeaven: birthDayHeavenEarthly.heaven)
+        
         print(birthYearHeavenEarthly)
         
         print(birthMonthHeavenEarthly)
         
         print(birthDayHeavenEarthly)
+        
+        print(birthHourHeaven)
     }
     
     override func viewDidLoad() {

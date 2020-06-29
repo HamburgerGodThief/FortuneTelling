@@ -7,32 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "91D51C73-A691-4603-BBC4-835FAF28346D"
+            uuid = "BB6BA0D9-CC68-4AC5-9301-4B532D18D2ED"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FortuneTelling/MonthHeavenEarthly.swift"
+            filePath = "FortuneTelling/HourHeavenEarthly.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "readJSON()"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "getHourHeaven(birthHourEarthly:birthDayHeaven:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "33B4AC3F-6DFE-453F-AC91-BDE2CB82FC98"
+            uuid = "AF063C6C-B958-4725-BB7C-5954605ACD45"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FortuneTelling/MonthHeavenEarthly.swift"
+            filePath = "FortuneTelling/HourHeavenEarthly.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "readJSON()"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "getHourHeaven(birthHourEarthly:birthDayHeaven:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
