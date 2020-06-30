@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FortuneResultCollectionViewCell" id="gTV-IL-0wX" customClass="FortuneResultCollectionViewCell" customModule="FortuneTelling" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ResultTitleCollectionViewCell" id="gTV-IL-0wX" customClass="ResultTitleCollectionViewCell" customModule="FortuneTelling" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -17,14 +17,14 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATT-WX-jvQ">
-                        <rect key="frame" x="31.5" y="45.5" width="57" height="29"/>
+                        <rect key="frame" x="31.5" y="0.0" width="57" height="29"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2X-Jg-hc8">
-                        <rect key="frame" x="49" y="74.5" width="22" height="22"/>
+                        <rect key="frame" x="49" y="29" width="22" height="22"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="I2X-Jg-hc8" secondAttribute="height" multiplier="1:1" id="PQ3-Ka-OLs"/>
                         </constraints>
@@ -32,11 +32,11 @@
                     </button>
                 </subviews>
             </view>
-            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="I2X-Jg-hc8" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="7gm-lb-L9k"/>
                 <constraint firstItem="ATT-WX-jvQ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="8CN-UW-NZz"/>
-                <constraint firstItem="ATT-WX-jvQ" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="QQG-yq-Daj"/>
+                <constraint firstItem="ATT-WX-jvQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="H8K-FW-06E"/>
                 <constraint firstItem="I2X-Jg-hc8" firstAttribute="top" secondItem="ATT-WX-jvQ" secondAttribute="bottom" id="zaF-m9-yFN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>

@@ -14,6 +14,20 @@ enum ColorAsset: String {
     
     case MainColor
     
+    case YinColor
+    
+    case YangColor
+    
+    case MetalColor
+    
+    case WoodColor
+    
+    case WaterColor
+    
+    case FireColor
+    
+    case EarthColor
+        
 }
 
 // swiftlint:enable identifier_name
@@ -25,4 +39,5 @@ extension UIColor {
         return UIColor(named: color.rawValue)
         
     }
+    
 }

@@ -1,5 +1,5 @@
 //
-//  FortuneResultCollectionViewCell.swift
+//  ResultTitleCollectionViewCell.swift
 //  FortuneTelling
 //
 //  Created by Hamburger on 2020/6/21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FortuneResultCollectionViewCell: UICollectionViewCell {
+class ResultTitleCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var titleLbl: UILabel!
     

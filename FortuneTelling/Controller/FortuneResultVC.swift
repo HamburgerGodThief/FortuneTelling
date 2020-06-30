@@ -10,15 +10,29 @@ import UIKit
 
 class FortuneResultVC: UIViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView! {
+    @IBOutlet weak var titleCollectionView: UICollectionView! {
         
         didSet {
             
-            collectionView.delegate = self
+            titleCollectionView.delegate = self
             
-            collectionView.dataSource = self
+            titleCollectionView.dataSource = self
             
-            collectionView.hbg_registerCellWithNib(identifier: String(describing: FortuneResultCollectionViewCell.self), bundle: nil)
+            titleCollectionView.hbg_registerCellWithNib(identifier: String(describing: ResultTitleCollectionViewCell.self), bundle: nil)
+                        
+        }
+        
+    }
+    
+    @IBOutlet weak var resultCollectionView: UICollectionView! {
+        
+        didSet {
+            
+            resultCollectionView.delegate = self
+            
+            resultCollectionView.dataSource = self
+            
+            resultCollectionView.hbg_registerCellWithNib(identifier: String(describing: ResultCollectionViewCell.self), bundle: nil)
                         
         }
         
@@ -45,6 +59,10 @@ class FortuneResultVC: UIViewController {
     }
     
     var birthdayString: String = ""
+    
+    var topLabelData: [HeavenEarthly] = []
+    
+    var bottomLabelData: [HeavenEarthly] = []
     
     func navConfigure() {
         
@@ -74,13 +92,22 @@ class FortuneResultVC: UIViewController {
         
         let birthHourHeaven = HourHeavenEarthly.shared.getHourHeaven(birthHourEarthly: birthHourEarthly, birthDayHeaven: birthDayHeavenEarthly.heaven)
         
-        print(birthYearHeavenEarthly)
+        topLabelData.append(HeavenEarthly(string: birthHourHeaven))
         
-        print(birthMonthHeavenEarthly)
+        topLabelData.append(HeavenEarthly(string: birthDayHeavenEarthly.heaven))
         
-        print(birthDayHeavenEarthly)
+        topLabelData.append(HeavenEarthly(string: birthMonthHeavenEarthly.heaven))
         
-        print(birthHourHeaven)
+        topLabelData.append(HeavenEarthly(string: birthYearHeavenEarthly.heaven))
+        
+        bottomLabelData.append(HeavenEarthly(string: birthHourEarthly))
+        
+        bottomLabelData.append(HeavenEarthly(string: birthDayHeavenEarthly.earthly))
+        
+        bottomLabelData.append(HeavenEarthly(string: birthMonthHeavenEarthly.earthly))
+        
+        bottomLabelData.append(HeavenEarthly(string: birthYearHeavenEarthly.earthly))
+        
     }
     
     override func viewDidLoad() {
@@ -98,46 +125,59 @@ class FortuneResultVC: UIViewController {
 extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 27
+        
+        if collectionView == titleCollectionView {
+            
+            return 9
+            
+        } else {
+            
+            return 18
+            
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: "FortuneResultCollectionViewCell", for: indexPath) as? FortuneResultCollectionViewCell else { return UICollectionViewCell() }
+        if collectionView == titleCollectionView {
         
-        let title: [String] = ["生\n時", "生\n日", "生\n月", "生\n年", "大\n運", "流\n年", "流\n月", "流\n日", "流\n時",
-                               "壬\n戌", "戊\n申", "丙\n午", "丁\n未", "庚\n子", "甲\n辰", "乙\n亥", "辛\n巳", "乙\n未",
-                               "壬\n戌", "戊\n申", "丙\n午", "丁\n未", "庚\n子", "甲\n辰", "乙\n亥", "辛\n巳", "乙\n未"]
-                
-        item.titleLbl.text = title[indexPath.item]
-        
-        switch indexPath.item {
-        case 4:
-            item.iconBtn.isHidden = false
-        case 5:
-            item.iconBtn.isHidden = false
-        case 6:
-            item.iconBtn.isHidden = false
-        case 7:
-            item.iconBtn.isHidden = false
-        case 8:
-            item.iconBtn.isHidden = false
-        default:
-            item.iconBtn.isHidden = true
+            guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: "ResultTitleCollectionViewCell", for: indexPath) as? ResultTitleCollectionViewCell else { return UICollectionViewCell() }
+            
+            let title: [String] = ["生\n時", "生\n日", "生\n月", "生\n年", "大\n運", "流\n年", "流\n月", "流\n日", "流\n時"]
+                    
+            item.titleLbl.text = title[indexPath.item]
+            
+            return item
+            
+        } else {
+            
+            guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: "ResultCollectionViewCell", for: indexPath) as? ResultCollectionViewCell else { return UICollectionViewCell() }
+            
+            let topContent: [String] = ["壬", "戊", "丙", "丁", "庚", "甲", "乙", "辛", "乙",
+                                        "壬", "戊", "丙", "丁", "庚", "甲", "乙", "辛", "乙"]
+            
+            let bottomContent: [String] = ["戌", "申", "午", "未", "子", "辰", "亥", "巳", "未",
+                                           "戌", "申", "午", "未", "子", "辰", "亥", "巳", "未"]
+            
+            item.topLabel.text = topContent[indexPath.item]
+            
+            item.bottomLabel.text = bottomContent[indexPath.item]
+            
+            return item
+            
         }
-        
-        return item
         
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = floor(collectionView.frame.size.width - 110) / 9
-        let height = floor(collectionView.frame.size.height - 15) / 3
+        let height = floor(view.frame.size.height / 3 - 15) / 3
         return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -145,27 +185,32 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        return UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let storyboard = UIStoryboard(name: "FortuneResult", bundle: nil)
-        guard let datePickerVC = storyboard.instantiateViewController(withIdentifier: "DatePickerVC") as? DatePickerVC else { return }
+        if collectionView == titleCollectionView {
         
-        switch indexPath.item {
-        case 4:
-            present(datePickerVC, animated: true, completion: nil)
-        case 5:
-            present(datePickerVC, animated: true, completion: nil)
-        case 6:
-            present(datePickerVC, animated: true, completion: nil)
-        case 7:
-            present(datePickerVC, animated: true, completion: nil)
-        case 8:
-            present(datePickerVC, animated: true, completion: nil)
-        default:
-            return
+            let storyboard = UIStoryboard(name: "FortuneResult", bundle: nil)
+            
+            guard let datePickerVC = storyboard.instantiateViewController(withIdentifier: "DatePickerVC") as? DatePickerVC else { return }
+            
+            switch indexPath.item {
+            case 4:
+                present(datePickerVC, animated: true, completion: nil)
+            case 5:
+                present(datePickerVC, animated: true, completion: nil)
+            case 6:
+                present(datePickerVC, animated: true, completion: nil)
+            case 7:
+                present(datePickerVC, animated: true, completion: nil)
+            case 8:
+                present(datePickerVC, animated: true, completion: nil)
+            default:
+                return
+            }
+            
         }
         
     }

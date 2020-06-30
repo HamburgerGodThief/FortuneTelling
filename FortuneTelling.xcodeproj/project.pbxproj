@@ -17,6 +17,10 @@
 		64B65DCF24A9B10B00397C07 /* monthHeavenEarthlyData.json in Resources */ = {isa = PBXBuildFile; fileRef = 64B65DCE24A9B10B00397C07 /* monthHeavenEarthlyData.json */; };
 		64B65DD124A9B44300397C07 /* DayHeavenEarthly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DD024A9B44300397C07 /* DayHeavenEarthly.swift */; };
 		64B65DD324A9E7FD00397C07 /* HourHeavenEarthly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DD224A9E7FD00397C07 /* HourHeavenEarthly.swift */; };
+		64B65DD624AA4A4D00397C07 /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DD424AA4A4D00397C07 /* ResultCollectionViewCell.swift */; };
+		64B65DD724AA4A4D00397C07 /* ResultCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64B65DD524AA4A4D00397C07 /* ResultCollectionViewCell.xib */; };
+		64B65DD924AB174800397C07 /* HeavenEarthlyStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DD824AB174700397C07 /* HeavenEarthlyStruct.swift */; };
+		64B65DDB24AB233300397C07 /* BigTenYears.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DDA24AB233300397C07 /* BigTenYears.swift */; };
 		64FEF3AF249CB49000B77E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3AE249CB49000B77E59 /* AppDelegate.swift */; };
 		64FEF3B3249CB49000B77E59 /* HBGTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3B2249CB49000B77E59 /* HBGTabBarViewController.swift */; };
 		64FEF3B6249CB49000B77E59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3B4249CB49000B77E59 /* Main.storyboard */; };
@@ -36,8 +40,8 @@
 		64FEF3E4249F60A500B77E59 /* FortuneResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3E2249F60A500B77E59 /* FortuneResultTableViewCell.swift */; };
 		64FEF3E5249F60A500B77E59 /* FortuneResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3E3249F60A500B77E59 /* FortuneResultTableViewCell.xib */; };
 		64FEF3E7249F626400B77E59 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3E6249F626400B77E59 /* UICollectionView+Extension.swift */; };
-		64FEF3EA249F644300B77E59 /* FortuneResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3E8249F644300B77E59 /* FortuneResultCollectionViewCell.swift */; };
-		64FEF3EB249F644300B77E59 /* FortuneResultCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3E9249F644300B77E59 /* FortuneResultCollectionViewCell.xib */; };
+		64FEF3EA249F644300B77E59 /* ResultTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3E8249F644300B77E59 /* ResultTitleCollectionViewCell.swift */; };
+		64FEF3EB249F644300B77E59 /* ResultTitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3E9249F644300B77E59 /* ResultTitleCollectionViewCell.xib */; };
 		64FEF3ED249F7C8B00B77E59 /* FortuneResultTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3EC249F7C8B00B77E59 /* FortuneResultTableHeaderView.xib */; };
 		64FEF3EF249F7CA200B77E59 /* FortuneResulteTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3EE249F7CA200B77E59 /* FortuneResulteTableHeaderView.swift */; };
 		64FEF3F2249FD0DF00B77E59 /* FortuneCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3F0249FD0DF00B77E59 /* FortuneCommentTableViewCell.swift */; };
@@ -61,6 +65,10 @@
 		64B65DCE24A9B10B00397C07 /* monthHeavenEarthlyData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = monthHeavenEarthlyData.json; sourceTree = "<group>"; };
 		64B65DD024A9B44300397C07 /* DayHeavenEarthly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayHeavenEarthly.swift; sourceTree = "<group>"; };
 		64B65DD224A9E7FD00397C07 /* HourHeavenEarthly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourHeavenEarthly.swift; sourceTree = "<group>"; };
+		64B65DD424AA4A4D00397C07 /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		64B65DD524AA4A4D00397C07 /* ResultCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCollectionViewCell.xib; sourceTree = "<group>"; };
+		64B65DD824AB174700397C07 /* HeavenEarthlyStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeavenEarthlyStruct.swift; sourceTree = "<group>"; };
+		64B65DDA24AB233300397C07 /* BigTenYears.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTenYears.swift; sourceTree = "<group>"; };
 		64FEF3AB249CB49000B77E59 /* FortuneTelling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FortuneTelling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FEF3AE249CB49000B77E59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64FEF3B2249CB49000B77E59 /* HBGTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBGTabBarViewController.swift; sourceTree = "<group>"; };
@@ -82,8 +90,8 @@
 		64FEF3E2249F60A500B77E59 /* FortuneResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResultTableViewCell.swift; sourceTree = "<group>"; };
 		64FEF3E3249F60A500B77E59 /* FortuneResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FortuneResultTableViewCell.xib; sourceTree = "<group>"; };
 		64FEF3E6249F626400B77E59 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
-		64FEF3E8249F644300B77E59 /* FortuneResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResultCollectionViewCell.swift; sourceTree = "<group>"; };
-		64FEF3E9249F644300B77E59 /* FortuneResultCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FortuneResultCollectionViewCell.xib; sourceTree = "<group>"; };
+		64FEF3E8249F644300B77E59 /* ResultTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		64FEF3E9249F644300B77E59 /* ResultTitleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTitleCollectionViewCell.xib; sourceTree = "<group>"; };
 		64FEF3EC249F7C8B00B77E59 /* FortuneResultTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FortuneResultTableHeaderView.xib; sourceTree = "<group>"; };
 		64FEF3EE249F7CA200B77E59 /* FortuneResulteTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneResulteTableHeaderView.swift; sourceTree = "<group>"; };
 		64FEF3F0249FD0DF00B77E59 /* FortuneCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneCommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -151,10 +159,12 @@
 				6446F99924A773C50053B01E /* StorageManager.swift */,
 				6446F99B24A7C2570053B01E /* FortuneTelling.xcdatamodeld */,
 				64B65DC624A7C6AD00397C07 /* YearHeavenEarthly.swift */,
+				64B65DD824AB174700397C07 /* HeavenEarthlyStruct.swift */,
 				64B65DCA24A8C28400397C07 /* MonthHeavenEarthly.swift */,
 				64B65DCE24A9B10B00397C07 /* monthHeavenEarthlyData.json */,
 				64B65DD024A9B44300397C07 /* DayHeavenEarthly.swift */,
 				64B65DD224A9E7FD00397C07 /* HourHeavenEarthly.swift */,
+				64B65DDA24AB233300397C07 /* BigTenYears.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -210,8 +220,10 @@
 				64FEF3CD249CCEE900B77E59 /* FortuneResult.storyboard */,
 				64FEF3EE249F7CA200B77E59 /* FortuneResulteTableHeaderView.swift */,
 				64FEF3EC249F7C8B00B77E59 /* FortuneResultTableHeaderView.xib */,
-				64FEF3E8249F644300B77E59 /* FortuneResultCollectionViewCell.swift */,
-				64FEF3E9249F644300B77E59 /* FortuneResultCollectionViewCell.xib */,
+				64FEF3E8249F644300B77E59 /* ResultTitleCollectionViewCell.swift */,
+				64FEF3E9249F644300B77E59 /* ResultTitleCollectionViewCell.xib */,
+				64B65DD424AA4A4D00397C07 /* ResultCollectionViewCell.swift */,
+				64B65DD524AA4A4D00397C07 /* ResultCollectionViewCell.xib */,
 				64FEF3E2249F60A500B77E59 /* FortuneResultTableViewCell.swift */,
 				64FEF3E3249F60A500B77E59 /* FortuneResultTableViewCell.xib */,
 				64FEF3F0249FD0DF00B77E59 /* FortuneCommentTableViewCell.swift */,
@@ -310,13 +322,14 @@
 				64FEF3CE249CCEE900B77E59 /* FortuneResult.storyboard in Resources */,
 				64B65DCF24A9B10B00397C07 /* monthHeavenEarthlyData.json in Resources */,
 				64FEF3BE249CB49100B77E59 /* LaunchScreen.storyboard in Resources */,
+				64B65DD724AA4A4D00397C07 /* ResultCollectionViewCell.xib in Resources */,
 				64FEF3BB249CB49100B77E59 /* Assets.xcassets in Resources */,
 				64FEF3DF249CDA8000B77E59 /* RecordTableViewCell.xib in Resources */,
 				64FEF3E5249F60A500B77E59 /* FortuneResultTableViewCell.xib in Resources */,
 				64FEF3D0249CCEF600B77E59 /* Record.storyboard in Resources */,
 				64FEF3ED249F7C8B00B77E59 /* FortuneResultTableHeaderView.xib in Resources */,
 				64FEF3B6249CB49000B77E59 /* Main.storyboard in Resources */,
-				64FEF3EB249F644300B77E59 /* FortuneResultCollectionViewCell.xib in Resources */,
+				64FEF3EB249F644300B77E59 /* ResultTitleCollectionViewCell.xib in Resources */,
 				64FEF3F3249FD0DF00B77E59 /* FortuneCommentTableViewCell.xib in Resources */,
 				64FEF3CC249CCEDE00B77E59 /* UserInput.storyboard in Resources */,
 			);
@@ -389,16 +402,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				6446F99824A47BCC0053B01E /* LunarDate.swift in Sources */,
+				64B65DDB24AB233300397C07 /* BigTenYears.swift in Sources */,
 				64FEF3E7249F626400B77E59 /* UICollectionView+Extension.swift in Sources */,
-				64FEF3EA249F644300B77E59 /* FortuneResultCollectionViewCell.swift in Sources */,
+				64FEF3EA249F644300B77E59 /* ResultTitleCollectionViewCell.swift in Sources */,
 				64FEF3F6249FDC9C00B77E59 /* DatePickerVC.swift in Sources */,
 				64FEF3FB24A2EB5200B77E59 /* UIColor+Extension.swift in Sources */,
 				6446F99D24A7C2570053B01E /* FortuneTelling.xcdatamodeld in Sources */,
 				64FEF3B3249CB49000B77E59 /* HBGTabBarViewController.swift in Sources */,
 				64FEF3DB249CD47D00B77E59 /* RecordVC.swift in Sources */,
+				64B65DD924AB174800397C07 /* HeavenEarthlyStruct.swift in Sources */,
 				64FEF3FF24A33F7000B77E59 /* BirthdayModel.swift in Sources */,
 				64FEF3DE249CDA8000B77E59 /* RecordTableViewCell.swift in Sources */,
 				64FEF3D5249CD08800B77E59 /* UIImage+Extension.swift in Sources */,
+				64B65DD624AA4A4D00397C07 /* ResultCollectionViewCell.swift in Sources */,
 				64FEF3EF249F7CA200B77E59 /* FortuneResulteTableHeaderView.swift in Sources */,
 				64B65DD324A9E7FD00397C07 /* HourHeavenEarthly.swift in Sources */,
 				64B65DC724A7C6AD00397C07 /* YearHeavenEarthly.swift in Sources */,
