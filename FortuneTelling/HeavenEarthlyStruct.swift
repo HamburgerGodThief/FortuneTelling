@@ -15,7 +15,7 @@ struct HeavenEarthly {
     var backgroundColor: UIColor = .black
     
     var fontColor: UIColor = .black
-    
+    // swiftlint:disable all
     mutating func colorSet() {
         
         switch string {
@@ -159,7 +159,7 @@ struct HeavenEarthly {
         }
         
     }
-    
+    // swiftlint:enable all
     init(string: String) {
         
         self.string = string

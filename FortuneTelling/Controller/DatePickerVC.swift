@@ -22,6 +22,16 @@ class DatePickerVC: UIViewController {
         
     }
     
+    var birthString: String = ""
+    
+    func bigTenYears() {
+        
+    }
+    
+    func bigTenYears() {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

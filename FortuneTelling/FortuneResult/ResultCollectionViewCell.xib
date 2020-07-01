@@ -16,14 +16,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="148" height="87"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yep-yk-vSK">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yep-yk-vSK">
                         <rect key="frame" x="45.5" y="43" width="57" height="29"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UX5-rR-zHo">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UX5-rR-zHo">
                         <rect key="frame" x="45.5" y="4" width="57" height="29"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -35,9 +35,9 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="UX5-rR-zHo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="H3W-sX-GtA"/>
+                <constraint firstItem="UX5-rR-zHo" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Nv9-qP-T9L"/>
                 <constraint firstItem="yep-yk-vSK" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="jYO-pV-evf"/>
                 <constraint firstItem="yep-yk-vSK" firstAttribute="top" secondItem="UX5-rR-zHo" secondAttribute="bottom" constant="10" id="kAf-Cs-6R3"/>
-                <constraint firstItem="UX5-rR-zHo" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="vrV-Tw-Ptf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="148" height="87"/>

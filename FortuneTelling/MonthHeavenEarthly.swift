@@ -19,7 +19,7 @@ struct MonthHeavenEarthlyData: Codable {
     let order: Int
     
 }
-// swiftlint:disable all
+
 class MonthHeavenEarthly {
     
     static let shared: MonthHeavenEarthly = MonthHeavenEarthly()

@@ -64,11 +64,17 @@ class FortuneResultVC: UIViewController {
     
     var bottomLabelData: [HeavenEarthly] = []
     
+    var topTenGod: [String] = []
+    
+    var bottomTenGod: [String] = []
+    
     func navConfigure() {
         
         navigationController?.navigationBar.isTranslucent = false
         
         navigationController?.navigationBar.barTintColor = UIColor.assetColor(.MainColor)
+        
+        navigationController?.navigationBar.tintColor = .white
         
         title = "Bob Wang (男) 虛歲 56歲"
         
@@ -110,6 +116,48 @@ class FortuneResultVC: UIViewController {
         
     }
     
+    func getTenGod() {
+        
+        var topTenGodLabel: [String] = []
+        
+        var bottomTenGodLabel: [String] = []
+        
+        for index in 0..<topLabelData.count {
+            
+            if index == 1 {
+                
+                topTenGodLabel.append("日主")
+                
+                continue
+                
+            }
+            
+            let tenGod = TenGod.shared.getHourEarthly(birthDayHeaven: topLabelData[1].string, targetHeavenEarthly: topLabelData[index].string)
+            
+            topTenGodLabel.append(tenGod)
+            
+        }
+        
+        for index in 0..<bottomLabelData.count {
+            
+            let tenGod = TenGod.shared.getHourEarthly(birthDayHeaven: topLabelData[1].string, targetHeavenEarthly: bottomLabelData[index].string)
+            
+            bottomTenGodLabel.append(tenGod)
+            
+        }
+        
+        topTenGod = topTenGodLabel
+        
+        bottomTenGod = bottomTenGodLabel
+                
+    }
+    
+//    func getBigTenYears() {
+//
+//        let test = BigTenYears.shared.getBigTenYearsDate(birthDateString: birthdayString, gender: "男", birthYearHeaven: topLabelData[3].string)
+//
+//    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -118,6 +166,9 @@ class FortuneResultVC: UIViewController {
         
         calculateBirthHeavenEarthly()
         
+        getTenGod()
+        
+//        getBigTenYears()
     }
     
 }
@@ -148,21 +199,65 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
                     
             item.titleLbl.text = title[indexPath.item]
             
+            if indexPath.item < 4 {
+                
+                item.iconBtn.isHidden = true
+                
+            }
+            
             return item
             
         } else {
             
             guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: "ResultCollectionViewCell", for: indexPath) as? ResultCollectionViewCell else { return UICollectionViewCell() }
             
-            let topContent: [String] = ["壬", "戊", "丙", "丁", "庚", "甲", "乙", "辛", "乙",
-                                        "壬", "戊", "丙", "丁", "庚", "甲", "乙", "辛", "乙"]
+            if indexPath.item < 4 {
+                
+                item.topLabel.text = topLabelData[indexPath.item].string
+                
+                item.topLabel.backgroundColor = topLabelData[indexPath.item].backgroundColor
+                
+                item.topLabel.textColor = topLabelData[indexPath.item].fontColor
+                
+                item.bottomLabel.text = bottomLabelData[indexPath.item].string
+                
+                item.bottomLabel.backgroundColor = bottomLabelData[indexPath.item].backgroundColor
+                
+                item.bottomLabel.textColor = bottomLabelData[indexPath.item].fontColor
+                
+            } else if indexPath.item == 9 {
+                
+                item.topLabel.text = topTenGod[0]
+                
+                item.bottomLabel.text = bottomTenGod[0]
+                
+            } else if indexPath.item == 10 {
+                
+                item.topLabel.text = topTenGod[1]
+                                
+                item.bottomLabel.text = bottomTenGod[1]
+                
+            } else if indexPath.item == 11 {
+                
+                item.topLabel.text = topTenGod[2]
+                
+                item.bottomLabel.text = bottomTenGod[2]
+                
+            } else if indexPath.item == 12 {
+                
+                item.topLabel.text = topTenGod[3]
+                
+                item.bottomLabel.text = bottomTenGod[3]
+                
+            } else {
+                
+                item.topLabel.text = "null"
+                
+                item.bottomLabel.text = "null"
+                
+            }
             
-            let bottomContent: [String] = ["戌", "申", "午", "未", "子", "辰", "亥", "巳", "未",
-                                           "戌", "申", "午", "未", "子", "辰", "亥", "巳", "未"]
             
-            item.topLabel.text = topContent[indexPath.item]
-            
-            item.bottomLabel.text = bottomContent[indexPath.item]
             
             return item
             
