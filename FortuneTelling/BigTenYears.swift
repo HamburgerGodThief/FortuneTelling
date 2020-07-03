@@ -66,6 +66,18 @@ class BigTenYears {
         
     }
     
+    func timeStringToDate(inputTimeString dateStr: String) -> Date {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        guard let date = dateFormatter.date(from: dateStr) else { return Date() }
+        
+        return date
+        
+    }
+    
     func tenYearsDirection(gender: String, birthYearHeaven: String) -> Bool {
         
         var genderIndex: Int = 1
@@ -121,18 +133,6 @@ class BigTenYears {
             return false
             
         }
-        
-    }
-    
-    func timeStringToDate(inputTimeString dateStr: String) -> Date {
-        
-        let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-        
-        guard let date = dateFormatter.date(from: dateStr) else { return Date() }
-        
-        return date
         
     }
     

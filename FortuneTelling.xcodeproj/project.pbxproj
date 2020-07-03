@@ -126,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				64FEF3D8249CD47300B77E59 /* FortuneResultVC.swift */,
+				64FEF3F5249FDC9C00B77E59 /* DatePickerVC.swift */,
 				64B65DE024AC911000397C07 /* BigTenYearsVC.swift */,
 			);
 			path = FortuneResult;
@@ -212,7 +213,6 @@
 				64FEF3B2249CB49000B77E59 /* HBGTabBarViewController.swift */,
 				64FEF3F924A2DEFF00B77E59 /* UserInput */,
 				64B65DE224AC911A00397C07 /* FortuneResult */,
-				64FEF3F5249FDC9C00B77E59 /* DatePickerVC.swift */,
 				64FEF3DA249CD47D00B77E59 /* RecordVC.swift */,
 			);
 			path = Controller;

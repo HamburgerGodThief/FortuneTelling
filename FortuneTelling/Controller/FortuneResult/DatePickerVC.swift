@@ -26,9 +26,22 @@ class DatePickerVC: UIViewController {
     
     func bigTenYears() {
         
+        
     }
     
-    func bigTenYears() {
+    func specificYear() {
+        
+    }
+    
+    func specificMonth() {
+        
+    }
+    
+    func specificDay() {
+        
+    }
+    
+    func specificHour() {
         
     }
     
@@ -42,7 +55,7 @@ extension DatePickerVC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
-        return 4
+        return 1
         
     }
     

@@ -106,17 +106,75 @@ class UserInputVC: UIViewController {
 
     }
     
+    func showRemindAlert() {
+            
+        let alertController = UIAlertController(title: "錯誤",
+                                                message: "您有資料尚未填寫",
+                                                preferredStyle: .alert)
+
+        let defaultAction = UIAlertAction(title: "確認", style: .default, handler: nil)
+        
+        alertController.addAction(defaultAction)
+
+        present(alertController, animated: true, completion: nil)
+            
+    }
+    
+    func showInfoCheckAlert() {
+        
+        var gender: String = "女生"
+        
+        guard let lastname = lastNameTextField.text else { return }
+        
+        guard let firstname = firstNameTextField.text else { return }
+        
+        guard let birthday = birthBtn.titleLabel?.text else { return }
+        
+        if genderSegControl.selectedSegmentIndex == 0 {
+            
+            gender = "男生"
+            
+        }
+        
+        let alertController = UIAlertController(title: "請確認資料",  message: "姓:\(lastname)\n名:\(firstname)\n性別:\(gender)\n出生時間:\(birthday)", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        
+        alertController.addAction(cancelAction)
+
+        let defaultAction = UIAlertAction(title: "送出", style: .default, handler: {[weak self] (_) -> Void in
+            
+            guard let strongSelf = self else { return }
+            
+            let storyboard = UIStoryboard(name: "FortuneResult", bundle: nil)
+            
+            guard let fortuneResultVC = storyboard.instantiateViewController(withIdentifier: "FortuneResultVC") as? FortuneResultVC else { return }
+            
+            strongSelf.tabBarController?.tabBar.isHidden = true
+            
+            fortuneResultVC.birthdayString = strongSelf.userBirthString
+            
+            strongSelf.navigationController?.pushViewController(fortuneResultVC, animated: true)
+            
+        })
+        
+        alertController.addAction(defaultAction)
+
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
     @IBAction func didTouchCalculateBtn(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "FortuneResult", bundle: nil)
+        if lastNameTextField.text == "" || firstNameTextField.text == "" || birthBtn.titleLabel?.text == "請輸入出生時間" {
         
-        guard let fortuneResultVC = storyboard.instantiateViewController(withIdentifier: "FortuneResultVC") as? FortuneResultVC else { return }
+            showRemindAlert()
+            
+            return
+            
+        }
         
-        tabBarController?.tabBar.isHidden = true
-        
-        fortuneResultVC.birthdayString = userBirthString
-        
-        navigationController?.pushViewController(fortuneResultVC, animated: true)
+        showInfoCheckAlert()
         
     }
     
