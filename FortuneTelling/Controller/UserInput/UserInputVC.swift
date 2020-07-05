@@ -20,9 +20,13 @@ class UserInputVC: UIViewController {
     
     @IBOutlet weak var birthBtn: UIButton!
     
+    @IBOutlet weak var birthTimeBtn: UIButton!
+    
     @IBOutlet weak var calculateBtn: UIButton!
     
-    var userBirthString: String = ""
+    var userBirthDate: String = ""
+    
+    var userBirthTime: String = ""
     
     func layoutSetting() {
         
@@ -39,6 +43,12 @@ class UserInputVC: UIViewController {
         birthBtn.layer.borderWidth = 1
         
         birthBtn.layer.cornerRadius = 5
+        
+        birthTimeBtn.layer.borderColor = UIColor.lightGray.cgColor
+        
+        birthTimeBtn.layer.borderWidth = 1
+        
+        birthTimeBtn.layer.cornerRadius = 5
         
         calculateBtn.layer.borderColor = UIColor.black.cgColor
         
@@ -128,7 +138,9 @@ class UserInputVC: UIViewController {
         
         guard let firstname = firstNameTextField.text else { return }
         
-        guard let birthday = birthBtn.titleLabel?.text else { return }
+        guard let birthDate = birthBtn.titleLabel?.text else { return }
+        
+        guard (birthTimeBtn.titleLabel?.text) != nil else { return }
         
         if genderSegControl.selectedSegmentIndex == 0 {
             
@@ -136,7 +148,7 @@ class UserInputVC: UIViewController {
             
         }
         
-        let alertController = UIAlertController(title: "請確認資料", message: "姓:\(lastname)\n名:\(firstname)\n性別:\(gender)\n出生時間:\(birthday)", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "請確認資料", message: "姓:\(lastname)\n名:\(firstname)\n性別:\(gender)\n出生時間:\(birthDate) \(userBirthTime)", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         
@@ -152,7 +164,7 @@ class UserInputVC: UIViewController {
             
             strongSelf.tabBarController?.tabBar.isHidden = true
             
-            fortuneResultVC.birthdayString = strongSelf.userBirthString
+            fortuneResultVC.birthdayString = "\(strongSelf.userBirthDate) \(strongSelf.userBirthTime)"
             
             fortuneResultVC.gender = gender
             
@@ -170,7 +182,7 @@ class UserInputVC: UIViewController {
     
     @IBAction func didTouchCalculateBtn(_ sender: Any) {
         
-        if lastNameTextField.text == "" || firstNameTextField.text == "" || birthBtn.titleLabel?.text == "請輸入出生時間" {
+        if lastNameTextField.text == "" || firstNameTextField.text == "" || birthBtn.titleLabel?.text == "出生年月日" || birthTimeBtn.titleLabel?.text == "出生時辰" {
         
             showRemindAlert()
             
@@ -191,6 +203,18 @@ class UserInputVC: UIViewController {
         birthPickerVC.delegate = self
         
         present(birthPickerVC, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func didTouchBirthTimeBtn(_ sender: Any) {
+        
+        let storyboard = UIStoryboard.init(name: "UserInput", bundle: nil)
+        
+        guard let birthTimePickerVC = storyboard.instantiateViewController(withIdentifier: "BirthTimePickerVC") as? BirthTimePickerVC else { return }
+        
+        birthTimePickerVC.delegate = self
+        
+        present(birthTimePickerVC, animated: true, completion: nil)
         
     }
     
@@ -218,11 +242,27 @@ extension UserInputVC: BirthPickerVCDelegate {
     
     func passSelectedBirthday(birthPickerVC: BirthPickerVC) {
         
-        let birthday = "\(birthPickerVC.selectedBirth.year) \(birthPickerVC.selectedBirth.month) \(birthPickerVC.selectedBirth.day) \(birthPickerVC.selectedBirth.hour)"
+        let birthday = "\(birthPickerVC.selectedBirth.year) \(birthPickerVC.selectedBirth.month) \(birthPickerVC.selectedBirth.day)"
         
-        userBirthString = birthPickerVC.selectedBirthString
+        userBirthDate = birthPickerVC.selectedBirthString
         
         birthBtn.setTitle(birthday, for: .normal)
+        
+    }
+
+}
+
+extension UserInputVC: BirthTimePickerVCDelegate {
+    
+    func passSelectedTime(birthTimePickerVC: BirthTimePickerVC) {
+        
+        let selectedHour = birthTimePickerVC.hour[birthTimePickerVC.pickerView.selectedRow(inComponent: 0)]
+        
+        let selectedMin = birthTimePickerVC.minute[birthTimePickerVC.pickerView.selectedRow(inComponent: 1)]
+        
+        userBirthTime = "\(selectedHour):\(selectedMin)"
+        
+        birthTimeBtn.setTitle(userBirthTime, for: .normal)
         
     }
 

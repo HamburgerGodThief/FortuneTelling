@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1DD1D56711EC223CA80B71BF /* Pods_FortuneTelling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034D80F57CEFF93B1811303E /* Pods_FortuneTelling.framework */; };
+		640D7E8024B1D06F0096F554 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D7E7F24B1D06F0096F554 /* DateManager.swift */; };
+		640D7E8224B1DE390096F554 /* BirthTimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D7E8124B1DE390096F554 /* BirthTimePickerVC.swift */; };
 		6446F99824A47BCC0053B01E /* LunarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6446F99724A47BCC0053B01E /* LunarDate.swift */; };
 		6446F99A24A773C50053B01E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6446F99924A773C50053B01E /* StorageManager.swift */; };
 		6446F99D24A7C2570053B01E /* FortuneTelling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6446F99B24A7C2570053B01E /* FortuneTelling.xcdatamodeld */; };
@@ -59,6 +61,8 @@
 /* Begin PBXFileReference section */
 		034D80F57CEFF93B1811303E /* Pods_FortuneTelling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FortuneTelling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C666386613114DD3E208017 /* Pods-FortuneTelling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FortuneTelling.release.xcconfig"; path = "Target Support Files/Pods-FortuneTelling/Pods-FortuneTelling.release.xcconfig"; sourceTree = "<group>"; };
+		640D7E7F24B1D06F0096F554 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
+		640D7E8124B1DE390096F554 /* BirthTimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthTimePickerVC.swift; sourceTree = "<group>"; };
 		6446F99724A47BCC0053B01E /* LunarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarDate.swift; sourceTree = "<group>"; };
 		6446F99924A773C50053B01E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		6446F99C24A7C2570053B01E /* FortuneTelling.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FortuneTelling.xcdatamodel; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 		64FEF3C6249CCC9400B77E59 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				640D7E7F24B1D06F0096F554 /* DateManager.swift */,
 				64FEF3FC24A2EE8C00B77E59 /* SolarDate.swift */,
 				6446F99724A47BCC0053B01E /* LunarDate.swift */,
 				64FEF3FE24A33F7000B77E59 /* BirthdayModel.swift */,
@@ -254,6 +259,7 @@
 			children = (
 				64FEF3D6249CD46700B77E59 /* UserInputVC.swift */,
 				64FEF3F724A0C4C400B77E59 /* BirthPickerVC.swift */,
+				640D7E8124B1DE390096F554 /* BirthTimePickerVC.swift */,
 			);
 			path = UserInput;
 			sourceTree = "<group>";
@@ -426,6 +432,7 @@
 				64B65DE124AC911000397C07 /* BigTenYearsVC.swift in Sources */,
 				64FEF3F6249FDC9C00B77E59 /* DatePickerVC.swift in Sources */,
 				64FEF3FB24A2EB5200B77E59 /* UIColor+Extension.swift in Sources */,
+				640D7E8024B1D06F0096F554 /* DateManager.swift in Sources */,
 				6446F99D24A7C2570053B01E /* FortuneTelling.xcdatamodeld in Sources */,
 				64FEF3B3249CB49000B77E59 /* HBGTabBarViewController.swift in Sources */,
 				64FEF3DB249CD47D00B77E59 /* RecordVC.swift in Sources */,
@@ -447,6 +454,7 @@
 				64FEF3E1249CDC0E00B77E59 /* UITableView+Extension.swift in Sources */,
 				64FEF3F2249FD0DF00B77E59 /* FortuneCommentTableViewCell.swift in Sources */,
 				64FEF3D7249CD46700B77E59 /* UserInputVC.swift in Sources */,
+				640D7E8224B1DE390096F554 /* BirthTimePickerVC.swift in Sources */,
 				64FEF3AF249CB49000B77E59 /* AppDelegate.swift in Sources */,
 				64FEF3E4249F60A500B77E59 /* FortuneResultTableViewCell.swift in Sources */,
 				64B65DD124A9B44300397C07 /* DayHeavenEarthly.swift in Sources */,

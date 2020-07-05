@@ -52,16 +52,14 @@ class BirthPickerVC: UIViewController {
     
     weak var delegate: BirthPickerVCDelegate?
     
-    var selectedBirth: BirthdayModel = BirthdayModel(year: "1925年", month: "1月", day: "1號", hour: "00:00-01:00 早子")
+    var selectedBirth: BirthdayModel = BirthdayModel(year: "1925年", month: "1月", day: "1日")
     
     var selectedYear: String = "1925"
     
     var selectedMonth: String = "01"
     
     var selectedDay: String = "01"
-    
-    var selectedHour: String = "00:00"
-    
+        
     var selectedBirthString: String = ""
     
     let solarManager = SolarDateManager()
@@ -75,9 +73,7 @@ class BirthPickerVC: UIViewController {
     var monthComponent: [String] = []
     
     var dayComponent: [String] = []
-    
-    var hourComponent: [String] = []
-    
+        
     func solarDate() {
         
         yearComponent = []
@@ -85,9 +81,7 @@ class BirthPickerVC: UIViewController {
         monthComponent = []
         
         dayComponent = []
-        
-        hourComponent = []
-        
+                
         for element in solarManager.solarYears() {
             
             yearComponent.append("\(element)年")
@@ -108,11 +102,9 @@ class BirthPickerVC: UIViewController {
         
         for day in 1...days {
             
-            dayComponent.append("\(day)號")
+            dayComponent.append("\(day)日")
             
         }
-        
-        hourComponent = solarManager.solarHours()
             
     }
     
@@ -160,14 +152,6 @@ class BirthPickerVC: UIViewController {
         
     }
     
-    func lunarHours() {
-        
-        hourComponent = []
-        
-        hourComponent = solarManager.solarHours()
-        
-    }
-    
     func lunarDate() {
         
         lunarYears()
@@ -176,7 +160,6 @@ class BirthPickerVC: UIViewController {
         
         lunarDays()
         
-        lunarHours()
     }
     
     func lunarToSolar() -> String {
@@ -195,13 +178,13 @@ class BirthPickerVC: UIViewController {
             
             let solarDate = lunarManager.lunarToSolar(gregorianYear: selectedYear, lunarMonth: selectedMonthIndex, isLeapMonth: true, lunarDay: selectedDay)
             
-            return "\(solarDate) \(selectedHour)"
+            return "\(solarDate)"
             
         } else {
             
             let solarDate = lunarManager.lunarToSolar(gregorianYear: selectedYear, lunarMonth: selectedLunarMonth, isLeapMonth: false, lunarDay: selectedDay)
             
-            return "\(solarDate) \(selectedHour)"
+            return "\(solarDate)"
             
         }
         
@@ -215,7 +198,7 @@ class BirthPickerVC: UIViewController {
             
         } else {
             
-            selectedBirthString = "\(selectedYear)-\(selectedMonth)-\(selectedDay) \(selectedHour)"
+            selectedBirthString = "\(selectedYear)-\(selectedMonth)-\(selectedDay)"
             
         }
         
@@ -240,10 +223,8 @@ class BirthPickerVC: UIViewController {
         let selectedMonth = birthdayPickerView.selectedRow(inComponent: 1)
         
         let selectedDay = birthdayPickerView.selectedRow(inComponent: 2)
-        
-        let selectedHour = birthdayPickerView.selectedRow(inComponent: 3)
-        
-        selectedBirth = BirthdayModel(year: yearComponent[selectedYear], month: monthComponent[selectedMonth], day: dayComponent[selectedDay], hour: hourComponent[selectedHour])
+                
+        selectedBirth = BirthdayModel(year: yearComponent[selectedYear], month: monthComponent[selectedMonth], day: dayComponent[selectedDay])
         
     }
     
@@ -264,10 +245,8 @@ class BirthPickerVC: UIViewController {
         let selectedMonth = birthdayPickerView.selectedRow(inComponent: 1)
         
         let selectedDay = birthdayPickerView.selectedRow(inComponent: 2)
-        
-        let selectedHour = birthdayPickerView.selectedRow(inComponent: 3)
-        
-        selectedBirth = BirthdayModel(year: yearComponent[selectedYear], month: monthComponent[selectedMonth], day: dayComponent[selectedDay], hour: hourComponent[selectedHour])
+                
+        selectedBirth = BirthdayModel(year: yearComponent[selectedYear], month: monthComponent[selectedMonth], day: dayComponent[selectedDay])
         
     }
     
@@ -303,7 +282,7 @@ extension BirthPickerVC: UIPickerViewDataSource, UIPickerViewDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
-        return 4
+        return 3
         
     }
     
@@ -319,14 +298,10 @@ extension BirthPickerVC: UIPickerViewDataSource, UIPickerViewDelegate {
                         
             return monthComponent.count
             
-        case 2:
-            
-            return dayComponent.count
-            
         default:
             
-            return hourComponent.count
-            
+            return dayComponent.count
+              
         }
         
     }
@@ -373,7 +348,7 @@ extension BirthPickerVC: UIPickerViewDataSource, UIPickerViewDelegate {
             
             pickerView.reloadComponent(2)
             
-        case 2:
+        default:
             
             selectedBirth.day = dayComponent[row]
             
@@ -383,38 +358,35 @@ extension BirthPickerVC: UIPickerViewDataSource, UIPickerViewDelegate {
                 
             }
             
-        default:
-            
-            selectedHour = String(hourComponent[row].prefix(5))
-                        
-            selectedBirth.hour = hourComponent[row]
-            
         }
         
     }
 
     func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+        
         switch component {
+            
         case 0:
+            
             return 120
-        case 1:
-            return 50
-        case 2:
-            return 50
+            
         default:
-            return 180
+            
+            return 80
+            
         }
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 40
+        return 50
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 
         let title = UILabel()
         
-        title.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        title.font = UIFont.systemFont(ofSize: 24, weight: .regular)
                         
         title.textAlignment = .center
         
@@ -428,13 +400,9 @@ extension BirthPickerVC: UIPickerViewDataSource, UIPickerViewDelegate {
                         
             title.text = monthComponent[row]
             
-        case 2:
+        default:
             
             title.text = dayComponent[row]
-            
-        default:
-                                    
-            title.text = hourComponent[row]
             
         }
 

@@ -72,6 +72,20 @@ class FortuneResultVC: UIViewController {
     
     var bottomTenGod: [String] = []
     
+    var lunarYear: [String] = ["", "", ""]
+    
+    var lunarMonth: [String] = ["", "", ""]
+    
+    var lunarDay: [String] = ["", "", ""]
+    
+    var year: [String] = ["", "", ""]
+    
+    var month: [String] = ["", "", ""]
+    
+    var day: [String] = ["", "", ""]
+    
+    var time: [String] = ["", "", ""]
+    
     func navConfigure() {
         
         navigationController?.navigationBar.isTranslucent = false
@@ -96,7 +110,7 @@ class FortuneResultVC: UIViewController {
         
         guard let birthDayHeavenEarthly = DayHeavenEarthly.shared.getDayHeavenEarthly(year_month_date: birthDateWithoutHour) else { return }
         
-        let birthDateHour = birthdayString.substring(fromIndex: birthdayString.length - 5, toIndex: birthdayString.length)
+        let birthDateHour = birthdayString.substring(fromIndex: birthdayString.length - 5, toIndex: birthdayString.length - 3)
         
         let birthHourEarthly = HourHeavenEarthly.shared.getHourEarthly(birthHour: birthDateHour)
         
@@ -156,6 +170,46 @@ class FortuneResultVC: UIViewController {
                 
     }
     
+    func nowSolarDataForTableViewSection0() {
+        
+        let now = DateManager.shared.dateToString(date: Date())
+        
+        year[0] = now.substring(toIndex: 4)
+        
+        month[0] = now.substring(fromIndex: 5, toIndex: 7)
+        
+        day[0] = now.substring(fromIndex: 8, toIndex: 10)
+        
+        time[0] = now.substring(fromIndex: 11)
+        
+    }
+    
+    func dataForTableViewSection0(thisBigTen: BigTenYearsForView, nextBigTen: BigTenYearsForView) {
+        
+        nowSolarDataForTableViewSection0()
+        
+        let thisTime = DateManager.shared.dateToString(date: thisBigTen.time)
+        
+        year[1] = thisTime.substring(toIndex: 4)
+        
+        month[1] = thisTime.substring(fromIndex: 5, toIndex: 7)
+        
+        day[1] = thisTime.substring(fromIndex: 8, toIndex: 10)
+        
+        time[1] = thisTime.substring(fromIndex: 11)
+        
+        let nextTime = DateManager.shared.dateToString(date: nextBigTen.time)
+        
+        year[2] = nextTime.substring(toIndex: 4)
+        
+        month[2] = nextTime.substring(fromIndex: 5, toIndex: 7)
+        
+        day[2] = nextTime.substring(fromIndex: 8, toIndex: 10)
+        
+        time[2] = nextTime.substring(fromIndex: 11)
+        
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -165,7 +219,11 @@ class FortuneResultVC: UIViewController {
         calculateBirthHeavenEarthly()
         
         getTenGod()
-                
+        
+        nowSolarDataForTableViewSection0()
+        
+        tableView.reloadData()
+                        
     }
     
 }
@@ -320,6 +378,8 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
             
             datePickerVC.gender = gender
             
+            datePickerVC.delegate = self
+            
             present(datePickerVC, animated: true, completion: nil)
             
         }
@@ -377,6 +437,14 @@ extension FortuneResultVC: UITableViewDelegate, UITableViewDataSource {
         
             cell.titleLbl.text = title[indexPath.row]
             
+            cell.yearLbl.text = year[indexPath.row]
+            
+            cell.monthLbl.text = month[indexPath.row]
+            
+            cell.dayLbl.text = day[indexPath.row]
+            
+            cell.timeLbl.text = time[indexPath.row]
+            
             return cell
             
         } else {
@@ -408,4 +476,22 @@ extension FortuneResultVC: UITableViewDelegate, UITableViewDataSource {
         
     }
 
+}
+
+extension FortuneResultVC: DatePickerVCDelegate {
+    
+    func bigTenYearsData(viewController: DatePickerVC) {
+        
+        let selectedRow = viewController.pickerView.selectedRow(inComponent: 0)
+        
+        let startBigTen = viewController.bigTenYearsData[selectedRow + 1]
+        
+        let nextBigTen = viewController.bigTenYearsData[selectedRow + 2]
+        
+        dataForTableViewSection0(thisBigTen: startBigTen, nextBigTen: nextBigTen)
+        
+        tableView.reloadData()
+        
+    }
+    
 }

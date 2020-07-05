@@ -16,11 +16,6 @@ class HourHeavenEarthly {
     
     let heavenData: [String] = ["甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"]
     
-    let earthlyData: [String: String] = ["00:00": "子", "01:00": "丑", "03:00": "寅",
-                                         "05:00": "卯", "07:00": "辰", "09:00": "巳",
-                                         "11:00": "午", "13:00": "未", "15:00": "申",
-                                         "17:00": "酉", "19:00": "戌", "21:00": "亥", "23:00": "孖"]
-    
     let heavenEarthlyData: [String: [String]] = [
         "子": ["甲", "丙", "戊", "庚", "壬", "甲", "丙", "戊", "庚", "壬"],
         "丑": ["乙", "丁", "己", "辛", "癸", "乙", "丁", "己", "辛", "癸"],
@@ -36,13 +31,87 @@ class HourHeavenEarthly {
         "亥": ["乙", "丁", "己", "辛", "癸", "乙", "丁", "己", "辛", "癸"],
         "孖": ["丙", "戊", "庚", "壬", "甲", "丙", "戊", "庚", "壬", "甲"]
     ]
-    
+    // swiftlint:disable all
     func getHourEarthly(birthHour: String) -> String {
         
-        guard let hourEarthly: String = earthlyData[birthHour] else { return "查無此值"}
+        switch birthHour {
+            
+        case "01":
+            return "丑"
+            
+        case "02":
+            return "丑"
+            
+        case "03":
+            return "寅"
+            
+        case "04":
+            return "寅"
+            
+        case "05":
+            return "卯"
+            
+        case "06":
+            return "卯"
+            
+        case "07":
+            return "辰"
+            
+        case "08":
+            return "辰"
+            
+        case "09":
+            return "巳"
+            
+        case "10":
+            return "巳"
+            
+        case "11":
+            return "午"
+            
+        case "12":
+            return "午"
+            
+        case "13":
+            return "未"
+            
+        case "14":
+            return "未"
+            
+        case "15":
+            return "申"
+            
+        case "16":
+            return "申"
+            
+        case "17":
+            return "酉"
+            
+        case "18":
+            return "酉"
+            
+        case "19":
+            return "戌"
+            
+        case "20":
+            return "戌"
+            
+        case "21":
+            return "亥"
+            
+        case "22":
+            return "亥"
+            
+        case "23":
+            return "孖"
+            
+        default:
+            return "子"
+            
+        }
         
-        return hourEarthly
     }
+    // swiftlint:enable all
     
     func getHourHeaven(birthHourEarthly: String, birthDayHeaven: String) -> String {
         

@@ -40,9 +40,11 @@ class DatePickerVC: UIViewController {
     
     var index: Int = 0
     
+    var bigTenYearsData: [BigTenYearsForView] = []
+    
     func bigTenYears() {
         
-        let bigTenYearsData = BigTenYears.shared.getBigTenYearsDate(birthDateString: birthString, gender: gender, birthYearHeaven: birthYearHeaven)
+        bigTenYearsData = BigTenYears.shared.getBigTenYearsDate(birthDateString: birthString, gender: gender, birthYearHeaven: birthYearHeaven)
         
         pickerViewData = []
         
@@ -54,7 +56,7 @@ class DatePickerVC: UIViewController {
             
             guard let yearInt = Int(yearString) else { return }
             
-            let string: String = "\(bigTenYearsData[index].age)歲 \(yearInt)-\(yearInt + 9)"
+            let string: String = "\(bigTenYearsData[index].age)歲    \(yearInt)-\(yearInt + 9)"
             
             pickerViewData.append(string)
             
@@ -102,6 +104,20 @@ class DatePickerVC: UIViewController {
         
         super.viewWillDisappear(animated)
         
+        delegate?.bigTenYearsData(viewController: self)
+//        switch index {
+//        case 0:
+//            delegate?.bigTenYearsData(viewController: self)
+//        case 1:
+//
+//        case 2:
+//
+//        case 3:
+//
+//        default:
+//
+//        }
+        
     }
     
 }
@@ -121,7 +137,32 @@ extension DatePickerVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
         return pickerViewData[row]
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        
+        return 40
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+//        switch index {
+//        case 0:
+//
+//        case 1:
+//
+//        case 2:
+//            specificMonth()
+//        case 3:
+//            specificDay()
+//        default:
+//            specificHour()
+//        }
+//
     }
     
 }

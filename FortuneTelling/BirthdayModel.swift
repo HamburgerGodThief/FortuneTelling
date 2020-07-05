@@ -15,7 +15,5 @@ struct BirthdayModel {
     var month: String
     
     var day: String
-    
-    var hour: String
-    
+        
 }
