@@ -96,6 +96,14 @@ class DatePickerVC: UIViewController {
     
     func specificMonth() {
         
+        pickerViewData = []
+        
+        let specificMonthForPickerView = SpecificMonth.shared.getSpecificMonth()
+        
+        pickerViewData = specificMonthForPickerView
+        
+        pickerView.reloadAllComponents()
+        
     }
     
     func specificDay() {

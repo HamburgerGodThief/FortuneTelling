@@ -297,6 +297,8 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
                 
                 item.lbl.text = tenGodData[indexPath.item]
                 
+                item.lbl.font = UIFont.systemFont(ofSize: 26, weight: .regular)
+                
                 if indexPath.item == 2 {
                     
                     item.lbl.font = UIFont.systemFont(ofSize: 20, weight: .regular)
@@ -485,6 +487,14 @@ extension FortuneResultVC: DatePickerVCDelegate {
         
         tenGodData[9] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[9].string)
         
+        for index in 10...17 {
+            
+            heavenEarthlyData[index] = HeavenEarthly(string: "")
+            
+            tenGodData[index] = ""
+            
+        }
+        
         heavenEarthlyCollectionView.reloadData()
         
         tenGodCollectionView.reloadData()
@@ -511,6 +521,14 @@ extension FortuneResultVC: DatePickerVCDelegate {
         
         tenGodData[11] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[11].string)
         
+        for index in 12...17 {
+            
+            heavenEarthlyData[index] = HeavenEarthly(string: "")
+            
+            tenGodData[index] = ""
+            
+        }
+        
         heavenEarthlyCollectionView.reloadData()
         
         tenGodCollectionView.reloadData()
@@ -518,9 +536,43 @@ extension FortuneResultVC: DatePickerVCDelegate {
     
     func specificMonthData(viewController: DatePickerVC) {
         
+        let selectedRow = viewController.pickerView.selectedRow(inComponent: 0)
+        
+        let earthly = SpecificMonth.shared.getSpecificMonthEarthly(selectedMonthIndex: selectedRow)
+        
+        let heaven = SpecificMonth.shared.getSpecificMonthHeaven(specificMonthEarthly: earthly, specificYearHeaven: heavenEarthlyData[10].string)
+        
+        heavenEarthlyData[12] = HeavenEarthly(string: heaven)
+        
+        heavenEarthlyData[13] = HeavenEarthly(string: earthly)
+        
+        tenGodData[12] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[12].string)
+        
+        tenGodData[13] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[13].string)
+        
+        for index in 14...17 {
+            
+            heavenEarthlyData[index] = HeavenEarthly(string: "")
+            
+            tenGodData[index] = ""
+            
+        }
+        
+        heavenEarthlyCollectionView.reloadData()
+        
+        tenGodCollectionView.reloadData()
+        
     }
     
     func specificDayData(viewController: DatePickerVC) {
+        
+        for index in 16...17 {
+            
+            heavenEarthlyData[index] = HeavenEarthly(string: "")
+            
+            tenGodData[index] = ""
+            
+        }
         
     }
     
