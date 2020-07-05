@@ -122,7 +122,7 @@ class UserInputVC: UIViewController {
     
     func showInfoCheckAlert() {
         
-        var gender: String = "女生"
+        var gender: String = "女"
         
         guard let lastname = lastNameTextField.text else { return }
         
@@ -132,11 +132,11 @@ class UserInputVC: UIViewController {
         
         if genderSegControl.selectedSegmentIndex == 0 {
             
-            gender = "男生"
+            gender = "男"
             
         }
         
-        let alertController = UIAlertController(title: "請確認資料",  message: "姓:\(lastname)\n名:\(firstname)\n性別:\(gender)\n出生時間:\(birthday)", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "請確認資料", message: "姓:\(lastname)\n名:\(firstname)\n性別:\(gender)\n出生時間:\(birthday)", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         
@@ -153,6 +153,10 @@ class UserInputVC: UIViewController {
             strongSelf.tabBarController?.tabBar.isHidden = true
             
             fortuneResultVC.birthdayString = strongSelf.userBirthString
+            
+            fortuneResultVC.gender = gender
+            
+            fortuneResultVC.navTitle = "\(lastname) \(firstname) (\(gender))"
             
             strongSelf.navigationController?.pushViewController(fortuneResultVC, animated: true)
             

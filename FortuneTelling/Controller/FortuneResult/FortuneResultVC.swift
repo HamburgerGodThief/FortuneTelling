@@ -60,6 +60,10 @@ class FortuneResultVC: UIViewController {
     
     var birthdayString: String = ""
     
+    var gender: String = "男"
+    
+    var navTitle: String = ""
+    
     var topLabelData: [HeavenEarthly] = []
     
     var bottomLabelData: [HeavenEarthly] = []
@@ -76,7 +80,7 @@ class FortuneResultVC: UIViewController {
         
         navigationController?.navigationBar.tintColor = .white
         
-        title = "Bob Wang (男) 虛歲 56歲"
+        title = navTitle
         
     }
     
@@ -152,12 +156,6 @@ class FortuneResultVC: UIViewController {
                 
     }
     
-//    func getBigTenYears() {
-//
-//        let test = BigTenYears.shared.getBigTenYearsDate(birthDateString: birthdayString, gender: "男", birthYearHeaven: topLabelData[3].string)
-//
-//    }
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -167,8 +165,7 @@ class FortuneResultVC: UIViewController {
         calculateBirthHeavenEarthly()
         
         getTenGod()
-        
-//        getBigTenYears()
+                
     }
     
 }
@@ -257,8 +254,6 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
                 
             }
             
-            
-            
             return item
             
         }
@@ -292,19 +287,40 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
             guard let datePickerVC = storyboard.instantiateViewController(withIdentifier: "DatePickerVC") as? DatePickerVC else { return }
             
             switch indexPath.item {
+                
             case 4:
-                present(datePickerVC, animated: true, completion: nil)
+                
+                datePickerVC.index = 0
+                
             case 5:
-                present(datePickerVC, animated: true, completion: nil)
+                
+                datePickerVC.index = 1
+                                
             case 6:
-                present(datePickerVC, animated: true, completion: nil)
+                
+                datePickerVC.index = 2
+                                
             case 7:
-                present(datePickerVC, animated: true, completion: nil)
+                
+                datePickerVC.index = 3
+                                
             case 8:
-                present(datePickerVC, animated: true, completion: nil)
+                
+                datePickerVC.index = 4
+                                
             default:
+                
                 return
+                
             }
+            
+            datePickerVC.birthString = birthdayString
+            
+            datePickerVC.birthYearHeaven = topLabelData[3].string
+            
+            datePickerVC.gender = gender
+            
+            present(datePickerVC, animated: true, completion: nil)
             
         }
         

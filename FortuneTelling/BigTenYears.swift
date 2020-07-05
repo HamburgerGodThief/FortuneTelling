@@ -22,7 +22,7 @@ struct BigTenYearsForView {
     
     let age: Int
     
-    let year: Int
+    let time: Date
     
     let heaven: String
     
@@ -75,6 +75,18 @@ class BigTenYears {
         guard let date = dateFormatter.date(from: dateStr) else { return Date() }
         
         return date
+        
+    }
+    
+    func dateToString(date: Date) -> String {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+        
+        let dateString = dateFormatter.string(from: date)
+        
+        return dateString
         
     }
     
@@ -216,15 +228,11 @@ class BigTenYears {
             
         }
         
-        for element in MonthHeavenEarthly.shared.monthHeavenEarthlyData {
+        for index in 1..<bigTenYearsOrder.count {
             
-            for order in bigTenYearsOrder {
+            for element in MonthHeavenEarthly.shared.monthHeavenEarthlyData where element.order == bigTenYearsOrder[index] {
                 
-                if element.order == order {
-                    
-                    bigTenYearHeaven.append(element.heaven)
-                                        
-                }
+                bigTenYearHeaven.append(element.heaven)
                 
             }
             
@@ -264,15 +272,11 @@ class BigTenYears {
             
         }
         
-        for element in MonthHeavenEarthly.shared.monthHeavenEarthlyData {
+        for index in 1..<bigTenYearsOrder.count {
             
-            for order in bigTenYearsOrder {
+            for element in MonthHeavenEarthly.shared.monthHeavenEarthlyData where element.order == bigTenYearsOrder[index] {
                 
-                if element.order == order {
-                    
-                    bigTenYearEarthly.append(element.earthly)
-                                        
-                }
+                bigTenYearEarthly.append(element.earthly)
                 
             }
             
@@ -290,9 +294,9 @@ class BigTenYears {
         
         let basicJieh = getBasicJieh(inputDate: birthDate, isPositive: isPositive)
         
-        let days = 60 * 60 * 24
+        let days = Double(60 * 60 * 24)
         
-        let dayDifference = abs(Int(birthDate.timeIntervalSince(basicJieh)) / days)
+        let dayDifference = abs(Double(birthDate.timeIntervalSince(basicJieh)) / days)
         
         let startBigTenYearDate = birthDate + Double(dayDifference / 3) * 365.2564 * Double(days)
         
@@ -309,17 +313,15 @@ class BigTenYears {
         let yearHeavens = getBigTenYearsHeaven(birthDate: birthDate, gender: gender, birthYearHeaven: birthYearHeaven)
         
         let yearEarthlys = getBigTenYearsEarthly(birthDate: birthDate, gender: gender, birthYearHeaven: birthYearHeaven)
-                
-        let birthYear = Int(birthDateString.substring(toIndex: 4))
-        
+                        
         var bigTenYearsForView: [BigTenYearsForView] = [
-            BigTenYearsForView(age: 1, year: birthYear!, heaven: yearHeavens[0], earthly: yearEarthlys[0]),
-            BigTenYearsForView(age: 1 + dayDifference / 3, year: birthYear! + dayDifference / 3, heaven: yearHeavens[1], earthly: yearEarthlys[1])
+            BigTenYearsForView(age: 1, time: totalBigTenYearDate[0], heaven: yearHeavens[0], earthly: yearEarthlys[0]),
+            BigTenYearsForView(age: Int(1 + dayDifference / 3), time: totalBigTenYearDate[1], heaven: yearHeavens[1], earthly: yearEarthlys[1])
         ]
         
         for index in 2..<totalBigTenYearDate.count {
             
-            let viewData = BigTenYearsForView(age: bigTenYearsForView[index - 1].age + 10, year: bigTenYearsForView[index - 1].year + 10, heaven: yearHeavens[index], earthly: yearEarthlys[index])
+            let viewData = BigTenYearsForView(age: bigTenYearsForView[index - 1].age + 10, time: totalBigTenYearDate[index], heaven: yearHeavens[index], earthly: yearEarthlys[index])
             
             bigTenYearsForView.append(viewData)
             
