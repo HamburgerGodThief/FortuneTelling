@@ -10,9 +10,7 @@ import UIKit
 
 class ResultCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var topLabel: UILabel!
-    
-    @IBOutlet weak var bottomLabel: UILabel!
+    @IBOutlet weak var lbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

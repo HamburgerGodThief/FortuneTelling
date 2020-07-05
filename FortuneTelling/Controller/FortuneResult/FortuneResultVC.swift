@@ -238,7 +238,7 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
             
         } else {
             
-            return 18
+            return 36
             
         }
         
@@ -266,49 +266,17 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
             
             guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: "ResultCollectionViewCell", for: indexPath) as? ResultCollectionViewCell else { return UICollectionViewCell() }
             
-            if indexPath.item < 4 {
+            if indexPath.item % 2 == 0 {
                 
-                item.topLabel.text = topLabelData[indexPath.item].string
-                
-                item.topLabel.backgroundColor = topLabelData[indexPath.item].backgroundColor
-                
-                item.topLabel.textColor = topLabelData[indexPath.item].fontColor
-                
-                item.bottomLabel.text = bottomLabelData[indexPath.item].string
-                
-                item.bottomLabel.backgroundColor = bottomLabelData[indexPath.item].backgroundColor
-                
-                item.bottomLabel.textColor = bottomLabelData[indexPath.item].fontColor
-                
-            } else if indexPath.item == 9 {
-                
-                item.topLabel.text = topTenGod[0]
-                
-                item.bottomLabel.text = bottomTenGod[0]
-                
-            } else if indexPath.item == 10 {
-                
-                item.topLabel.text = topTenGod[1]
+                item.lbl.text = "甲"
                                 
-                item.bottomLabel.text = bottomTenGod[1]
-                
-            } else if indexPath.item == 11 {
-                
-                item.topLabel.text = topTenGod[2]
-                
-                item.bottomLabel.text = bottomTenGod[2]
-                
-            } else if indexPath.item == 12 {
-                
-                item.topLabel.text = topTenGod[3]
-                
-                item.bottomLabel.text = bottomTenGod[3]
+                item.lbl.textColor = .white
                 
             } else {
                 
-                item.topLabel.text = "null"
+                item.lbl.text = "乙"
                 
-                item.bottomLabel.text = "null"
+                item.lbl.textColor = .black
                 
             }
             
@@ -319,21 +287,35 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = floor(collectionView.frame.size.width - 110) / 9
-        let height = floor(view.frame.size.height / 3 - 15) / 3
-        return CGSize(width: width, height: height)
+        
+        let width = floor(view.frame.size.width - 20) / 9
+
+        if collectionView == titleCollectionView {
+        
+            let height = collectionView.frame.size.height - 6
+            
+            return CGSize(width: width, height: height)
+        
+        } else {
+            
+            let height = floor((collectionView.frame.size.height - 6) / 4)
+
+            return CGSize(width: width, height: height)
+
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 10, bottom: 0, right: 10)
+        return UIEdgeInsets(top: 3, left: 5, bottom: 3, right: 5)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -433,7 +415,7 @@ extension FortuneResultVC: UITableViewDelegate, UITableViewDataSource {
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FortuneResultTableViewCell", for: indexPath) as? FortuneResultTableViewCell else { return UITableViewCell() }
             
-            let title: [String] = ["目前時間", "本次大運開始", "下次大運開始"]
+            let title: [String] = ["目前時間", "本次大運", "下次大運"]
         
             cell.titleLbl.text = title[indexPath.row]
             
