@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="s2z-RG-GJE">
-                                <rect key="frame" x="0.0" y="330.5" width="414" height="531.5"/>
+                                <rect key="frame" x="0.0" y="339.5" width="414" height="522.5"/>
                             </tableView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JU8-Qh-s8B">
                                 <rect key="frame" x="0.0" y="44" width="414" height="98.5"/>
@@ -31,9 +31,20 @@
                                 <cells/>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HhY-yu-F1r">
-                                <rect key="frame" x="0.0" y="142.5" width="414" height="188"/>
+                                <rect key="frame" x="0.0" y="142.5" width="414" height="98.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rfj-DA-q0S">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rfj-DA-q0S">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TeS-cI-n3X">
+                                <rect key="frame" x="0.0" y="241" width="414" height="98.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="c0Z-2V-W0F">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -51,27 +62,32 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="TeS-cI-n3X" firstAttribute="top" secondItem="HhY-yu-F1r" secondAttribute="bottom" id="1E9-e5-0la"/>
                             <constraint firstItem="Onv-y7-dFQ" firstAttribute="trailing" secondItem="JU8-Qh-s8B" secondAttribute="trailing" id="6pP-oa-LCd"/>
                             <constraint firstItem="HhY-yu-F1r" firstAttribute="top" secondItem="JU8-Qh-s8B" secondAttribute="bottom" id="9bI-ay-i6X"/>
                             <constraint firstItem="091-EW-pmb" firstAttribute="leading" secondItem="Onv-y7-dFQ" secondAttribute="leading" id="BJ4-Ga-WYa"/>
                             <constraint firstItem="091-EW-pmb" firstAttribute="top" secondItem="JU8-Qh-s8B" secondAttribute="bottom" id="Cjn-Sc-iS0"/>
+                            <constraint firstItem="TeS-cI-n3X" firstAttribute="trailing" secondItem="Onv-y7-dFQ" secondAttribute="trailing" id="FWF-oR-QZI"/>
+                            <constraint firstItem="TeS-cI-n3X" firstAttribute="height" secondItem="r37-cP-cOr" secondAttribute="height" multiplier="0.11" id="GXJ-Ui-9jW"/>
+                            <constraint firstItem="TeS-cI-n3X" firstAttribute="leading" secondItem="Onv-y7-dFQ" secondAttribute="leading" id="LJk-rN-uLG"/>
                             <constraint firstItem="Onv-y7-dFQ" firstAttribute="bottom" secondItem="s2z-RG-GJE" secondAttribute="bottom" id="OY3-QM-bJo"/>
                             <constraint firstItem="Onv-y7-dFQ" firstAttribute="trailing" secondItem="HhY-yu-F1r" secondAttribute="trailing" id="OcO-jg-nhk"/>
-                            <constraint firstItem="HhY-yu-F1r" firstAttribute="height" secondItem="r37-cP-cOr" secondAttribute="height" multiplier="0.21" id="Xwx-3b-g9P"/>
+                            <constraint firstItem="HhY-yu-F1r" firstAttribute="height" secondItem="r37-cP-cOr" secondAttribute="height" multiplier="0.11" id="Xwx-3b-g9P"/>
+                            <constraint firstItem="TeS-cI-n3X" firstAttribute="bottom" secondItem="s2z-RG-GJE" secondAttribute="top" id="ZKF-RX-KsT"/>
                             <constraint firstItem="HhY-yu-F1r" firstAttribute="leading" secondItem="Onv-y7-dFQ" secondAttribute="leading" id="cYU-O7-NE8"/>
                             <constraint firstItem="JU8-Qh-s8B" firstAttribute="leading" secondItem="Onv-y7-dFQ" secondAttribute="leading" id="hg4-kf-quH"/>
                             <constraint firstItem="JU8-Qh-s8B" firstAttribute="top" secondItem="Onv-y7-dFQ" secondAttribute="top" id="hkW-fL-B8r"/>
                             <constraint firstItem="s2z-RG-GJE" firstAttribute="leading" secondItem="Onv-y7-dFQ" secondAttribute="leading" id="q2z-jd-U1n"/>
                             <constraint firstItem="JU8-Qh-s8B" firstAttribute="height" secondItem="r37-cP-cOr" secondAttribute="height" multiplier="0.11" id="rJz-tF-MxS"/>
-                            <constraint firstItem="s2z-RG-GJE" firstAttribute="top" secondItem="HhY-yu-F1r" secondAttribute="bottom" id="rNq-fj-CGS"/>
                             <constraint firstItem="Onv-y7-dFQ" firstAttribute="trailing" secondItem="s2z-RG-GJE" secondAttribute="trailing" id="s5P-bR-wnc"/>
                             <constraint firstItem="091-EW-pmb" firstAttribute="trailing" secondItem="Onv-y7-dFQ" secondAttribute="trailing" id="zUc-Cj-RS3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Onv-y7-dFQ"/>
                     </view>
                     <connections>
-                        <outlet property="resultCollectionView" destination="HhY-yu-F1r" id="n9C-VF-3n2"/>
+                        <outlet property="heavenEarthlyCollectionView" destination="HhY-yu-F1r" id="n9C-VF-3n2"/>
                         <outlet property="tableView" destination="s2z-RG-GJE" id="fff-Ru-LkX"/>
+                        <outlet property="tenGodCollectionView" destination="TeS-cI-n3X" id="LEQ-4W-tyU"/>
                         <outlet property="titleCollectionView" destination="JU8-Qh-s8B" id="AL7-ic-nzR"/>
                     </connections>
                 </viewController>

@@ -24,19 +24,33 @@ class FortuneResultVC: UIViewController {
         
     }
     
-    @IBOutlet weak var resultCollectionView: UICollectionView! {
+    @IBOutlet weak var heavenEarthlyCollectionView: UICollectionView! {
         
         didSet {
             
-            resultCollectionView.delegate = self
+            heavenEarthlyCollectionView.delegate = self
             
-            resultCollectionView.dataSource = self
-            
-            resultCollectionView.hbg_registerCellWithNib(identifier: String(describing: ResultCollectionViewCell.self), bundle: nil)
+            heavenEarthlyCollectionView.dataSource = self
+                        
+            heavenEarthlyCollectionView.hbg_registerCellWithNib(identifier: String(describing: ResultCollectionViewCell.self), bundle: nil)
                         
         }
         
     }
+    
+    @IBOutlet weak var tenGodCollectionView: UICollectionView! {
+           
+           didSet {
+               
+               tenGodCollectionView.delegate = self
+               
+               tenGodCollectionView.dataSource = self
+                           
+               tenGodCollectionView.hbg_registerCellWithNib(identifier: String(describing: ResultCollectionViewCell.self), bundle: nil)
+                           
+           }
+           
+       }
     
     @IBOutlet weak var tableView: UITableView! {
         
@@ -64,14 +78,10 @@ class FortuneResultVC: UIViewController {
     
     var navTitle: String = ""
     
-    var topLabelData: [HeavenEarthly] = []
-    
-    var bottomLabelData: [HeavenEarthly] = []
-    
-    var topTenGod: [String] = []
-    
-    var bottomTenGod: [String] = []
-    
+    var heavenEarthlyData: [HeavenEarthly] = []
+        
+    var tenGodData: [String] = []
+        
     var lunarYear: [String] = ["", "", ""]
     
     var lunarMonth: [String] = ["", "", ""]
@@ -86,6 +96,8 @@ class FortuneResultVC: UIViewController {
     
     var time: [String] = ["", "", ""]
     
+    var startBigTenAge: Int = 0
+    
     func navConfigure() {
         
         navigationController?.navigationBar.isTranslucent = false
@@ -98,10 +110,22 @@ class FortuneResultVC: UIViewController {
         
     }
     
+    func showRemindAlert(message: String) {
+            
+        let alertController = UIAlertController(title: "錯誤", message: message, preferredStyle: .alert)
+
+        let defaultAction = UIAlertAction(title: "確認", style: .default, handler: nil)
+        
+        alertController.addAction(defaultAction)
+
+        present(alertController, animated: true, completion: nil)
+            
+    }
+    
     func calculateBirthHeavenEarthly() {
         
-        let birthDate = YearHeavenEarthly.shared.timeStringToDate(inputTimeString: birthdayString)
-        
+        let birthDate = DateManager.shared.stringToDate(dateStr: birthdayString)
+                
         let birthYearHeavenEarthly = YearHeavenEarthly.shared.getBirthYearHeavenEarthly(inputDate: birthDate)
         
         let birthMonthHeavenEarthly = MonthHeavenEarthly.shared.getBirthMonthHeavenEarthly(inputDate: birthDate)
@@ -116,58 +140,53 @@ class FortuneResultVC: UIViewController {
         
         let birthHourHeaven = HourHeavenEarthly.shared.getHourHeaven(birthHourEarthly: birthHourEarthly, birthDayHeaven: birthDayHeavenEarthly.heaven)
         
-        topLabelData.append(HeavenEarthly(string: birthHourHeaven))
+        heavenEarthlyData.append(HeavenEarthly(string: birthHourHeaven))
         
-        topLabelData.append(HeavenEarthly(string: birthDayHeavenEarthly.heaven))
+        heavenEarthlyData.append(HeavenEarthly(string: birthHourEarthly))
         
-        topLabelData.append(HeavenEarthly(string: birthMonthHeavenEarthly.heaven))
+        heavenEarthlyData.append(HeavenEarthly(string: birthDayHeavenEarthly.heaven))
         
-        topLabelData.append(HeavenEarthly(string: birthYearHeavenEarthly.heaven))
+        heavenEarthlyData.append(HeavenEarthly(string: birthDayHeavenEarthly.earthly))
         
-        bottomLabelData.append(HeavenEarthly(string: birthHourEarthly))
+        heavenEarthlyData.append(HeavenEarthly(string: birthMonthHeavenEarthly.heaven))
         
-        bottomLabelData.append(HeavenEarthly(string: birthDayHeavenEarthly.earthly))
+        heavenEarthlyData.append(HeavenEarthly(string: birthMonthHeavenEarthly.earthly))
         
-        bottomLabelData.append(HeavenEarthly(string: birthMonthHeavenEarthly.earthly))
+        heavenEarthlyData.append(HeavenEarthly(string: birthYearHeavenEarthly.heaven))
         
-        bottomLabelData.append(HeavenEarthly(string: birthYearHeavenEarthly.earthly))
+        heavenEarthlyData.append(HeavenEarthly(string: birthYearHeavenEarthly.earthly))
+        
+        for _ in 0...9 {
+            
+            heavenEarthlyData.append(HeavenEarthly(string: ""))
+            
+        }
         
     }
     
-    func getTenGod() {
+    func getBirthTenGod() {
         
-        var topTenGodLabel: [String] = []
-        
-        var bottomTenGodLabel: [String] = []
-        
-        for index in 0..<topLabelData.count {
-            
-            if index == 1 {
+        var tenGodLabel: [String] = ["", "", "", "", "", "", "", "", "",
+                                     "", "", "", "", "", "", "", "", ""]
                 
-                topTenGodLabel.append("日主")
+        for index in 0...7 {
+            
+            if index == 2 {
+                
+                tenGodLabel[2] = "日主"
                 
                 continue
                 
             }
             
-            let tenGod = TenGod.shared.getHourEarthly(birthDayHeaven: topLabelData[1].string, targetHeavenEarthly: topLabelData[index].string)
+            let tenGod = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[index].string)
             
-            topTenGodLabel.append(tenGod)
-            
-        }
-        
-        for index in 0..<bottomLabelData.count {
-            
-            let tenGod = TenGod.shared.getHourEarthly(birthDayHeaven: topLabelData[1].string, targetHeavenEarthly: bottomLabelData[index].string)
-            
-            bottomTenGodLabel.append(tenGod)
+            tenGodLabel[index] = tenGod
             
         }
         
-        topTenGod = topTenGodLabel
+        tenGodData = tenGodLabel
         
-        bottomTenGod = bottomTenGodLabel
-                
     }
     
     func nowSolarDataForTableViewSection0() {
@@ -218,7 +237,7 @@ class FortuneResultVC: UIViewController {
         
         calculateBirthHeavenEarthly()
         
-        getTenGod()
+        getBirthTenGod()
         
         nowSolarDataForTableViewSection0()
         
@@ -238,7 +257,7 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
             
         } else {
             
-            return 36
+            return 18
             
         }
         
@@ -266,17 +285,23 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
             
             guard let item = collectionView.dequeueReusableCell(withReuseIdentifier: "ResultCollectionViewCell", for: indexPath) as? ResultCollectionViewCell else { return UICollectionViewCell() }
             
-            if indexPath.item % 2 == 0 {
+            if collectionView == heavenEarthlyCollectionView {
                 
-                item.lbl.text = "甲"
-                                
-                item.lbl.textColor = .white
+                item.lbl.text = heavenEarthlyData[indexPath.item].string
                 
+                item.lbl.textColor = heavenEarthlyData[indexPath.item].fontColor
+                
+                item.backgroundColor = heavenEarthlyData[indexPath.item].backgroundColor
+                    
             } else {
                 
-                item.lbl.text = "乙"
+                item.lbl.text = tenGodData[indexPath.item]
                 
-                item.lbl.textColor = .black
+                if indexPath.item == 2 {
+                    
+                    item.lbl.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+                    
+                }
                 
             }
             
@@ -298,7 +323,7 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
         
         } else {
             
-            let height = floor((collectionView.frame.size.height - 6) / 4)
+            let height = floor((collectionView.frame.size.height - 7) / 2)
 
             return CGSize(width: width, height: height)
 
@@ -326,39 +351,15 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
             
             guard let datePickerVC = storyboard.instantiateViewController(withIdentifier: "DatePickerVC") as? DatePickerVC else { return }
             
-            switch indexPath.item {
-                
-            case 4:
-                
-                datePickerVC.index = 0
-                
-            case 5:
-                
-                datePickerVC.index = 1
-                                
-            case 6:
-                
-                datePickerVC.index = 2
-                                
-            case 7:
-                
-                datePickerVC.index = 3
-                                
-            case 8:
-                
-                datePickerVC.index = 4
-                                
-            default:
-                
-                return
-                
-            }
+            datePickerVC.index = indexPath.row
             
             datePickerVC.birthString = birthdayString
             
-            datePickerVC.birthYearHeaven = topLabelData[3].string
+            datePickerVC.birthYearHeaven = heavenEarthlyData[6].string
             
             datePickerVC.gender = gender
+            
+            datePickerVC.startBigTenAge = startBigTenAge
             
             datePickerVC.delegate = self
             
@@ -468,11 +469,62 @@ extension FortuneResultVC: DatePickerVCDelegate {
         
         let startBigTen = viewController.bigTenYearsData[selectedRow + 1]
         
+        startBigTenAge = startBigTen.age
+        
         let nextBigTen = viewController.bigTenYearsData[selectedRow + 2]
         
         dataForTableViewSection0(thisBigTen: startBigTen, nextBigTen: nextBigTen)
         
         tableView.reloadData()
+        
+        heavenEarthlyData[8] = HeavenEarthly(string: startBigTen.heaven)
+        
+        heavenEarthlyData[9] = HeavenEarthly(string: startBigTen.earthly)
+        
+        tenGodData[8] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[8].string)
+        
+        tenGodData[9] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[9].string)
+        
+        heavenEarthlyCollectionView.reloadData()
+        
+        tenGodCollectionView.reloadData()
+        
+    }
+    
+    func specificYearData(viewController: DatePickerVC) {
+        
+        let selectedRow = viewController.pickerView.selectedRow(inComponent: 0)
+        
+        let selectedAge = viewController.startBigTenAge + selectedRow
+        
+        let birthDate = DateManager.shared.stringToDate(dateStr: birthdayString)
+        
+        let heaven = SpecificYear.shared.getSpecificYearHeaven(birthDate: birthDate, age: selectedAge)
+        
+        let earthly = SpecificYear.shared.getSpecificYearEarthly(birthDate: birthDate, age: selectedAge)
+        
+        heavenEarthlyData[10] = HeavenEarthly(string: heaven)
+        
+        heavenEarthlyData[11] = HeavenEarthly(string: earthly)
+        
+        tenGodData[10] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[10].string)
+        
+        tenGodData[11] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[11].string)
+        
+        heavenEarthlyCollectionView.reloadData()
+        
+        tenGodCollectionView.reloadData()
+    }
+    
+    func specificMonthData(viewController: DatePickerVC) {
+        
+    }
+    
+    func specificDayData(viewController: DatePickerVC) {
+        
+    }
+    
+    func specificHourData(viewController: DatePickerVC) {
         
     }
     

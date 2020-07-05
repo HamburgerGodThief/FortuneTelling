@@ -42,7 +42,7 @@ class TenGod {
         "亥": ["印", "ㄗ", "官", "殺", "財", "才", "傷", "食", "劫", "比"]
     ]
     
-    func getHourEarthly(birthDayHeaven: String, targetHeavenEarthly: String) -> String {
+    func getTenGod(birthDayHeaven: String, targetHeavenEarthly: String) -> String {
         
         var order: Int = 0
         

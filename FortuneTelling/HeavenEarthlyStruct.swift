@@ -10,11 +10,11 @@ import UIKit
 
 struct HeavenEarthly {
     
-    var string: String
+    var string: String = ""
     
-    var backgroundColor: UIColor = .black
+    var backgroundColor: UIColor = .white
     
-    var fontColor: UIColor = .black
+    var fontColor: UIColor = .white
     // swiftlint:disable all
     mutating func colorSet() {
         

@@ -10,6 +10,8 @@
 		1DD1D56711EC223CA80B71BF /* Pods_FortuneTelling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 034D80F57CEFF93B1811303E /* Pods_FortuneTelling.framework */; };
 		640D7E8024B1D06F0096F554 /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D7E7F24B1D06F0096F554 /* DateManager.swift */; };
 		640D7E8224B1DE390096F554 /* BirthTimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D7E8124B1DE390096F554 /* BirthTimePickerVC.swift */; };
+		640D7E8424B23FE70096F554 /* SpecificYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D7E8324B23FE70096F554 /* SpecificYear.swift */; };
+		640D7E8624B243240096F554 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D7E8524B243240096F554 /* UserManager.swift */; };
 		6446F99824A47BCC0053B01E /* LunarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6446F99724A47BCC0053B01E /* LunarDate.swift */; };
 		6446F99A24A773C50053B01E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6446F99924A773C50053B01E /* StorageManager.swift */; };
 		6446F99D24A7C2570053B01E /* FortuneTelling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6446F99B24A7C2570053B01E /* FortuneTelling.xcdatamodeld */; };
@@ -63,6 +65,8 @@
 		0C666386613114DD3E208017 /* Pods-FortuneTelling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FortuneTelling.release.xcconfig"; path = "Target Support Files/Pods-FortuneTelling/Pods-FortuneTelling.release.xcconfig"; sourceTree = "<group>"; };
 		640D7E7F24B1D06F0096F554 /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		640D7E8124B1DE390096F554 /* BirthTimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthTimePickerVC.swift; sourceTree = "<group>"; };
+		640D7E8324B23FE70096F554 /* SpecificYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificYear.swift; sourceTree = "<group>"; };
+		640D7E8524B243240096F554 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		6446F99724A47BCC0053B01E /* LunarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarDate.swift; sourceTree = "<group>"; };
 		6446F99924A773C50053B01E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		6446F99C24A7C2570053B01E /* FortuneTelling.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FortuneTelling.xcdatamodel; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				640D7E7F24B1D06F0096F554 /* DateManager.swift */,
+				640D7E8524B243240096F554 /* UserManager.swift */,
 				64FEF3FC24A2EE8C00B77E59 /* SolarDate.swift */,
 				6446F99724A47BCC0053B01E /* LunarDate.swift */,
 				64FEF3FE24A33F7000B77E59 /* BirthdayModel.swift */,
@@ -188,6 +193,7 @@
 				64B65DDE24AC74C000397C07 /* TenGod.swift */,
 				64B65DDA24AB233300397C07 /* BigTenYears.swift */,
 				64B65DDC24AB700B00397C07 /* bigTenYearsData.json */,
+				640D7E8324B23FE70096F554 /* SpecificYear.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -443,11 +449,13 @@
 				64B65DD624AA4A4D00397C07 /* ResultCollectionViewCell.swift in Sources */,
 				64FEF3EF249F7CA200B77E59 /* FortuneResulteTableHeaderView.swift in Sources */,
 				64B65DD324A9E7FD00397C07 /* HourHeavenEarthly.swift in Sources */,
+				640D7E8624B243240096F554 /* UserManager.swift in Sources */,
 				64B65DC724A7C6AD00397C07 /* YearHeavenEarthly.swift in Sources */,
 				64FEF3F824A0C4C400B77E59 /* BirthPickerVC.swift in Sources */,
 				6446F99A24A773C50053B01E /* StorageManager.swift in Sources */,
 				64FEF3D3249CCF6400B77E59 /* UIStoryborad+Extension.swift in Sources */,
 				64B65DC924A8B75E00397C07 /* String+Extension.swift in Sources */,
+				640D7E8424B23FE70096F554 /* SpecificYear.swift in Sources */,
 				64FEF3FD24A2EE8C00B77E59 /* SolarDate.swift in Sources */,
 				64B65DCB24A8C28400397C07 /* MonthHeavenEarthly.swift in Sources */,
 				64FEF3D9249CD47300B77E59 /* FortuneResultVC.swift in Sources */,

@@ -12,6 +12,14 @@ protocol DatePickerVCDelegate: AnyObject {
     
     func bigTenYearsData(viewController: DatePickerVC)
     
+    func specificYearData(viewController: DatePickerVC)
+    
+    func specificMonthData(viewController: DatePickerVC)
+    
+    func specificDayData(viewController: DatePickerVC)
+    
+    func specificHourData(viewController: DatePickerVC)
+    
 }
 
 class DatePickerVC: UIViewController {
@@ -38,9 +46,11 @@ class DatePickerVC: UIViewController {
     
     var birthYearHeaven: String = "甲"
     
-    var index: Int = 0
+    var index: Int = 4
     
     var bigTenYearsData: [BigTenYearsForView] = []
+    
+    var startBigTenAge: Int = 0
     
     func bigTenYears() {
         
@@ -68,6 +78,20 @@ class DatePickerVC: UIViewController {
     
     func specificYear() {
         
+        pickerViewData = []
+        
+        let birthDate = DateManager.shared.stringToDate(dateStr: birthString)
+        
+        for index in 0...9 {
+            
+            let specificYearString = SpecificYear.shared.getSpecificYears(birthDate: birthDate, selectedStartAge: startBigTenAge + index)
+            
+            pickerViewData.append(specificYearString)
+            
+        }
+        
+        pickerView.reloadAllComponents()
+        
     }
     
     func specificMonth() {
@@ -83,19 +107,31 @@ class DatePickerVC: UIViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         switch index {
-        case 0:
+            
+        case 4:
+            
             bigTenYears()
-        case 1:
+        
+        case 5:
+        
             specificYear()
-        case 2:
+        
+        case 6:
+            
             specificMonth()
-        case 3:
+        
+        case 7:
+        
             specificDay()
+        
         default:
+        
             specificHour()
+        
         }
         
     }
@@ -104,19 +140,29 @@ class DatePickerVC: UIViewController {
         
         super.viewWillDisappear(animated)
         
-        delegate?.bigTenYearsData(viewController: self)
-//        switch index {
-//        case 0:
-//            delegate?.bigTenYearsData(viewController: self)
-//        case 1:
-//
-//        case 2:
-//
-//        case 3:
-//
-//        default:
-//
-//        }
+        switch index {
+            
+        case 4:
+            
+            delegate?.bigTenYearsData(viewController: self)
+            
+        case 5:
+            
+            delegate?.specificYearData(viewController: self)
+            
+        case 6:
+            
+            delegate?.specificMonthData(viewController: self)
+
+        case 7:
+            
+            delegate?.specificDayData(viewController: self)
+
+        default:
+            
+            delegate?.specificHourData(viewController: self)
+
+        }
         
     }
     
@@ -146,23 +192,6 @@ extension DatePickerVC: UIPickerViewDelegate, UIPickerViewDataSource {
         
         return 40
         
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-//        switch index {
-//        case 0:
-//
-//        case 1:
-//
-//        case 2:
-//            specificMonth()
-//        case 3:
-//            specificDay()
-//        default:
-//            specificHour()
-//        }
-//
     }
     
 }
