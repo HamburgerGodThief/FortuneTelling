@@ -131,5 +131,22 @@ extension RecordVC: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(fortuneResultVC, animated: true)
         
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let selectedRow: Int = indexPath.row
+        
+        userRecord.remove(at: selectedRow)
+        
+        StorageManager.shared.remove(indexPathRow: selectedRow)
+        
+        tableView.reloadData() // 更新tableView
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        
+        return "刪除"
+        
+    }
 
 }
