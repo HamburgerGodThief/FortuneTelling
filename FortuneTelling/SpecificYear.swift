@@ -24,15 +24,19 @@ class SpecificYear {
         
         var targetEarthly: String = ""
         
+        var targetYear: Int = 0
+        
         for element in YearHeavenEarthly.shared.yearHeavenEarthlyData where element.order == specificYearOrder {
             
             targetHeaven = element.heaven
             
             targetEarthly = element.earthly
             
+            targetYear = element.order + 1923
+            
         }
         
-        return "\(selectedStartAge)歲    \(targetHeaven)\(targetEarthly)年"
+        return "\(selectedStartAge)歲  \(targetYear)  \(targetHeaven)\(targetEarthly)年"
         
     }
     

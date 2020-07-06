@@ -26,6 +26,30 @@ class DateManager {
         
     }
     
+    func stringToDateMMdd(dateStr: String) -> Date {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "MM-dd"
+                
+        guard let date = dateFormatter.date(from: dateStr) else { return Date() }
+        
+        return date
+        
+    }
+    
+    func stringToDateYYYYMMdd(dateStr: String) -> Date {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+                
+        guard let date = dateFormatter.date(from: dateStr) else { return Date() }
+        
+        return date
+        
+    }
+    
     func dateToString(date: Date) -> String {
         
         let dateFormatter = DateFormatter()
@@ -37,6 +61,5 @@ class DateManager {
         return string
         
     }
-    
     
 }

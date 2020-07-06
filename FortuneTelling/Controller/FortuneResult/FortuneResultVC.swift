@@ -98,6 +98,10 @@ class FortuneResultVC: UIViewController {
     
     var startBigTenAge: Int = 0
     
+    var selectedSpecificYear: Int = 1924
+    
+    var selectedSpecificMonth: Int = 1
+    
     func navConfigure() {
         
         navigationController?.navigationBar.isTranslucent = false
@@ -363,6 +367,10 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
             
             datePickerVC.startBigTenAge = startBigTenAge
             
+            datePickerVC.selectedSpecificYear = selectedSpecificYear
+            
+            datePickerVC.selectedSpecificMonth = selectedSpecificMonth
+            
             datePickerVC.delegate = self
             
             present(datePickerVC, animated: true, completion: nil)
@@ -507,6 +515,10 @@ extension FortuneResultVC: DatePickerVCDelegate {
         
         let selectedAge = viewController.startBigTenAge + selectedRow
         
+        let birthYear = Int(birthdayString.substring(toIndex: 4))
+        
+        selectedSpecificYear = birthYear! + selectedAge - 1
+        
         let birthDate = DateManager.shared.stringToDate(dateStr: birthdayString)
         
         let heaven = SpecificYear.shared.getSpecificYearHeaven(birthDate: birthDate, age: selectedAge)
@@ -538,6 +550,8 @@ extension FortuneResultVC: DatePickerVCDelegate {
         
         let selectedRow = viewController.pickerView.selectedRow(inComponent: 0)
         
+        selectedSpecificMonth = 1 + selectedRow
+        
         let earthly = SpecificMonth.shared.getSpecificMonthEarthly(selectedMonthIndex: selectedRow)
         
         let heaven = SpecificMonth.shared.getSpecificMonthHeaven(specificMonthEarthly: earthly, specificYearHeaven: heavenEarthlyData[10].string)
@@ -566,6 +580,22 @@ extension FortuneResultVC: DatePickerVCDelegate {
     
     func specificDayData(viewController: DatePickerVC) {
         
+        let selectedRow = viewController.pickerView.selectedRow(inComponent: 0)
+        
+        let selectedDate: String = "\(selectedSpecificYear)-\(viewController.pickerViewData[selectedRow])"
+        
+        let heaven = SpecificDay.shared.getSpecificDayHeaven(selectedDateYYYYMMdd: selectedDate)
+        
+        let earthly = SpecificDay.shared.getSpecificDayEarthly(selectedDateYYYYMMdd: selectedDate)
+        
+        heavenEarthlyData[14] = HeavenEarthly(string: heaven)
+        
+        heavenEarthlyData[15] = HeavenEarthly(string: earthly)
+        
+        tenGodData[14] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[14].string)
+        
+        tenGodData[15] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[15].string)
+        
         for index in 16...17 {
             
             heavenEarthlyData[index] = HeavenEarthly(string: "")
@@ -573,6 +603,10 @@ extension FortuneResultVC: DatePickerVCDelegate {
             tenGodData[index] = ""
             
         }
+        
+        heavenEarthlyCollectionView.reloadData()
+        
+        tenGodCollectionView.reloadData()
         
     }
     

@@ -52,6 +52,10 @@ class DatePickerVC: UIViewController {
     
     var startBigTenAge: Int = 0
     
+    var selectedSpecificYear: Int = 1924
+    
+    var selectedSpecificMonth: Int = 1
+    
     func bigTenYears() {
         
         bigTenYearsData = BigTenYears.shared.getBigTenYearsDate(birthDateString: birthString, gender: gender, birthYearHeaven: birthYearHeaven)
@@ -107,6 +111,30 @@ class DatePickerVC: UIViewController {
     }
     
     func specificDay() {
+        
+        let startSpecificDay = SpecificDay.shared.getSpecificDayString(specificYear: selectedSpecificYear, specificMonth: selectedSpecificMonth)
+        
+        var nextYear = selectedSpecificYear
+        
+        var nextMonth = selectedSpecificMonth + 1
+        
+        if nextMonth == 13 {
+            
+            nextYear += 1
+            
+            nextMonth = 1
+            
+        }
+
+        let nextSpecificDay = SpecificDay.shared.getSpecificDayString(specificYear: nextYear, specificMonth: nextMonth)
+
+        let allOption = SpecificDay.shared.getAllOptionsSpecificDay(startSpecificDay: startSpecificDay, endSpecificDay: nextSpecificDay)
+
+        pickerViewData = []
+
+        pickerViewData = allOption
+
+        pickerView.reloadAllComponents()
         
     }
     
