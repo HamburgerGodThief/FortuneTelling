@@ -114,7 +114,7 @@ class FortuneResultVC: UIViewController {
         
     }
     
-    func showRemindAlert(message: String) {
+    func remindAlert(message: String) {
             
         let alertController = UIAlertController(title: "錯誤", message: message, preferredStyle: .alert)
 
@@ -124,6 +124,36 @@ class FortuneResultVC: UIViewController {
 
         present(alertController, animated: true, completion: nil)
             
+    }
+    
+    func showAlertMessage(indexPathItem: Int) {
+        
+        if tenGodData[8] == "" && tenGodData[10] == "" && tenGodData[12] == "" && tenGodData[14] == ""{
+            
+            remindAlert(message: "請先輸入大運/流年/流月/流日")
+            
+            return
+            
+        } else if tenGodData[8] == "" && tenGodData[10] == "" && tenGodData[12] == "" {
+            
+            remindAlert(message: "請先輸入大運/流年/流月")
+            
+            return
+            
+        } else if tenGodData[8] == "" && tenGodData[10] == "" {
+            
+            remindAlert(message: "請先輸入大運/流年")
+            
+            return
+            
+        } else if tenGodData[8] == "" {
+            
+            remindAlert(message: "請先輸入大運")
+            
+            return
+            
+        }
+        
     }
     
     func calculateBirthHeavenEarthly() {
@@ -207,29 +237,27 @@ class FortuneResultVC: UIViewController {
         
     }
     
+    func bigTenYearsForTableViewSection0(bigTen: BigTenYearsForView, index: Int) {
+        
+        let bigTenString = DateManager.shared.dateToString(date: bigTen.time)
+        
+        year[index] = bigTenString.substring(toIndex: 4)
+        
+        month[index] = bigTenString.substring(fromIndex: 5, toIndex: 7)
+        
+        day[index] = bigTenString.substring(fromIndex: 8, toIndex: 10)
+        
+        time[index] = bigTenString.substring(fromIndex: 11)
+        
+    }
+    
     func dataForTableViewSection0(thisBigTen: BigTenYearsForView, nextBigTen: BigTenYearsForView) {
         
         nowSolarDataForTableViewSection0()
         
-        let thisTime = DateManager.shared.dateToString(date: thisBigTen.time)
+        bigTenYearsForTableViewSection0(bigTen: thisBigTen, index: 1)
         
-        year[1] = thisTime.substring(toIndex: 4)
-        
-        month[1] = thisTime.substring(fromIndex: 5, toIndex: 7)
-        
-        day[1] = thisTime.substring(fromIndex: 8, toIndex: 10)
-        
-        time[1] = thisTime.substring(fromIndex: 11)
-        
-        let nextTime = DateManager.shared.dateToString(date: nextBigTen.time)
-        
-        year[2] = nextTime.substring(toIndex: 4)
-        
-        month[2] = nextTime.substring(fromIndex: 5, toIndex: 7)
-        
-        day[2] = nextTime.substring(fromIndex: 8, toIndex: 10)
-        
-        time[2] = nextTime.substring(fromIndex: 11)
+        bigTenYearsForTableViewSection0(bigTen: nextBigTen, index: 2)
         
     }
     
@@ -352,7 +380,45 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if collectionView == titleCollectionView {
-        
+            
+            if indexPath.item < 4 {
+                
+                return
+                
+            } else if indexPath.item > 4 {
+                
+                for index in 8..<indexPath.item * 2 {
+                    
+                    if tenGodData[index] == "" && index < 10 {
+                        
+                        remindAlert(message: "請先輸入大運")
+                        
+                        return
+                        
+                    } else if tenGodData[index] == "" && index < 12 {
+                        
+                        remindAlert(message: "請先輸入流年")
+                        
+                        return
+                        
+                    } else if tenGodData[index] == "" && index < 14 {
+                        
+                        remindAlert(message: "請先輸入流月")
+                        
+                        return
+                        
+                    } else if tenGodData[index] == "" && index < 16 {
+                        
+                        remindAlert(message: "請先輸入流日")
+                        
+                        return
+                        
+                    }
+                    
+                }
+                
+            }
+            
             let storyboard = UIStoryboard(name: "FortuneResult", bundle: nil)
             
             guard let datePickerVC = storyboard.instantiateViewController(withIdentifier: "DatePickerVC") as? DatePickerVC else { return }
@@ -386,6 +452,18 @@ extension FortuneResultVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return 2
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 {
+            
+            return 80
+            
+        }
+        
+        return UITableView.automaticDimension
         
     }
     
@@ -429,6 +507,12 @@ extension FortuneResultVC: UITableViewDelegate, UITableViewDataSource {
             let title: [String] = ["目前時間", "本次大運", "下次大運"]
         
             cell.titleLbl.text = title[indexPath.row]
+            
+            cell.lunarYearLbl.text = lunarYear[indexPath.row]
+            
+            cell.lunarMonthLbl.text = lunarMonth[indexPath.row]
+            
+            cell.lunarDayLbl.text = lunarDay[indexPath.row]
             
             cell.yearLbl.text = year[indexPath.row]
             
@@ -481,9 +565,31 @@ extension FortuneResultVC: DatePickerVCDelegate {
         
         startBigTenAge = startBigTen.age
         
-        let nextBigTen = viewController.bigTenYearsData[selectedRow + 2]
+        if selectedRow + 2 < viewController.bigTenYearsData.count - 1 {
         
-        dataForTableViewSection0(thisBigTen: startBigTen, nextBigTen: nextBigTen)
+            let nextBigTen = viewController.bigTenYearsData[selectedRow + 2]
+            
+            dataForTableViewSection0(thisBigTen: startBigTen, nextBigTen: nextBigTen)
+            
+        } else {
+            
+            bigTenYearsForTableViewSection0(bigTen: startBigTen, index: 1)
+            
+            lunarYear[2] = ""
+            
+            lunarMonth[2] = ""
+            
+            lunarDay[2] = ""
+            
+            year[2] = ""
+            
+            month[2] = ""
+            
+            day[2] = ""
+            
+            time[2] = ""
+            
+        }
         
         tableView.reloadData()
         
@@ -611,6 +717,24 @@ extension FortuneResultVC: DatePickerVCDelegate {
     }
     
     func specificHourData(viewController: DatePickerVC) {
+        
+        let selectedRow = viewController.pickerView.selectedRow(inComponent: 0)
+        
+        let earthly = SpecificHour.shared.getSpecificHourEarthly(selectedHourIndex: selectedRow)
+        
+        let heaven = SpecificHour.shared.getSpecificHourHeaven(specificHourEarthly: earthly, specificDayHeaven: heavenEarthlyData[14].string)
+        
+        heavenEarthlyData[16] = HeavenEarthly(string: heaven)
+        
+        heavenEarthlyData[17] = HeavenEarthly(string: earthly)
+        
+        tenGodData[16] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[16].string)
+        
+        tenGodData[17] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[17].string)
+        
+        heavenEarthlyCollectionView.reloadData()
+        
+        tenGodCollectionView.reloadData()
         
     }
     

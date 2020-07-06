@@ -15,6 +15,7 @@
 		640D7E8824B24FEE0096F554 /* SpecificMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D7E8724B24FEE0096F554 /* SpecificMonth.swift */; };
 		640D7E8A24B2561A0096F554 /* SpecificDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D7E8924B2561A0096F554 /* SpecificDay.swift */; };
 		640D7E8E24B259910096F554 /* specificDayData.json in Resources */ = {isa = PBXBuildFile; fileRef = 640D7E8D24B259910096F554 /* specificDayData.json */; };
+		640D7E9024B2D7520096F554 /* SpecificHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640D7E8F24B2D7520096F554 /* SpecificHour.swift */; };
 		6446F99824A47BCC0053B01E /* LunarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6446F99724A47BCC0053B01E /* LunarDate.swift */; };
 		6446F99A24A773C50053B01E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6446F99924A773C50053B01E /* StorageManager.swift */; };
 		6446F99D24A7C2570053B01E /* FortuneTelling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6446F99B24A7C2570053B01E /* FortuneTelling.xcdatamodeld */; };
@@ -73,6 +74,7 @@
 		640D7E8724B24FEE0096F554 /* SpecificMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificMonth.swift; sourceTree = "<group>"; };
 		640D7E8924B2561A0096F554 /* SpecificDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificDay.swift; sourceTree = "<group>"; };
 		640D7E8D24B259910096F554 /* specificDayData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = specificDayData.json; sourceTree = "<group>"; };
+		640D7E8F24B2D7520096F554 /* SpecificHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificHour.swift; sourceTree = "<group>"; };
 		6446F99724A47BCC0053B01E /* LunarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarDate.swift; sourceTree = "<group>"; };
 		6446F99924A773C50053B01E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		6446F99C24A7C2570053B01E /* FortuneTelling.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FortuneTelling.xcdatamodel; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				640D7E8724B24FEE0096F554 /* SpecificMonth.swift */,
 				640D7E8924B2561A0096F554 /* SpecificDay.swift */,
 				640D7E8D24B259910096F554 /* specificDayData.json */,
+				640D7E8F24B2D7520096F554 /* SpecificHour.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				64B65DD324A9E7FD00397C07 /* HourHeavenEarthly.swift in Sources */,
 				640D7E8624B243240096F554 /* UserManager.swift in Sources */,
 				64B65DC724A7C6AD00397C07 /* YearHeavenEarthly.swift in Sources */,
+				640D7E9024B2D7520096F554 /* SpecificHour.swift in Sources */,
 				64FEF3F824A0C4C400B77E59 /* BirthPickerVC.swift in Sources */,
 				6446F99A24A773C50053B01E /* StorageManager.swift in Sources */,
 				64FEF3D3249CCF6400B77E59 /* UIStoryborad+Extension.swift in Sources */,

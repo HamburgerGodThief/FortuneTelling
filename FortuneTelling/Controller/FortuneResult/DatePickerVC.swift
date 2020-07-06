@@ -140,6 +140,14 @@ class DatePickerVC: UIViewController {
     
     func specificHour() {
         
+        pickerViewData = []
+        
+        let specificHourForPickerView = SpecificHour.shared.getSpecificHour()
+        
+        pickerViewData = specificHourForPickerView
+
+        pickerView.reloadAllComponents()
+        
     }
     
     override func viewDidLoad() {
