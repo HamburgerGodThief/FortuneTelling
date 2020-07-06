@@ -28,6 +28,8 @@ class RecordVC: UIViewController {
         
     }
     
+    var userRecord: [UserRecord] = []
+    
     func navConfigure() {
         
         navigationController?.navigationBar.isTranslucent = false
@@ -42,12 +44,30 @@ class RecordVC: UIViewController {
         
     }
     
+    func fetchRecord() {
+        
+        userRecord = StorageManager.shared.read()
+        
+        for element in userRecord {
+            
+            let birthDate = DateManager.shared.stringToDate(dateStr: element.solarBirth!)
+            
+            let birthString = DateManager.shared.dateToString(date: birthDate)
+            
+            element.solarBirth = birthString
+            
+        }
+        
+        tableView.reloadData()
+        
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
         navConfigure()
-        
+                
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +75,8 @@ class RecordVC: UIViewController {
         super.viewWillAppear(animated)
         
         tabBarController?.tabBar.isHidden = false
+        
+        fetchRecord()
         
     }
     
@@ -64,7 +86,7 @@ extension RecordVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 4
+        return userRecord.count
         
     }
     
@@ -72,11 +94,27 @@ extension RecordVC: UITableViewDelegate, UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecordTableViewCell", for: indexPath) as? RecordTableViewCell else { return UITableViewCell() }
         
-        cell.namelbl.text = "程弘棋"
-                
-        cell.genderlbl.text = "[男]"
+        guard let lastname = userRecord[indexPath.row].lastname else { return UITableViewCell() }
         
-        cell.birthlbl.text = "1993年 5月 10日 13:20"
+        guard let firstname = userRecord[indexPath.row].firstname else { return UITableViewCell() }
+        
+        guard let gender = userRecord[indexPath.row].gender else { return UITableViewCell() }
+        
+        guard let birthString = userRecord[indexPath.row].solarBirth else { return UITableViewCell() }
+        
+        let year = birthString.substring(toIndex: 4)
+        
+        let month = birthString.substring(fromIndex: 5, toIndex: 7)
+        
+        let day = birthString.substring(fromIndex: 8, toIndex: 10)
+        
+        let time = birthString.substring(fromIndex: 11)
+        
+        cell.namelbl.text = "\(lastname)\(firstname)"
+                
+        cell.genderlbl.text = "[\(gender)]"
+        
+        cell.birthlbl.text = "陽曆  \(year)年  \(month)月  \(day)日  \(time)"
         
         return cell
         

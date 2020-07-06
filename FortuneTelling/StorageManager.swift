@@ -12,15 +12,8 @@ import CoreData
 
     private enum Entity: String, CaseIterable {
         
-        case birthYearHeavenEarthly = "BirthYearHeavenEarthly"
-
-        case birthMonthHeavenEarthly = "BirthMonthHeavenEarthly"
+        case record = "UserRecord"
         
-    }
-
-    private struct Order {
-
-        static let createTime = "createTime"
     }
 
     static let shared = StorageManager()
@@ -50,12 +43,76 @@ import CoreData
         return persistanceContainer.viewContext
     }
     
-    func fetchOrders() {
-                        
-        let request = NSFetchRequest<BirthYearHeavenEarthly>(entityName: Entity.birthYearHeavenEarthly.rawValue)
+    func saveContext() {
+        
+        let context = persistanceContainer.viewContext
+        
+        if context.hasChanges {
+            
+            do {
                 
-        print(request)
-
+                try context.save()
+            
+            } catch {
+             
+                let error = error as NSError
+                
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            
+            }
+            
+        }
+        
+    }
+    
+    func read() -> [UserRecord] {
+        
+        let request: NSFetchRequest<UserRecord> = UserRecord.fetchRequest()
+        
+        request.sortDescriptors = [NSSortDescriptor(key: "createTime", ascending: false)]
+        
+        var result: [UserRecord] = []
+        
+        do {
+            
+            result = try viewContext.fetch(request)
+            
+        } catch {
+            
+            print(error)
+            
+        }
+        
+        return result
+        
+    }
+    
+    func create(lastname: String, firstname: String, gender: String, solarBirth: String) {
+        
+        guard let user = NSEntityDescription.insertNewObject(forEntityName: "UserRecord", into: viewContext) as? UserRecord else {return}
+        
+        user.lastname = lastname
+        
+        user.firstname = firstname
+        
+        user.gender = gender
+        
+        user.solarBirth = solarBirth
+                
+        user.createTime = Date()
+        
+        saveContext()
+        
+    }
+        
+    func remove(indexPathRow: Int) {
+        
+        let results = read()
+        
+        viewContext.delete(results[indexPathRow])
+        
+        saveContext()
+        
     }
 
 }

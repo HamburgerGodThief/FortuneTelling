@@ -170,6 +170,8 @@ class UserInputVC: UIViewController {
             
             fortuneResultVC.navTitle = "\(lastname) \(firstname) (\(gender))"
             
+            StorageManager.shared.create(lastname: lastname, firstname: firstname, gender: gender, solarBirth: fortuneResultVC.birthdayString)
+            
             strongSelf.navigationController?.pushViewController(fortuneResultVC, animated: true)
             
         })
