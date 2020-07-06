@@ -87,14 +87,12 @@ import CoreData
         
     }
     
-    func create(lastname: String, firstname: String, gender: String, solarBirth: String) {
+    func create(name: String, gender: String, solarBirth: String) {
         
         guard let user = NSEntityDescription.insertNewObject(forEntityName: "UserRecord", into: viewContext) as? UserRecord else {return}
         
-        user.lastname = lastname
-        
-        user.firstname = firstname
-        
+        user.name = name
+                
         user.gender = gender
         
         user.solarBirth = solarBirth

@@ -235,6 +235,20 @@ class FortuneResultVC: UIViewController {
         
         time[0] = now.substring(fromIndex: 11)
         
+        let lunarYearHeavenEarthly = YearHeavenEarthly.shared.getBirthYearHeavenEarthly(inputDate: Date())
+        
+        lunarYear[0] = "\(lunarYearHeavenEarthly.heaven)\(lunarYearHeavenEarthly.earthly)"
+        
+        let lunarMonthHeaveEarthly = MonthHeavenEarthly.shared.getBirthMonthHeavenEarthly(inputDate: Date())
+        
+        lunarMonth[0] = "\(lunarMonthHeaveEarthly.heaven)\(lunarMonthHeaveEarthly.earthly)"
+        
+        let lunarDayHeaven = SpecificDay.shared.getSpecificDayHeaven(selectedDateYYYYMMdd: now)
+        
+        let lunarDayEarthly = SpecificDay.shared.getSpecificDayEarthly(selectedDateYYYYMMdd: now)
+        
+        lunarDay[0] = "\(lunarDayHeaven)\(lunarDayEarthly)"
+        
     }
     
     func bigTenYearsForTableViewSection0(bigTen: BigTenYearsForView, index: Int) {
@@ -248,6 +262,20 @@ class FortuneResultVC: UIViewController {
         day[index] = bigTenString.substring(fromIndex: 8, toIndex: 10)
         
         time[index] = bigTenString.substring(fromIndex: 11)
+        
+        let lunarYearHeavenEarthly = YearHeavenEarthly.shared.getBirthYearHeavenEarthly(inputDate: bigTen.time)
+        
+        lunarYear[index] = "\(lunarYearHeavenEarthly.heaven)\(lunarYearHeavenEarthly.earthly)"
+        
+        let lunarMonthHeaveEarthly = MonthHeavenEarthly.shared.getBirthMonthHeavenEarthly(inputDate: bigTen.time)
+        
+        lunarMonth[index] = "\(lunarMonthHeaveEarthly.heaven)\(lunarMonthHeaveEarthly.earthly)"
+        
+        let lunarDayHeaven = SpecificDay.shared.getSpecificDayHeaven(selectedDateYYYYMMdd: bigTenString)
+        
+        let lunarDayEarthly = SpecificDay.shared.getSpecificDayEarthly(selectedDateYYYYMMdd: bigTenString)
+        
+        lunarDay[index] = "\(lunarDayHeaven)\(lunarDayEarthly)"
         
     }
     

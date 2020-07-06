@@ -23,24 +23,19 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="姓" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qBo-et-O7N">
-                                <rect key="frame" x="111" y="395" width="263" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cI5-pA-l79">
-                                <rect key="frame" x="111" y="455" width="263" height="34"/>
+                                <rect key="frame" x="111" y="359" width="263" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wao-Uo-IXK">
-                                <rect key="frame" x="111" y="513" width="263" height="32"/>
+                                <rect key="frame" x="111" y="419" width="263" height="37"/>
                                 <segments>
                                     <segment title="男生"/>
                                     <segment title="女生"/>
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3U7-J7-ULE">
-                                <rect key="frame" x="111" y="568" width="263" height="36"/>
+                                <rect key="frame" x="111" y="479" width="263" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="出生年月日">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,7 +45,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgd-kg-w67">
-                                <rect key="frame" x="111" y="628" width="263" height="36"/>
+                                <rect key="frame" x="111" y="539" width="263" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="出生時辰">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,32 +54,26 @@
                                     <action selector="didTouchBirthTimeBtn:" destination="ZxJ-Ee-jej" eventType="touchUpInside" id="X1j-X5-F27"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓氏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ii-d4-Nwy">
-                                <rect key="frame" x="40" y="401" width="41" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWC-nO-AIe">
-                                <rect key="frame" x="40" y="460" width="41" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ii-d4-Nwy">
+                                <rect key="frame" x="40" y="365" width="41" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性別" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5s-EU-Ttt">
-                                <rect key="frame" x="40" y="516.5" width="41" height="24"/>
+                                <rect key="frame" x="40" y="425" width="41" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="生辰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4G-fU-cBo">
-                                <rect key="frame" x="40" y="574" width="41" height="24"/>
+                                <rect key="frame" x="40" y="485" width="41" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLr-sF-MFF">
-                                <rect key="frame" x="180" y="796" width="54" height="36"/>
+                                <rect key="frame" x="165.5" y="810" width="83" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="計算"/>
                                 <connections>
@@ -94,36 +83,34 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cI5-pA-l79" firstAttribute="top" secondItem="qBo-et-O7N" secondAttribute="bottom" constant="24" id="0Gt-7I-t0M"/>
                             <constraint firstItem="mRi-Dq-wsP" firstAttribute="top" secondItem="7Y3-Nt-ftf" secondAttribute="top" constant="40" id="16t-RW-hZW"/>
                             <constraint firstItem="Wao-Uo-IXK" firstAttribute="leading" secondItem="qBo-et-O7N" secondAttribute="leading" id="1BY-PK-Nwk"/>
                             <constraint firstItem="O5s-EU-Ttt" firstAttribute="centerY" secondItem="Wao-Uo-IXK" secondAttribute="centerY" id="380-JR-Cnl"/>
-                            <constraint firstItem="Wao-Uo-IXK" firstAttribute="top" secondItem="cI5-pA-l79" secondAttribute="bottom" constant="24" id="6Uk-zd-Ox1"/>
                             <constraint firstItem="8Ii-d4-Nwy" firstAttribute="leading" secondItem="7Y3-Nt-ftf" secondAttribute="leading" constant="40" id="9ee-QR-3RE"/>
-                            <constraint firstItem="zLr-sF-MFF" firstAttribute="leading" secondItem="Cf0-2I-Wyn" secondAttribute="leading" constant="180" id="A7N-V8-a2v"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" id="AmF-ut-Jra"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="leading" secondItem="qBo-et-O7N" secondAttribute="leading" id="CYc-fR-8Wv"/>
                             <constraint firstItem="mRi-Dq-wsP" firstAttribute="centerX" secondItem="Cf0-2I-Wyn" secondAttribute="centerX" id="CtQ-KU-XZ7"/>
-                            <constraint firstAttribute="trailing" secondItem="zLr-sF-MFF" secondAttribute="trailing" constant="180" id="Dih-N0-SnV"/>
                             <constraint firstItem="qBo-et-O7N" firstAttribute="leading" secondItem="8Ii-d4-Nwy" secondAttribute="trailing" constant="30" id="H9w-RQ-gME"/>
-                            <constraint firstItem="cI5-pA-l79" firstAttribute="leading" secondItem="qBo-et-O7N" secondAttribute="leading" id="ITV-1Z-dsf"/>
                             <constraint firstItem="R4G-fU-cBo" firstAttribute="leading" secondItem="8Ii-d4-Nwy" secondAttribute="leading" id="KIS-Di-MSh"/>
-                            <constraint firstItem="hWC-nO-AIe" firstAttribute="leading" secondItem="8Ii-d4-Nwy" secondAttribute="leading" id="RmH-dn-yoL"/>
+                            <constraint firstItem="zLr-sF-MFF" firstAttribute="width" secondItem="mRi-Dq-wsP" secondAttribute="width" multiplier="0.4" id="L1D-1z-vBd"/>
+                            <constraint firstItem="Wao-Uo-IXK" firstAttribute="top" secondItem="qBo-et-O7N" secondAttribute="bottom" constant="24" id="Tb9-RK-Lw9"/>
                             <constraint firstItem="7Y3-Nt-ftf" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" constant="40" id="U2E-nq-wOx"/>
                             <constraint firstItem="O5s-EU-Ttt" firstAttribute="leading" secondItem="8Ii-d4-Nwy" secondAttribute="leading" id="Uhj-rs-xYd"/>
                             <constraint firstItem="Qgd-kg-w67" firstAttribute="top" secondItem="3U7-J7-ULE" secondAttribute="bottom" constant="24" id="W70-6B-oI4"/>
+                            <constraint firstItem="Qgd-kg-w67" firstAttribute="height" secondItem="qBo-et-O7N" secondAttribute="height" id="WH4-Z5-t05"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="centerY" secondItem="R4G-fU-cBo" secondAttribute="centerY" id="Wxo-lL-gUF"/>
                             <constraint firstItem="8Ii-d4-Nwy" firstAttribute="centerY" secondItem="qBo-et-O7N" secondAttribute="centerY" id="c13-W9-Mtu"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="height" secondItem="qBo-et-O7N" secondAttribute="height" id="ec0-1R-kJx"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="top" secondItem="Wao-Uo-IXK" secondAttribute="bottom" constant="24" id="fIs-rg-1mb"/>
-                            <constraint firstItem="qBo-et-O7N" firstAttribute="top" secondItem="mRi-Dq-wsP" secondAttribute="bottom" constant="60" id="fLN-vt-z4L"/>
+                            <constraint firstItem="qBo-et-O7N" firstAttribute="top" secondItem="mRi-Dq-wsP" secondAttribute="bottom" constant="24" id="fLN-vt-z4L"/>
                             <constraint firstItem="Qgd-kg-w67" firstAttribute="leading" secondItem="3U7-J7-ULE" secondAttribute="leading" id="hWX-ss-Mjh"/>
                             <constraint firstItem="Qgd-kg-w67" firstAttribute="trailing" secondItem="3U7-J7-ULE" secondAttribute="trailing" id="i49-dT-1yn"/>
                             <constraint firstItem="Wao-Uo-IXK" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" id="npW-gs-fkO"/>
                             <constraint firstItem="mRi-Dq-wsP" firstAttribute="width" secondItem="Cf0-2I-Wyn" secondAttribute="width" multiplier="0.5" id="nwT-py-4uq"/>
-                            <constraint firstItem="7Y3-Nt-ftf" firstAttribute="bottom" secondItem="zLr-sF-MFF" secondAttribute="bottom" constant="30" id="pOR-mA-AzJ"/>
-                            <constraint firstItem="hWC-nO-AIe" firstAttribute="centerY" secondItem="cI5-pA-l79" secondAttribute="centerY" id="syX-aE-K3R"/>
-                            <constraint firstItem="cI5-pA-l79" firstAttribute="trailing" secondItem="qBo-et-O7N" secondAttribute="trailing" id="thM-Rq-f1U"/>
+                            <constraint firstItem="zLr-sF-MFF" firstAttribute="centerX" secondItem="Cf0-2I-Wyn" secondAttribute="centerX" id="oI6-Wp-AlR"/>
+                            <constraint firstItem="7Y3-Nt-ftf" firstAttribute="bottom" secondItem="zLr-sF-MFF" secondAttribute="bottom" constant="16" id="pOR-mA-AzJ"/>
+                            <constraint firstItem="Wao-Uo-IXK" firstAttribute="height" secondItem="qBo-et-O7N" secondAttribute="height" id="uh5-zC-EE1"/>
+                            <constraint firstItem="zLr-sF-MFF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qgd-kg-w67" secondAttribute="bottom" constant="10" id="wJ8-rY-9XN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Y3-Nt-ftf"/>
                     </view>
@@ -132,7 +119,6 @@
                         <outlet property="birthBtn" destination="3U7-J7-ULE" id="OC6-c0-PQy"/>
                         <outlet property="birthTimeBtn" destination="Qgd-kg-w67" id="ldP-3P-ssb"/>
                         <outlet property="calculateBtn" destination="zLr-sF-MFF" id="LHL-Z2-1t2"/>
-                        <outlet property="firstNameTextField" destination="cI5-pA-l79" id="pdF-sv-f3G"/>
                         <outlet property="genderSegControl" destination="Wao-Uo-IXK" id="k4s-cg-4DO"/>
                         <outlet property="lastNameTextField" destination="qBo-et-O7N" id="rjO-J8-a9l"/>
                         <outlet property="logoImg" destination="mRi-Dq-wsP" id="mfw-P6-fhi"/>

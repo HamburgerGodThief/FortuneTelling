@@ -94,10 +94,8 @@ extension RecordVC: UITableViewDelegate, UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecordTableViewCell", for: indexPath) as? RecordTableViewCell else { return UITableViewCell() }
         
-        guard let lastname = userRecord[indexPath.row].lastname else { return UITableViewCell() }
-        
-        guard let firstname = userRecord[indexPath.row].firstname else { return UITableViewCell() }
-        
+        guard let name = userRecord[indexPath.row].name else { return UITableViewCell() }
+                
         guard let gender = userRecord[indexPath.row].gender else { return UITableViewCell() }
         
         guard let birthString = userRecord[indexPath.row].solarBirth else { return UITableViewCell() }
@@ -110,7 +108,7 @@ extension RecordVC: UITableViewDelegate, UITableViewDataSource {
         
         let time = birthString.substring(fromIndex: 11)
         
-        cell.namelbl.text = "\(lastname)\(firstname)"
+        cell.namelbl.text = name
                 
         cell.genderlbl.text = "[\(gender)]"
         
@@ -122,10 +120,8 @@ extension RecordVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let lastname = userRecord[indexPath.row].lastname else { return }
-        
-        guard let firstname = userRecord[indexPath.row].firstname else { return }
-        
+        guard let name = userRecord[indexPath.row].name else { return }
+                
         guard let gender = userRecord[indexPath.row].gender else { return }
         
         guard let birthString = userRecord[indexPath.row].solarBirth else { return }
@@ -140,7 +136,7 @@ extension RecordVC: UITableViewDelegate, UITableViewDataSource {
         
         fortuneResultVC.gender = gender
         
-        fortuneResultVC.navTitle = "\(lastname) \(firstname) (\(gender))"
+        fortuneResultVC.navTitle = "\(name) (\(gender))"
         
         navigationController?.pushViewController(fortuneResultVC, animated: true)
         

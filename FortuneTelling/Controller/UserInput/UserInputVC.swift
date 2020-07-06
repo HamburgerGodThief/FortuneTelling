@@ -13,9 +13,7 @@ class UserInputVC: UIViewController {
     @IBOutlet weak var logoImg: UIImageView!
     
     @IBOutlet weak var lastNameTextField: UITextField!
-    
-    @IBOutlet weak var firstNameTextField: UITextField!
-    
+        
     @IBOutlet weak var genderSegControl: UISegmentedControl!
     
     @IBOutlet weak var birthBtn: UIButton!
@@ -33,10 +31,6 @@ class UserInputVC: UIViewController {
         lastNameTextField.textAlignment = .center
         
         lastNameTextField.placeholder = "請輸入姓氏"
-        
-        firstNameTextField.textAlignment = .center
-        
-        firstNameTextField.placeholder = "請輸入名字"
         
         birthBtn.layer.borderColor = UIColor.lightGray.cgColor
         
@@ -134,10 +128,8 @@ class UserInputVC: UIViewController {
         
         var gender: String = "女"
         
-        guard let lastname = lastNameTextField.text else { return }
-        
-        guard let firstname = firstNameTextField.text else { return }
-        
+        guard let name = lastNameTextField.text else { return }
+                
         guard let birthDate = birthBtn.titleLabel?.text else { return }
         
         guard (birthTimeBtn.titleLabel?.text) != nil else { return }
@@ -148,7 +140,7 @@ class UserInputVC: UIViewController {
             
         }
         
-        let alertController = UIAlertController(title: "請確認資料", message: "姓:\(lastname)\n名:\(firstname)\n性別:\(gender)\n出生時間:\(birthDate) \(userBirthTime)", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "請確認資料", message: "姓名:\(name)\n性別:\(gender)\n出生時間:\(birthDate) \(userBirthTime)", preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         
@@ -168,9 +160,9 @@ class UserInputVC: UIViewController {
             
             fortuneResultVC.gender = gender
             
-            fortuneResultVC.navTitle = "\(lastname) \(firstname) (\(gender))"
+            fortuneResultVC.navTitle = "\(name) (\(gender))"
             
-            StorageManager.shared.create(lastname: lastname, firstname: firstname, gender: gender, solarBirth: fortuneResultVC.birthdayString)
+            StorageManager.shared.create(name: name, gender: gender, solarBirth: fortuneResultVC.birthdayString)
             
             strongSelf.navigationController?.pushViewController(fortuneResultVC, animated: true)
             
@@ -184,7 +176,7 @@ class UserInputVC: UIViewController {
     
     @IBAction func didTouchCalculateBtn(_ sender: Any) {
         
-        if lastNameTextField.text == "" || firstNameTextField.text == "" || birthBtn.titleLabel?.text == "出生年月日" || birthTimeBtn.titleLabel?.text == "出生時辰" {
+        if lastNameTextField.text == "" || birthBtn.titleLabel?.text == "出生年月日" || birthTimeBtn.titleLabel?.text == "出生時辰" {
         
             showRemindAlert()
             

@@ -2,12 +2,11 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="UserRecord" representedClassName="UserRecord" syncable="YES" codeGenerationType="class">
         <attribute name="createTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="firstname" optional="YES" attributeType="String"/>
         <attribute name="gender" optional="YES" attributeType="String"/>
-        <attribute name="lastname" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="solarBirth" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="UserRecord" positionX="-54" positionY="-9" width="128" height="118"/>
+        <element name="UserRecord" positionX="-54" positionY="-9" width="128" height="103"/>
     </elements>
 </model>

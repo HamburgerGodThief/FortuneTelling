@@ -31,7 +31,6 @@
 		64B65DDB24AB233300397C07 /* BigTenYears.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DDA24AB233300397C07 /* BigTenYears.swift */; };
 		64B65DDD24AB700B00397C07 /* bigTenYearsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 64B65DDC24AB700B00397C07 /* bigTenYearsData.json */; };
 		64B65DDF24AC74C000397C07 /* TenGod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DDE24AC74C000397C07 /* TenGod.swift */; };
-		64B65DE124AC911000397C07 /* BigTenYearsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DE024AC911000397C07 /* BigTenYearsVC.swift */; };
 		64FEF3AF249CB49000B77E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3AE249CB49000B77E59 /* AppDelegate.swift */; };
 		64FEF3B3249CB49000B77E59 /* HBGTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3B2249CB49000B77E59 /* HBGTabBarViewController.swift */; };
 		64FEF3B6249CB49000B77E59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3B4249CB49000B77E59 /* Main.storyboard */; };
@@ -90,7 +89,6 @@
 		64B65DDA24AB233300397C07 /* BigTenYears.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTenYears.swift; sourceTree = "<group>"; };
 		64B65DDC24AB700B00397C07 /* bigTenYearsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bigTenYearsData.json; sourceTree = "<group>"; };
 		64B65DDE24AC74C000397C07 /* TenGod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenGod.swift; sourceTree = "<group>"; };
-		64B65DE024AC911000397C07 /* BigTenYearsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTenYearsVC.swift; sourceTree = "<group>"; };
 		64FEF3AB249CB49000B77E59 /* FortuneTelling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FortuneTelling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FEF3AE249CB49000B77E59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64FEF3B2249CB49000B77E59 /* HBGTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBGTabBarViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 			children = (
 				64FEF3D8249CD47300B77E59 /* FortuneResultVC.swift */,
 				64FEF3F5249FDC9C00B77E59 /* DatePickerVC.swift */,
-				64B65DE024AC911000397C07 /* BigTenYearsVC.swift */,
 			);
 			path = FortuneResult;
 			sourceTree = "<group>";
@@ -448,7 +445,6 @@
 				64B65DDB24AB233300397C07 /* BigTenYears.swift in Sources */,
 				64FEF3E7249F626400B77E59 /* UICollectionView+Extension.swift in Sources */,
 				64FEF3EA249F644300B77E59 /* ResultTitleCollectionViewCell.swift in Sources */,
-				64B65DE124AC911000397C07 /* BigTenYearsVC.swift in Sources */,
 				640D7E8824B24FEE0096F554 /* SpecificMonth.swift in Sources */,
 				64FEF3F6249FDC9C00B77E59 /* DatePickerVC.swift in Sources */,
 				64FEF3FB24A2EB5200B77E59 /* UIColor+Extension.swift in Sources */,
