@@ -121,12 +121,26 @@ extension RecordVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //使用Navigator 跳轉至命盤結果
+        
+        guard let lastname = userRecord[indexPath.row].lastname else { return }
+        
+        guard let firstname = userRecord[indexPath.row].firstname else { return }
+        
+        guard let gender = userRecord[indexPath.row].gender else { return }
+        
+        guard let birthString = userRecord[indexPath.row].solarBirth else { return }
         
         let storyboard = UIStoryboard(name: "FortuneResult", bundle: nil)
+        
         guard let fortuneResultVC = storyboard.instantiateViewController(withIdentifier: "FortuneResultVC") as? FortuneResultVC else { return }
         
         tabBarController?.tabBar.isHidden = true
+        
+        fortuneResultVC.birthdayString = birthString
+        
+        fortuneResultVC.gender = gender
+        
+        fortuneResultVC.navTitle = "\(lastname) \(firstname) (\(gender))"
         
         navigationController?.pushViewController(fortuneResultVC, animated: true)
         
