@@ -112,7 +112,7 @@ extension RecordVC: UITableViewDelegate, UITableViewDataSource {
                 
         cell.genderlbl.text = "[\(gender)]"
         
-        cell.birthlbl.text = "陽曆  \(year)年  \(month)月  \(day)日  \(time)"
+        cell.birthlbl.text = "陽曆  \(year)年 \(month)月 \(day)日 \(time)"
         
         return cell
         

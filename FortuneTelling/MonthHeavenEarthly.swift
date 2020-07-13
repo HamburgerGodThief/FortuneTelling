@@ -86,7 +86,7 @@ class MonthHeavenEarthly {
                 
             case .orderedDescending:
                 
-                print("date 大於 compareTime")
+                continue
                 
             default:
                 

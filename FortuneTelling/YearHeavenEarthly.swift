@@ -229,19 +229,15 @@ class YearHeavenEarthly {
             switch compareResult {
                 
             case .orderedAscending:
-                
-                print("date 小於 compareTime")
-                
+                                
                 return yearHeavenEarthlyData[index-1]
                 
             case .orderedDescending:
                 
-                print("date 大於 compareTime")
+                continue
                 
             default:
-                
-                print("date 等於 compareTime")
-                
+                            
                 return yearHeavenEarthlyData[index]
                 
             }
