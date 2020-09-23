@@ -19,6 +19,8 @@
 		640D7E9324B304530096F554 /* FortuneTelling.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 640D7E9124B304530096F554 /* FortuneTelling.xcdatamodeld */; };
 		6446F99824A47BCC0053B01E /* LunarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6446F99724A47BCC0053B01E /* LunarDate.swift */; };
 		6446F99A24A773C50053B01E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6446F99924A773C50053B01E /* StorageManager.swift */; };
+		64529E1024BC195600E6E336 /* BirthComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64529E0F24BC195600E6E336 /* BirthComment.swift */; };
+		64529E1224BC22A300E6E336 /* WuXingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64529E1124BC22A300E6E336 /* WuXingModel.swift */; };
 		64B65DC724A7C6AD00397C07 /* YearHeavenEarthly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DC624A7C6AD00397C07 /* YearHeavenEarthly.swift */; };
 		64B65DC924A8B75E00397C07 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DC824A8B75E00397C07 /* String+Extension.swift */; };
 		64B65DCB24A8C28400397C07 /* MonthHeavenEarthly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DCA24A8C28400397C07 /* MonthHeavenEarthly.swift */; };
@@ -77,6 +79,8 @@
 		640D7E9224B304530096F554 /* FortuneTelling.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FortuneTelling.xcdatamodel; sourceTree = "<group>"; };
 		6446F99724A47BCC0053B01E /* LunarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarDate.swift; sourceTree = "<group>"; };
 		6446F99924A773C50053B01E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		64529E0F24BC195600E6E336 /* BirthComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthComment.swift; sourceTree = "<group>"; };
+		64529E1124BC22A300E6E336 /* WuXingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WuXingModel.swift; sourceTree = "<group>"; };
 		64B65DC624A7C6AD00397C07 /* YearHeavenEarthly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearHeavenEarthly.swift; sourceTree = "<group>"; };
 		64B65DC824A8B75E00397C07 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		64B65DCA24A8C28400397C07 /* MonthHeavenEarthly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeavenEarthly.swift; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 				640D7E8924B2561A0096F554 /* SpecificDay.swift */,
 				640D7E8D24B259910096F554 /* specificDayData.json */,
 				640D7E8F24B2D7520096F554 /* SpecificHour.swift */,
+				64529E0F24BC195600E6E336 /* BirthComment.swift */,
+				64529E1124BC22A300E6E336 /* WuXingModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 				64FEF3B3249CB49000B77E59 /* HBGTabBarViewController.swift in Sources */,
 				64FEF3DB249CD47D00B77E59 /* RecordVC.swift in Sources */,
 				64B65DD924AB174800397C07 /* HeavenEarthlyStruct.swift in Sources */,
+				64529E1024BC195600E6E336 /* BirthComment.swift in Sources */,
 				64FEF3FF24A33F7000B77E59 /* BirthdayModel.swift in Sources */,
 				64FEF3DE249CDA8000B77E59 /* RecordTableViewCell.swift in Sources */,
 				64FEF3D5249CD08800B77E59 /* UIImage+Extension.swift in Sources */,
@@ -471,6 +478,7 @@
 				64B65DCB24A8C28400397C07 /* MonthHeavenEarthly.swift in Sources */,
 				64FEF3D9249CD47300B77E59 /* FortuneResultVC.swift in Sources */,
 				64FEF3E1249CDC0E00B77E59 /* UITableView+Extension.swift in Sources */,
+				64529E1224BC22A300E6E336 /* WuXingModel.swift in Sources */,
 				64FEF3F2249FD0DF00B77E59 /* FortuneCommentTableViewCell.swift in Sources */,
 				64FEF3D7249CD46700B77E59 /* UserInputVC.swift in Sources */,
 				640D7E8224B1DE390096F554 /* BirthTimePickerVC.swift in Sources */,
@@ -554,7 +562,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -608,7 +616,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -634,7 +642,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamburger.BobFortuneTelling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -654,7 +662,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamburger.BobFortuneTelling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
