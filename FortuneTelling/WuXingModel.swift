@@ -5,7 +5,7 @@
 //  Created by Hamburger on 2020/7/13.
 //  Copyright © 2020 Hamburger. All rights reserved.
 //
-
+/*
 import Foundation
 import UIKit
 
@@ -486,4 +486,4 @@ enum Heaven: WuXingModel {
     }
     
 }
-
+*/
