@@ -539,16 +539,12 @@ class MatchComment {
                     
                 }
                 
-                for nonIndex in (0..<nonBirthEarthly.count).reversed() {
+                for nonIndex in (0..<nonBirthEarthly.count).reversed() where birthEarthly[index] == nonBirthEarthly[nonIndex] {
+                                
+                    tempAry.append(nonBirthEarthly[nonIndex])
                     
-                    if birthEarthly[index] == nonBirthEarthly[nonIndex] {
-                        
-                        tempAry.append(nonBirthEarthly[nonIndex])
-                        
-                        nonBirthEarthly.remove(at: nonIndex)
-                        
-                    }
-                    
+                    nonBirthEarthly.remove(at: nonIndex)
+                       
                 }
                 
                 totalAry.append(tempAry)
