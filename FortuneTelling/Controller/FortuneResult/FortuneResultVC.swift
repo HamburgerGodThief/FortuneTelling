@@ -79,6 +79,14 @@ class FortuneResultVC: UIViewController {
     var navTitle: String = ""
     
     var heavenEarthlyData: [HeavenEarthly] = []
+    
+    var heaven: [String] = []
+    
+    var earthly: [String] = []
+    
+    var heavenComment: [String] = ["", "", ""]
+    
+    var earthlyComment: [String] = ["", "", ""]
         
     var tenGodData: [String] = []
         
@@ -190,6 +198,22 @@ class FortuneResultVC: UIViewController {
         
         heavenEarthlyData.append(HeavenEarthly(string: birthYearHeavenEarthly.earthly))
         
+        heaven.append(birthHourHeaven)
+        
+        heaven.append(birthDayHeavenEarthly.heaven)
+        
+        heaven.append(birthMonthHeavenEarthly.heaven)
+        
+        heaven.append(birthYearHeavenEarthly.heaven)
+        
+        earthly.append(birthHourEarthly)
+        
+        earthly.append(birthDayHeavenEarthly.earthly)
+        
+        earthly.append(birthMonthHeavenEarthly.earthly)
+        
+        earthly.append(birthYearHeavenEarthly.earthly)
+        
         for _ in 0...9 {
             
             heavenEarthlyData.append(HeavenEarthly(string: ""))
@@ -289,6 +313,100 @@ class FortuneResultVC: UIViewController {
         
     }
     
+    func birthComment(heaven: [String], earthly: [String]) {
+        
+        let heavenMatchComment = MatchComment.shared.birthHeavenMatchStr(targetHeaven: heaven)
+        
+        let earthlyMatchComment = MatchComment.shared.birthEarthlyMatchStr(targetEarthly: earthly)
+        
+        let restHeavenAfterMatch = MatchComment.shared.restElementAfterBirthHeavenMatch(targetHeaven: heaven)
+        
+        let restEarthlyAfterMatch = MatchComment.shared.restElementAfterBirthEarthlyMatch(targetEarthly: earthly)
+        
+        let heavenBenefitComment = BenefitComment.shared.heavenCalculateStr(targetHeaven: restHeavenAfterMatch[0])
+        
+        let earthlyBenefitComment = BenefitComment.shared.earthlyCalculateStr(targetEarthly: restEarthlyAfterMatch[0])
+        
+        let restHeavenAfterBenefit = BenefitComment.shared.restHeavenAfterCalculate(targetHeaven: restHeavenAfterMatch[0])
+        
+        let restEarthlyAfterBenefit = BenefitComment.shared.restEarthlyAfterCalculate(targetEarthly: restEarthlyAfterMatch[0])
+        
+        let heavenDamageComment = DamageComment.shared.heavenCalculateStr(targetHeaven: restHeavenAfterBenefit)
+        
+        let earthlyDamageComment = DamageComment.shared.earthlyCalculateStr(targetEarthly: restEarthlyAfterBenefit)
+        
+        let restHeavenAfterDamage = DamageComment.shared.restHeavenAfterCalculate(targetHeaven: restHeavenAfterBenefit)
+        
+        let restEarthlyAfterDamage = DamageComment.shared.restEarthlyAfterCalculate(targetEarthly: restEarthlyAfterBenefit)
+                        
+        let heavenMatchStr = combineCommentStr(strAry: heavenMatchComment)
+        
+        let earthlyMatchStr = combineCommentStr(strAry: earthlyMatchComment)
+        
+        let heavenBenefitStr = combineCommentStr(strAry: heavenBenefitComment)
+        
+        let earthlyBenefitStr = combineCommentStr(strAry: earthlyBenefitComment)
+        
+        let heavenDamageStr = combineCommentStr(strAry: heavenDamageComment)
+        
+        let earthlyDamageStr = combineCommentStr(strAry: earthlyDamageComment)
+        
+        let remainingHeavenStr = combineCommentStr(strAry: restHeavenAfterDamage)
+        
+        let remainingEarthlyStr = combineCommentStr(strAry: restEarthlyAfterDamage)
+        
+        var tempAry: [String] = [heavenMatchStr, heavenBenefitStr, heavenDamageStr, remainingHeavenStr]
+        
+        var tempStr: String = ""
+        
+        for element in tempAry where element != "" {
+            
+            tempStr += element + ", "
+        
+        }
+        
+        tempStr = tempStr.trimmingCharacters(in: CharacterSet(charactersIn: ", "))
+        
+        heavenComment[0] = tempStr
+        
+        tempAry = [earthlyMatchStr, earthlyBenefitStr, earthlyDamageStr, remainingEarthlyStr]
+        
+        tempStr = ""
+        
+        for element in tempAry where element != "" {
+                            
+                tempStr += element + ", "
+            
+        }
+        
+        tempStr = tempStr.trimmingCharacters(in: CharacterSet(charactersIn: ", "))
+        
+        earthlyComment[0] = tempStr
+        
+    }
+    
+    func combineCommentStr(strAry: [String]) -> String {
+        
+        var result: String = ""
+        
+        for index in 0..<strAry.count {
+            
+            if index == strAry.count - 1 {
+                
+                result += strAry[index]
+                
+            } else {
+                
+                result += strAry[index] + ", "
+                
+            }
+            
+        }
+        
+        return result
+        
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -300,6 +418,8 @@ class FortuneResultVC: UIViewController {
         getBirthTenGod()
         
         nowSolarDataForTableViewSection0()
+        
+        birthComment(heaven: heaven, earthly: earthly)
         
         tableView.reloadData()
                         
@@ -557,24 +677,18 @@ extension FortuneResultVC: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FortuneCommentTableViewCell", for: indexPath) as? FortuneCommentTableViewCell else { return UITableViewCell() }
             
             let area: [String] = ["本命區塊", "動態區塊", "比較區塊"]
-            
-            let heavenly: String = "天干丁生己克癸"
-            
+                        
             let heavenlyComment: String = "比星一。食星一。官破一。"
-            
-            let earthly: String = "天干丁生己克癸"
-            
-            let earthlyComment: String = "比星一。食星一。官破一。"
-            
+                                    
             cell.areaLbl.text = area[indexPath.row]
             
-            cell.heavenlyLbl.text = heavenly
+            cell.heavenCommentLbl.text = heavenComment[indexPath.row]
             
-            cell.heavenlyComment.text = heavenlyComment
+            cell.heavenTenGodComment.text = heavenlyComment
             
-            cell.earthlyLbl.text = earthly
+            cell.earthlyCommentLbl.text = earthlyComment[indexPath.row]
             
-            cell.earthlyComment.text = earthlyComment
+            cell.earthlyTenGodComment.text = heavenlyComment
             
             return cell
         }

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,13 +28,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ps-sG-3Pe">
-                        <rect key="frame" x="80" y="90" width="45.5" height="25.5"/>
+                        <rect key="frame" x="76" y="90" width="45.5" height="25.5"/>
                         <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4c-e0-vBD">
-                        <rect key="frame" x="80" y="164" width="45.5" height="95"/>
+                        <rect key="frame" x="76" y="164" width="45.5" height="95"/>
                         <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -64,10 +63,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="areaLbl" destination="WXp-O5-dRj" id="Jag-f5-RJe"/>
-                <outlet property="earthlyComment" destination="Z4c-e0-vBD" id="i6k-9Y-pFC"/>
-                <outlet property="earthlyLbl" destination="7Ob-D2-esy" id="hdR-sC-L3A"/>
-                <outlet property="heavenlyComment" destination="7Ps-sG-3Pe" id="JMN-bu-1st"/>
-                <outlet property="heavenlyLbl" destination="5bb-jP-cxr" id="grq-bD-3oj"/>
+                <outlet property="earthlyCommentLbl" destination="7Ob-D2-esy" id="hdR-sC-L3A"/>
+                <outlet property="earthlyTenGodComment" destination="Z4c-e0-vBD" id="i6k-9Y-pFC"/>
+                <outlet property="heavenCommentLbl" destination="5bb-jP-cxr" id="grq-bD-3oj"/>
+                <outlet property="heavenTenGodComment" destination="7Ps-sG-3Pe" id="JMN-bu-1st"/>
             </connections>
             <point key="canvasLocation" x="32.608695652173914" y="230.02232142857142"/>
         </tableViewCell>

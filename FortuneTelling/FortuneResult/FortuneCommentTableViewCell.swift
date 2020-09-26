@@ -12,13 +12,13 @@ class FortuneCommentTableViewCell: UITableViewCell {
 
     @IBOutlet weak var areaLbl: UILabel!
     
-    @IBOutlet weak var heavenlyLbl: UILabel!
+    @IBOutlet weak var heavenCommentLbl: UILabel!
     
-    @IBOutlet weak var heavenlyComment: UILabel!
+    @IBOutlet weak var heavenTenGodComment: UILabel!
     
-    @IBOutlet weak var earthlyLbl: UILabel!
+    @IBOutlet weak var earthlyCommentLbl: UILabel!
     
-    @IBOutlet weak var earthlyComment: UILabel!
+    @IBOutlet weak var earthlyTenGodComment: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

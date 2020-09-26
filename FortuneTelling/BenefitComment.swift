@@ -92,7 +92,7 @@ enum EarthlyFiveElement: Hashable, CaseIterable {
             
         case .fireYang: return ["午"]
             
-        case .fireYin: return ["未"]
+        case .fireYin: return ["巳"]
             
         case .earthYang: return ["辰", "戌"]
             
@@ -136,7 +136,7 @@ class BenefitComment {
         
     }
     
-    func heavenFiveElementArrangement(targetHeaven: [String]) -> [HeavenFiveElement: [String]] {
+    private func heavenFiveElementArrangement(targetHeaven: [String]) -> [HeavenFiveElement: [String]] {
         
         let fiveElements = HeavenFiveElement.allCases
             
@@ -156,7 +156,7 @@ class BenefitComment {
         
     }
     
-    func earthlyFiveElementArrangement(targetEarthly: [String]) -> [EarthlyFiveElement: [String]] {
+    private func earthlyFiveElementArrangement(targetEarthly: [String]) -> [EarthlyFiveElement: [String]] {
         
         let fiveElements = EarthlyFiveElement.allCases
             
@@ -176,9 +176,11 @@ class BenefitComment {
         
     }
     
-    func heavenYinYangCalculate(fiveElement: [HeavenFiveElement: [String]]) -> [String] {
+    private func heavenYinYangCalculate(targetHeaven: [String]) -> [String] {
         
         var yinYangResult: [String] = []
+        
+        let fiveElement = heavenFiveElementArrangement(targetHeaven: targetHeaven)
         
         let fiveElements = HeavenFiveElement.allCases
         
@@ -214,9 +216,11 @@ class BenefitComment {
         
     }
     
-    func earthlyYinYangCalculate(fiveElement: [EarthlyFiveElement: [String]]) -> [String] {
+    private func earthlyYinYangCalculate(targetEarthly: [String]) -> [String] {
         
         var yinYangResult: [String] = []
+        
+        let fiveElement = earthlyFiveElementArrangement(targetEarthly: targetEarthly)
         
         let fiveElements = EarthlyFiveElement.allCases
         
@@ -252,9 +256,13 @@ class BenefitComment {
         
     }
     
-    func heavenCalculateStr(yinYangResult: [String], fiveElement: [HeavenFiveElement: [String]]) -> [String] {
+    func heavenCalculateStr(targetHeaven: [String]) -> [String] {
         
         var result: [String] = []
+        
+        let fiveElement = heavenFiveElementArrangement(targetHeaven: targetHeaven)
+        
+        let yinYangResult = heavenYinYangCalculate(targetHeaven: targetHeaven)
         
         let fiveElements = HeavenFiveElement.allCases
         
@@ -336,9 +344,13 @@ class BenefitComment {
         
     }
     
-    func earthlyCalculateStr(yinYangResult: [String], fiveElement: [EarthlyFiveElement: [String]]) -> [String] {
+    func earthlyCalculateStr(targetEarthly: [String]) -> [String] {
         
         var result: [String] = []
+        
+        let fiveElement = earthlyFiveElementArrangement(targetEarthly: targetEarthly)
+        
+        let yinYangResult = earthlyYinYangCalculate(targetEarthly: targetEarthly)
         
         let fiveElements = EarthlyFiveElement.allCases
         
@@ -420,9 +432,13 @@ class BenefitComment {
         
     }
     
-    func restHeavenAfterCalculate(yinYangResult: [String], fiveElement: [HeavenFiveElement: [String]]) -> [String] {
+    func restHeavenAfterCalculate(targetHeaven: [String]) -> [String] {
         
         var result: [String] = []
+        
+        let fiveElement = heavenFiveElementArrangement(targetHeaven: targetHeaven)
+        
+        let yinYangResult = heavenYinYangCalculate(targetHeaven: targetHeaven)
         
         let fiveElements = HeavenFiveElement.allCases
         
@@ -464,9 +480,13 @@ class BenefitComment {
         
     }
     
-    func restEarthlyAfterCalculate(yinYangResult: [String], fiveElement: [EarthlyFiveElement: [String]]) -> [String] {
+    func restEarthlyAfterCalculate(targetEarthly: [String]) -> [String] {
         
         var result: [String] = []
+        
+        let fiveElement = earthlyFiveElementArrangement(targetEarthly: targetEarthly)
+        
+        let yinYangResult = earthlyYinYangCalculate(targetEarthly: targetEarthly)
         
         let fiveElements = EarthlyFiveElement.allCases
         

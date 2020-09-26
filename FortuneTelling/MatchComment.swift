@@ -210,7 +210,7 @@ class MatchComment {
         
     }
 
-    func matchBirthHeavenStr(targetHeaven: [String]) -> [String] {
+    func birthHeavenMatchStr(targetHeaven: [String]) -> [String] {
         
         var result: [String] = []
         
@@ -253,7 +253,7 @@ class MatchComment {
         
     }
     
-    func matchBirthEarthlyStr(targetEarthly: [String]) -> [String] {
+    func birthEarthlyMatchStr(targetEarthly: [String]) -> [String] {
         
         var result: [String] = []
         
@@ -309,7 +309,7 @@ class MatchComment {
         
     }
 
-    func restElementAfterMatchBirthHeaven(targetHeaven: [String]) -> [[String]] {
+    func restElementAfterBirthHeavenMatch(targetHeaven: [String]) -> [[String]] {
         
         var heaven = splitIntoTwoAry(target: targetHeaven)
             
@@ -350,7 +350,7 @@ class MatchComment {
         
     }
     
-    func restElementAfterMatchBirthEarthly(targetEarthly: [String]) -> [[String]] {
+    func restElementAfterBirthEarthlyMatch(targetEarthly: [String]) -> [[String]] {
         
         var earthly = splitIntoTwoAry(target: targetEarthly)
             
