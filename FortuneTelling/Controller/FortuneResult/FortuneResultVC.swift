@@ -825,6 +825,22 @@ extension FortuneResultVC: DatePickerVCDelegate {
         
         earthly[4] = startBigTen.earthly
         
+        self.heaven[5] = ""
+        
+        self.heaven[6] = ""
+        
+        self.heaven[7] = ""
+        
+        self.heaven[8] = ""
+        
+        self.earthly[5] = ""
+        
+        self.earthly[6] = ""
+        
+        self.earthly[7] = ""
+        
+        self.earthly[8] = ""
+        
         specificTimingComment()
         
         tableView.reloadData()
@@ -871,6 +887,18 @@ extension FortuneResultVC: DatePickerVCDelegate {
         
         self.earthly[5] = earthly
         
+        self.heaven[6] = ""
+        
+        self.heaven[7] = ""
+        
+        self.heaven[8] = ""
+        
+        self.earthly[6] = ""
+        
+        self.earthly[7] = ""
+        
+        self.earthly[8] = ""
+        
         specificTimingComment()
         
         heavenEarthlyData[10] = HeavenEarthly(string: heaven)
@@ -910,6 +938,20 @@ extension FortuneResultVC: DatePickerVCDelegate {
         
         heavenEarthlyData[13] = HeavenEarthly(string: earthly)
         
+        self.heaven[6] = heaven
+        
+        self.earthly[6] = earthly
+        
+        self.heaven[7] = ""
+        
+        self.heaven[8] = ""
+                
+        self.earthly[7] = ""
+        
+        self.earthly[8] = ""
+        
+        specificTimingComment()
+        
         tenGodData[12] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[12].string)
         
         tenGodData[13] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[13].string)
@@ -921,6 +963,8 @@ extension FortuneResultVC: DatePickerVCDelegate {
             tenGodData[index] = ""
             
         }
+        
+        tableView.reloadData()
         
         heavenEarthlyCollectionView.reloadData()
         
@@ -942,6 +986,16 @@ extension FortuneResultVC: DatePickerVCDelegate {
         
         heavenEarthlyData[15] = HeavenEarthly(string: earthly)
         
+        self.heaven[7] = heaven
+        
+        self.earthly[7] = earthly
+                
+        self.heaven[8] = ""
+        
+        self.earthly[8] = ""
+        
+        specificTimingComment()
+        
         tenGodData[14] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[14].string)
         
         tenGodData[15] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[15].string)
@@ -953,6 +1007,8 @@ extension FortuneResultVC: DatePickerVCDelegate {
             tenGodData[index] = ""
             
         }
+        
+        tableView.reloadData()
         
         heavenEarthlyCollectionView.reloadData()
         
@@ -972,9 +1028,17 @@ extension FortuneResultVC: DatePickerVCDelegate {
         
         heavenEarthlyData[17] = HeavenEarthly(string: earthly)
         
+        self.heaven[8] = heaven
+        
+        self.earthly[8] = earthly
+        
+        specificTimingComment()
+        
         tenGodData[16] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[16].string)
         
         tenGodData[17] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[17].string)
+        
+        tableView.reloadData()
         
         heavenEarthlyCollectionView.reloadData()
         

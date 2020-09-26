@@ -494,7 +494,6 @@ class MatchComment {
                 
                 for nonIndex in (0..<nonBirthHeaven.count).reversed() {
                     
-                    print(nonIndex)
                     if birthHeaven[index] == nonBirthHeaven[nonIndex] {
                         
                         tempAry.append(nonBirthHeaven[nonIndex])
@@ -516,6 +515,12 @@ class MatchComment {
         }
         
         for nonIndex in 0..<nonBirthHeaven.count {
+            
+            if nonIndex == nonBirthHeaven.count {
+                
+                break
+                
+            }
             
             var tempAry: [String] = []
             
@@ -616,6 +621,12 @@ class MatchComment {
         }
         
         for nonIndex in 0..<nonBirthEarthly.count {
+            
+            if nonIndex == nonBirthEarthly.count {
+                
+                break
+                
+            }
             
             var tempAry: [String] = []
             
@@ -765,7 +776,7 @@ class MatchComment {
         
         let restEarthlyAfterBirthMatch = restElementAfterBirthEarthlyMatch(targetEarthly: targetEarthly)
         
-        let organisedEarthly = restHeavenArrangement(targetHeaven: restEarthlyAfterBirthMatch)
+        let organisedEarthly = restEarthlyArrangement(targetEarthly: restEarthlyAfterBirthMatch)
         
         for element in organisedEarthly {
             
@@ -777,7 +788,7 @@ class MatchComment {
         
         for index in 0..<targetEarthlyInt.count {
             
-            for indexY in (index..<targetEarthlyInt.count).reversed() where targetEarthlyInt[index][0] + targetEarthlyInt[indexY][0] == 9 {
+            for indexY in (index..<targetEarthlyInt.count).reversed() where targetEarthlyInt[index][0] + targetEarthlyInt[indexY][0] == 11 {
                                     
                 pairIndex.append(index)
                 
