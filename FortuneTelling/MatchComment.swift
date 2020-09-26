@@ -152,6 +152,50 @@ class MatchComment {
         
     }
     
+    private func arabicToChineseNumber(number: Int) -> String {
+        
+        var result: String = ""
+        
+        switch number {
+        
+        case 2:
+            
+            result = "二"
+        
+        case 3:
+            
+            result = "三"
+        
+        case 4:
+            
+            result = "四"
+        
+        case 5:
+            
+            result = "五"
+        
+        case 6:
+            
+            result = "六"
+        
+        case 7:
+            
+            result = "七"
+        
+        case 8:
+            
+            result = "八"
+        
+        default:
+            
+            result = ""
+            
+        }
+        
+        return result
+        
+    }
+    
     private func amountCalculate(ary: [String]) -> String {
         
         if ary.count == 0 {
@@ -164,7 +208,9 @@ class MatchComment {
             
         } else {
             
-            return "\(ary.count)\(ary[0])"
+            let count = arabicToChineseNumber(number: ary.count)
+            
+            return "\(count)\(ary[0])"
             
         }
         
@@ -398,7 +444,7 @@ class MatchComment {
         
     }
     
-    func restHeavenArrangement(targetHeaven: [[String]]) -> [[String]] {
+    private func restHeavenArrangement(targetHeaven: [[String]]) -> [[String]] {
         
         var birthHeaven = targetHeaven[0]
         
@@ -406,10 +452,16 @@ class MatchComment {
         //如果非本命有這個元素，那該元素不論在本命或非本命都可視為一體，計算個數即可
         //如果非本命沒有這個元素，該元素只存在於本命，那要將其視為不同個體
         
+        for index in (0..<nonBirthHeaven.count).reversed() where nonBirthHeaven[index] == "" {
+            
+            nonBirthHeaven.remove(at: index)
+            
+        }
+        
         var totalAry: [[String]] = []
         
         for index in 0..<birthHeaven.count {
-            print("Index:\(index)")
+            
             if index == birthHeaven.count {
                 
                 break
@@ -454,9 +506,7 @@ class MatchComment {
                 }
                 
                 totalAry.append(tempAry)
-                
-                print(totalAry)
-                
+                                
             } else {
                 
                 totalAry.append([birthHeaven[index]])
@@ -497,13 +547,19 @@ class MatchComment {
         
     }
     
-    func restEarthlyArrangement(targetEarthly: [[String]]) -> [[String]] {
+    private func restEarthlyArrangement(targetEarthly: [[String]]) -> [[String]] {
         
         var birthEarthly = targetEarthly[0]
         
         var nonBirthEarthly = targetEarthly[1]
         //如果非本命有這個元素，那該元素不論在本命或非本命都可視為一體，計算個數即可
         //如果非本命沒有這個元素，該元素只存在於本命，那要將其視為不同個體
+        
+        for index in (0..<nonBirthEarthly.count).reversed() where nonBirthEarthly[index] == "" {
+            
+            nonBirthEarthly.remove(at: index)
+            
+        }
         
         var totalAry: [[String]] = []
         
@@ -591,11 +647,15 @@ class MatchComment {
         
     }
     
-    func heavenMatchCalculateStr(organisedHeaven: [[String]]) -> [String] {
+    func heavenMatchCalculateStr(targetHeaven: [String]) -> [String] {
         
         var result: [String] = []
         
         var targetHeavenInt: [[Int]] = []
+        
+        let restHeavenAfterBirthMatch = restElementAfterBirthHeavenMatch(targetHeaven: targetHeaven)
+        
+        let organisedHeaven = restHeavenArrangement(targetHeaven: restHeavenAfterBirthMatch)
         
         for element in organisedHeaven {
             
@@ -621,11 +681,15 @@ class MatchComment {
         
     }
     
-    func earthlyMatchCalculateStr(organisedEarthly: [[String]]) -> [String] {
+    func earthlyMatchCalculateStr(targetEarthly: [String]) -> [String] {
         
         var result: [String] = []
         
         var targetEarthlyInt: [[Int]] = []
+        
+        let restEarthlyAfterBirthMatch = restElementAfterBirthEarthlyMatch(targetEarthly: targetEarthly)
+        
+        let organisedEarthly = restHeavenArrangement(targetHeaven: restEarthlyAfterBirthMatch)
         
         for element in organisedEarthly {
             
@@ -651,9 +715,13 @@ class MatchComment {
         
     }
     
-    func restHeavenAfterMatchCalculate(organisedHeaven: [[String]]) -> [String] {
+    func restHeavenAfterMatchCalculate(targetHeaven: [String]) -> [String] {
             
         var targetHeavenInt: [[Int]] = []
+        
+        let restHeavenAfterBirthMatch = restElementAfterBirthHeavenMatch(targetHeaven: targetHeaven)
+        
+        let organisedHeaven = restHeavenArrangement(targetHeaven: restHeavenAfterBirthMatch)
         
         for element in organisedHeaven {
             
@@ -691,9 +759,13 @@ class MatchComment {
         
     }
     
-    func restEarthlyAfterMatchCalculate(organisedEarthly: [[String]]) -> [String] {
+    func restEarthlyAfterMatchCalculate(targetEarthly: [String]) -> [String] {
             
         var targetEarthlyInt: [[Int]] = []
+        
+        let restEarthlyAfterBirthMatch = restElementAfterBirthEarthlyMatch(targetEarthly: targetEarthly)
+        
+        let organisedEarthly = restHeavenArrangement(targetHeaven: restEarthlyAfterBirthMatch)
         
         for element in organisedEarthly {
             

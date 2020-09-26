@@ -383,6 +383,94 @@ class FortuneResultVC: UIViewController {
         
         earthlyComment[0] = tempStr
         
+        for _ in 0...4 {
+            
+            self.heaven.append("")
+            
+            self.earthly.append("")
+            
+        }
+        
+    }
+    
+    func specificTimingComment() {
+        
+        let heavenBirthMatchComment = MatchComment.shared.birthHeavenMatchStr(targetHeaven: heaven)
+        
+        let earthlyBirthMatchComment = MatchComment.shared.birthEarthlyMatchStr(targetEarthly: earthly)
+        
+        let heavenMatchComment = MatchComment.shared.heavenMatchCalculateStr(targetHeaven: heaven)
+        
+        let earthlyMatchComment = MatchComment.shared.earthlyMatchCalculateStr(targetEarthly: earthly)
+        
+        let restHeavenAfterMatch = MatchComment.shared.restHeavenAfterMatchCalculate(targetHeaven: heaven)
+        
+        let restEarthlyAfterMatch = MatchComment.shared.restEarthlyAfterMatchCalculate(targetEarthly: earthly)
+        
+        let heavenBenefitComment = BenefitComment.shared.heavenCalculateStr(targetHeaven: restHeavenAfterMatch)
+        
+        let earthlyBenefitComment = BenefitComment.shared.earthlyCalculateStr(targetEarthly: restEarthlyAfterMatch)
+        
+        let restHeavenAfterBenefit = BenefitComment.shared.restHeavenAfterCalculate(targetHeaven: restHeavenAfterMatch)
+        
+        let restEarthlyAfterBenefit = BenefitComment.shared.restEarthlyAfterCalculate(targetEarthly: restEarthlyAfterMatch)
+        
+        let heavenDamageComment = DamageComment.shared.heavenCalculateStr(targetHeaven: restHeavenAfterBenefit)
+        
+        let earthlyDamageComment = DamageComment.shared.earthlyCalculateStr(targetEarthly: restEarthlyAfterBenefit)
+        
+        let restHeavenAfterDamage = DamageComment.shared.restHeavenAfterCalculate(targetHeaven: restHeavenAfterBenefit)
+        
+        let restEarthlyAfterDamage = DamageComment.shared.restEarthlyAfterCalculate(targetEarthly: restEarthlyAfterBenefit)
+        
+        let heavenBirthMatchStr = combineCommentStr(strAry: heavenBirthMatchComment)
+        
+        let earthlyBirthMatchStr = combineCommentStr(strAry: earthlyBirthMatchComment)
+                        
+        let heavenMatchStr = combineCommentStr(strAry: heavenMatchComment)
+        
+        let earthlyMatchStr = combineCommentStr(strAry: earthlyMatchComment)
+        
+        let heavenBenefitStr = combineCommentStr(strAry: heavenBenefitComment)
+        
+        let earthlyBenefitStr = combineCommentStr(strAry: earthlyBenefitComment)
+        
+        let heavenDamageStr = combineCommentStr(strAry: heavenDamageComment)
+        
+        let earthlyDamageStr = combineCommentStr(strAry: earthlyDamageComment)
+        
+        let remainingHeavenStr = combineCommentStr(strAry: restHeavenAfterDamage)
+        
+        let remainingEarthlyStr = combineCommentStr(strAry: restEarthlyAfterDamage)
+        
+        var tempAry: [String] = [heavenBirthMatchStr, heavenMatchStr, heavenBenefitStr, heavenDamageStr, remainingHeavenStr]
+        
+        var tempStr: String = ""
+        
+        for element in tempAry where element != "" {
+            
+            tempStr += element + ", "
+        
+        }
+        
+        tempStr = tempStr.trimmingCharacters(in: CharacterSet(charactersIn: ", "))
+        
+        heavenComment[1] = tempStr
+        
+        tempAry = [earthlyBirthMatchStr, earthlyMatchStr, earthlyBenefitStr, earthlyDamageStr, remainingEarthlyStr]
+        
+        tempStr = ""
+        
+        for element in tempAry where element != "" {
+                            
+                tempStr += element + ", "
+            
+        }
+        
+        tempStr = tempStr.trimmingCharacters(in: CharacterSet(charactersIn: ", "))
+        
+        earthlyComment[1] = tempStr
+        
     }
     
     func combineCommentStr(strAry: [String]) -> String {
@@ -733,6 +821,12 @@ extension FortuneResultVC: DatePickerVCDelegate {
             
         }
         
+        heaven[4] = startBigTen.heaven
+        
+        earthly[4] = startBigTen.earthly
+        
+        specificTimingComment()
+        
         tableView.reloadData()
         
         heavenEarthlyData[8] = HeavenEarthly(string: startBigTen.heaven)
@@ -773,6 +867,12 @@ extension FortuneResultVC: DatePickerVCDelegate {
         
         let earthly = SpecificYear.shared.getSpecificYearEarthly(birthDate: birthDate, age: selectedAge)
         
+        self.heaven[5] = heaven
+        
+        self.earthly[5] = earthly
+        
+        specificTimingComment()
+        
         heavenEarthlyData[10] = HeavenEarthly(string: heaven)
         
         heavenEarthlyData[11] = HeavenEarthly(string: earthly)
@@ -788,6 +888,8 @@ extension FortuneResultVC: DatePickerVCDelegate {
             tenGodData[index] = ""
             
         }
+        
+        tableView.reloadData()
         
         heavenEarthlyCollectionView.reloadData()
         

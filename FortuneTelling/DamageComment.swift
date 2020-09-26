@@ -14,6 +14,50 @@ class DamageComment {
     
     private init() {}
     
+    private func arabicToChineseNumber(number: Int) -> String {
+        
+        var result: String = ""
+        
+        switch number {
+        
+        case 2:
+            
+            result = "二"
+        
+        case 3:
+            
+            result = "三"
+        
+        case 4:
+            
+            result = "四"
+        
+        case 5:
+            
+            result = "五"
+        
+        case 6:
+            
+            result = "六"
+        
+        case 7:
+            
+            result = "七"
+        
+        case 8:
+            
+            result = "八"
+        
+        default:
+            
+            result = ""
+            
+        }
+        
+        return result
+        
+    }
+    
     private func amountCalculate(ary: [String]) -> String {
         
         if ary.count == 0 {
@@ -26,7 +70,9 @@ class DamageComment {
             
         } else {
             
-            return "\(ary.count)\(ary[0])"
+            let count = arabicToChineseNumber(number: ary.count)
+            
+            return "\(count)\(ary[0])"
             
         }
         
