@@ -231,7 +231,7 @@ class FortuneResultVC: UIViewController {
             
             if index == 2 {
                 
-                tenGodLabel[2] = "日主"
+                tenGodLabel[2] = "日\n主"
                 
                 continue
                 
@@ -569,7 +569,7 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
                 
                 if indexPath.item == 2 {
                     
-                    item.lbl.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+                    item.lbl.font = UIFont.systemFont(ofSize: 18, weight: .regular)
                     
                 }
                 
@@ -766,7 +766,7 @@ extension FortuneResultVC: UITableViewDelegate, UITableViewDataSource {
             
             let area: [String] = ["本命區塊", "動態區塊", "比較區塊"]
                         
-            let heavenlyComment: String = "比星一。食星一。官破一。"
+            let heavenlyComment: String = ""//"比星一。食星一。官破一。"
                                     
             cell.areaLbl.text = area[indexPath.row]
             
