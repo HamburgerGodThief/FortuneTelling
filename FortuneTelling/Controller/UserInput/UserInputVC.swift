@@ -10,7 +10,15 @@ import UIKit
 
 class UserInputVC: UIViewController {
     
-    @IBOutlet weak var logoImg: UIImageView!
+    @IBOutlet weak var logoImg: UIImageView! {
+        
+        didSet {
+            
+            logoImg.image = UIImage.asset(.Logo_36px_UserInput)
+            
+        }
+        
+    }
     
     @IBOutlet weak var lastNameTextField: UITextField!
         
@@ -164,6 +172,12 @@ class UserInputVC: UIViewController {
             
             StorageManager.shared.create(name: name, gender: gender, solarBirth: fortuneResultVC.birthdayString)
             
+            UserManager.shared.userName = name
+            
+            UserManager.shared.gender = gender
+            
+            UserManager.shared.birthString = "\(strongSelf.userBirthDate) \(strongSelf.userBirthTime)"
+            
             strongSelf.navigationController?.pushViewController(fortuneResultVC, animated: true)
             
         })
@@ -209,6 +223,18 @@ class UserInputVC: UIViewController {
         birthTimePickerVC.delegate = self
         
         present(birthTimePickerVC, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func testBtn(_ sender: Any) {
+        
+        let storyboard = UIStoryboard.init(name: "FortuneResult", bundle: nil)
+        
+        guard let resultVC = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController else { return }
+        
+        navigationController?.pushViewController(resultVC, animated: true)
+                
+//        present(resultVC, animated: true, completion: nil)
         
     }
     

@@ -34,6 +34,9 @@
 		64B65DDF24AC74C000397C07 /* TenGod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DDE24AC74C000397C07 /* TenGod.swift */; };
 		64C5FFA2251DA1530080C700 /* BenefitComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C5FFA1251DA1530080C700 /* BenefitComment.swift */; };
 		64C5FFA6251DA1D30080C700 /* DamageComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C5FFA5251DA1D30080C700 /* DamageComment.swift */; };
+		64C5FFD9252027890080C700 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C5FFD8252027890080C700 /* TitleViewController.swift */; };
+		64C5FFDC252029B50080C700 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C5FFDB252029B50080C700 /* ResultViewController.swift */; };
+		64C5FFDF25204BD10080C700 /* HeavenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C5FFDE25204BD10080C700 /* HeavenVC.swift */; };
 		64FEF3AF249CB49000B77E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3AE249CB49000B77E59 /* AppDelegate.swift */; };
 		64FEF3B3249CB49000B77E59 /* HBGTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FEF3B2249CB49000B77E59 /* HBGTabBarViewController.swift */; };
 		64FEF3B6249CB49000B77E59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64FEF3B4249CB49000B77E59 /* Main.storyboard */; };
@@ -95,6 +98,9 @@
 		64B65DDE24AC74C000397C07 /* TenGod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenGod.swift; sourceTree = "<group>"; };
 		64C5FFA1251DA1530080C700 /* BenefitComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenefitComment.swift; sourceTree = "<group>"; };
 		64C5FFA5251DA1D30080C700 /* DamageComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageComment.swift; sourceTree = "<group>"; };
+		64C5FFD8252027890080C700 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		64C5FFDB252029B50080C700 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		64C5FFDE25204BD10080C700 /* HeavenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeavenVC.swift; sourceTree = "<group>"; };
 		64FEF3AB249CB49000B77E59 /* FortuneTelling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FortuneTelling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FEF3AE249CB49000B77E59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64FEF3B2249CB49000B77E59 /* HBGTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBGTabBarViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +153,9 @@
 			children = (
 				64FEF3D8249CD47300B77E59 /* FortuneResultVC.swift */,
 				64FEF3F5249FDC9C00B77E59 /* DatePickerVC.swift */,
+				64C5FFDB252029B50080C700 /* ResultViewController.swift */,
+				64C5FFD8252027890080C700 /* TitleViewController.swift */,
+				64C5FFDE25204BD10080C700 /* HeavenVC.swift */,
 			);
 			path = FortuneResult;
 			sourceTree = "<group>";
@@ -175,7 +184,6 @@
 				64FEF3D1249CCF4300B77E59 /* Extension */,
 				64FEF3CA249CCCBD00B77E59 /* Controller */,
 				64FEF3C9249CCCAA00B77E59 /* View */,
-				64FEF3C7249CCC9C00B77E59 /* ViewModel */,
 				64FEF3C6249CCC9400B77E59 /* Model */,
 				64FEF3AE249CB49000B77E59 /* AppDelegate.swift */,
 				64FEF3BA249CB49100B77E59 /* Assets.xcassets */,
@@ -214,13 +222,6 @@
 				64C5FFA5251DA1D30080C700 /* DamageComment.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		64FEF3C7249CCC9C00B77E59 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		64FEF3C9249CCCAA00B77E59 /* View */ = {
@@ -451,6 +452,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6446F99824A47BCC0053B01E /* LunarDate.swift in Sources */,
+				64C5FFDF25204BD10080C700 /* HeavenVC.swift in Sources */,
+				64C5FFDC252029B50080C700 /* ResultViewController.swift in Sources */,
 				64B65DDB24AB233300397C07 /* BigTenYears.swift in Sources */,
 				64FEF3E7249F626400B77E59 /* UICollectionView+Extension.swift in Sources */,
 				64FEF3EA249F644300B77E59 /* ResultTitleCollectionViewCell.swift in Sources */,
@@ -467,6 +470,7 @@
 				64FEF3D5249CD08800B77E59 /* UIImage+Extension.swift in Sources */,
 				64B65DD624AA4A4D00397C07 /* ResultCollectionViewCell.swift in Sources */,
 				64FEF3EF249F7CA200B77E59 /* FortuneResulteTableHeaderView.swift in Sources */,
+				64C5FFD9252027890080C700 /* TitleViewController.swift in Sources */,
 				64B65DD324A9E7FD00397C07 /* HourHeavenEarthly.swift in Sources */,
 				640D7E8624B243240096F554 /* UserManager.swift in Sources */,
 				64C5FFA2251DA1530080C700 /* BenefitComment.swift in Sources */,

@@ -28,6 +28,16 @@ class RecordVC: UIViewController {
         
     }
     
+    @IBOutlet weak var isDataLbl: UILabel! {
+        
+        didSet {
+            
+            isDataLbl.text = "無任何歷史紀錄"
+            
+        }
+        
+    }
+    
     var userRecord: [UserRecord] = []
     
     func navConfigure() {
@@ -62,6 +72,24 @@ class RecordVC: UIViewController {
         
     }
     
+    func isData() {
+        
+        if userRecord.count == 0 {
+            
+            tableView.isHidden = true
+            
+            isDataLbl.isHidden = false
+            
+        } else {
+            
+            tableView.isHidden = false
+            
+            isDataLbl.isHidden = true
+            
+        }
+        
+    }
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -77,6 +105,8 @@ class RecordVC: UIViewController {
         tabBarController?.tabBar.isHidden = false
         
         fetchRecord()
+        
+        isData()
         
     }
     
@@ -138,6 +168,12 @@ extension RecordVC: UITableViewDelegate, UITableViewDataSource {
         
         fortuneResultVC.navTitle = "\(name) (\(gender))"
         
+        UserManager.shared.userName = name
+        
+        UserManager.shared.gender = gender
+        
+        UserManager.shared.birthString = birthString
+        
         navigationController?.pushViewController(fortuneResultVC, animated: true)
         
     }
@@ -150,7 +186,10 @@ extension RecordVC: UITableViewDelegate, UITableViewDataSource {
         
         StorageManager.shared.remove(indexPathRow: selectedRow)
         
-        tableView.reloadData() // 更新tableView
+        tableView.reloadData()
+        
+        isData()
+        
     }
     
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
