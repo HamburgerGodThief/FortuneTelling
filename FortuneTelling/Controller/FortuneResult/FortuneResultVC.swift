@@ -545,6 +545,10 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
                 
                 item.iconBtn.isHidden = true
                 
+            } else {
+                
+                item.backgroundColor = UIColor.systemYellow
+                
             }
             
             return item
@@ -569,7 +573,7 @@ extension FortuneResultVC: UICollectionViewDataSource, UICollectionViewDelegateF
                 
                 if indexPath.item == 2 {
                     
-                    item.lbl.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+                    item.lbl.font = UIFont.systemFont(ofSize: 17, weight: .regular)
                     
                 }
                 
@@ -729,7 +733,7 @@ extension FortuneResultVC: UITableViewDelegate, UITableViewDataSource {
             
         } else {
         
-            return 3
+            return 2
             
         }
     }
@@ -764,9 +768,9 @@ extension FortuneResultVC: UITableViewDelegate, UITableViewDataSource {
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FortuneCommentTableViewCell", for: indexPath) as? FortuneCommentTableViewCell else { return UITableViewCell() }
             
-            let area: [String] = ["本命區塊", "動態區塊", "比較區塊"]
+            let area: [String] = ["本命區塊", "動態區塊"]
                         
-            let heavenlyComment: String = ""//"比星一。食星一。官破一。"
+            let heavenlyComment: String = ""
                                     
             cell.areaLbl.text = area[indexPath.row]
             
