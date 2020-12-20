@@ -30,6 +30,8 @@ class UserInputVC: UIViewController {
     
     @IBOutlet weak var calculateBtn: UIButton!
     
+    @IBOutlet weak var testBtn: UIButton!
+    
     var userBirthDate: String = ""
     
     var userBirthTime: String = ""
@@ -245,6 +247,8 @@ class UserInputVC: UIViewController {
         layoutSetting()
         
         navConfigure()
+        
+        testBtn.isHidden = true
         
     }
     

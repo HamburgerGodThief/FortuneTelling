@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rgh-Ii-Vhs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rgh-Ii-Vhs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -82,7 +82,7 @@
                                     <action selector="didTouchCalculateBtn:" destination="ZxJ-Ee-jej" eventType="touchUpInside" id="Rkz-fh-5i2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWo-cI-goP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWo-cI-goP">
                                 <rect key="frame" x="184" y="711" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -110,6 +110,7 @@
                             <constraint firstItem="Qgd-kg-w67" firstAttribute="height" secondItem="qBo-et-O7N" secondAttribute="height" id="WH4-Z5-t05"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="centerY" secondItem="R4G-fU-cBo" secondAttribute="centerY" id="Wxo-lL-gUF"/>
                             <constraint firstItem="8Ii-d4-Nwy" firstAttribute="centerY" secondItem="qBo-et-O7N" secondAttribute="centerY" id="c13-W9-Mtu"/>
+                            <constraint firstItem="YWo-cI-goP" firstAttribute="centerX" secondItem="Cf0-2I-Wyn" secondAttribute="centerX" id="dxe-aw-Eq9"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="height" secondItem="qBo-et-O7N" secondAttribute="height" id="ec0-1R-kJx"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="top" secondItem="Wao-Uo-IXK" secondAttribute="bottom" constant="24" id="fIs-rg-1mb"/>
                             <constraint firstItem="qBo-et-O7N" firstAttribute="top" secondItem="mRi-Dq-wsP" secondAttribute="bottom" constant="24" id="fLN-vt-z4L"/>
@@ -132,6 +133,7 @@
                         <outlet property="genderSegControl" destination="Wao-Uo-IXK" id="k4s-cg-4DO"/>
                         <outlet property="lastNameTextField" destination="qBo-et-O7N" id="rjO-J8-a9l"/>
                         <outlet property="logoImg" destination="mRi-Dq-wsP" id="mfw-P6-fhi"/>
+                        <outlet property="testBtn" destination="YWo-cI-goP" id="buW-yx-CZ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4E-gs-QfB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

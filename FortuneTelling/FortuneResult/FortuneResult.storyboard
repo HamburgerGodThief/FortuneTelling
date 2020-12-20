@@ -109,23 +109,48 @@
                                 <rect key="frame" x="0.0" y="544" width="414" height="352"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1P-Nz-fh0">
+                                <rect key="frame" x="0.0" y="486" width="414" height="58"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmR-xR-vBt">
+                                        <rect key="frame" x="353" y="12" width="37" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="確定">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTouchOkBtn:" destination="c0z-kw-V1e" eventType="touchUpInside" id="JYi-Wf-8d2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bmR-xR-vBt" secondAttribute="trailing" constant="24" id="FP6-DP-hlu"/>
+                                    <constraint firstItem="bmR-xR-vBt" firstAttribute="centerY" secondItem="d1P-Nz-fh0" secondAttribute="centerY" id="XaY-AD-geg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Sob-am-CsF"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="iaa-dh-KZR" firstAttribute="top" secondItem="Sob-am-CsF" secondAttribute="top" constant="500" id="5hh-K5-hqx"/>
+                            <constraint firstItem="d1P-Nz-fh0" firstAttribute="bottom" secondItem="iaa-dh-KZR" secondAttribute="top" id="LWH-UY-Cg8"/>
+                            <constraint firstItem="d1P-Nz-fh0" firstAttribute="leading" secondItem="Sob-am-CsF" secondAttribute="leading" id="MgU-t3-PBp"/>
+                            <constraint firstItem="d1P-Nz-fh0" firstAttribute="trailing" secondItem="Sob-am-CsF" secondAttribute="trailing" id="T1N-xW-PRV"/>
                             <constraint firstItem="iaa-dh-KZR" firstAttribute="trailing" secondItem="Sob-am-CsF" secondAttribute="trailing" id="YuL-4I-COa"/>
+                            <constraint firstItem="d1P-Nz-fh0" firstAttribute="height" secondItem="AoJ-ym-LGk" secondAttribute="height" multiplier="0.065" id="m5B-h9-tAo"/>
                             <constraint firstItem="iaa-dh-KZR" firstAttribute="leading" secondItem="Sob-am-CsF" secondAttribute="leading" id="ueR-zl-zlc"/>
                             <constraint firstAttribute="bottom" secondItem="iaa-dh-KZR" secondAttribute="bottom" id="xjN-5c-2VS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="okBtn" destination="bmR-xR-vBt" id="ciE-6s-QzO"/>
                         <outlet property="pickerView" destination="iaa-dh-KZR" id="NVG-1b-gus"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dYe-07-tI4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="139"/>
+            <point key="canvasLocation" x="837.68115942028987" y="138.61607142857142"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="e6Y-MQ-oy2">

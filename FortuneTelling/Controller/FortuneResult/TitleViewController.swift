@@ -339,28 +339,6 @@ extension TitleViewController: DatePickerVCDelegate {
         
         self.earthly[8] = ""
         
-//        specificTimingComment()
-//
-//        heavenEarthlyData[8] = HeavenEarthly(string: startBigTen.heaven)
-//
-//        heavenEarthlyData[9] = HeavenEarthly(string: startBigTen.earthly)
-//
-//        tenGodData[8] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[8].string)
-//
-//        tenGodData[9] = TenGod.shared.getTenGod(birthDayHeaven: heavenEarthlyData[2].string, targetHeavenEarthly: heavenEarthlyData[9].string)
-//
-//        for index in 10...17 {
-//
-//            heavenEarthlyData[index] = HeavenEarthly(string: "")
-//
-//            tenGodData[index] = ""
-//
-//        }
-//
-//        heavenEarthlyCollectionView.reloadData()
-//
-//        tenGodCollectionView.reloadData()
-        
     }
     
     func specificYearData(viewController: DatePickerVC) {

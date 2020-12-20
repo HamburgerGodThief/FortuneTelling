@@ -36,6 +36,8 @@ class DatePickerVC: UIViewController {
         
     }
     
+    @IBOutlet weak var okBtn: UIButton!
+    
     weak var delegate: DatePickerVCDelegate?
     
     var pickerViewData: [String] = []
@@ -147,6 +149,12 @@ class DatePickerVC: UIViewController {
         pickerViewData = specificHourForPickerView
 
         pickerView.reloadAllComponents()
+        
+    }
+    
+    @IBAction func didTouchOkBtn(_ sender: Any) {
+                
+        dismiss(animated: true, completion: nil)
         
     }
     

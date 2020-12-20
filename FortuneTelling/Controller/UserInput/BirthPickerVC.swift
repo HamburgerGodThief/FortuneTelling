@@ -52,7 +52,7 @@ class BirthPickerVC: UIViewController {
     
     weak var delegate: BirthPickerVCDelegate?
     
-    var selectedBirth: BirthdayModel = BirthdayModel(year: "1925年", month: "1月", day: "1日")
+    var selectedBirth: BirthdayModel = BirthdayModel(year: "2020年", month: "1月", day: "1日")
     
     var selectedYear: String = "1925"
     
@@ -206,6 +206,20 @@ class BirthPickerVC: UIViewController {
         
     }
     
+    func defaultYearValue() {
+        
+        let currentYear = Calendar.current.component(.year, from: Date())
+        
+        let index = currentYear - 1925
+        
+        selectedYear = "\(currentYear)"
+        
+        selectedBirth = BirthdayModel(year: "\(selectedYear)年", month: "1月", day: "1日")
+        
+        birthdayPickerView.selectRow(index, inComponent: 0, animated: false)
+        
+    }
+    
     @IBAction func didTouchSolarBtn(_ sender: Any) {
         
         isSolar = true
@@ -264,6 +278,8 @@ class BirthPickerVC: UIViewController {
         
         solarDate()
         
+        defaultYearValue()
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -272,8 +288,8 @@ class BirthPickerVC: UIViewController {
         
         passBirthToPreVC()
         
-        print(selectedBirth)
-        
+        print(selectedBirthString)
+                        
     }
     
 }
