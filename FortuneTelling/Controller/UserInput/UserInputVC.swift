@@ -170,7 +170,7 @@ class UserInputVC: UIViewController {
             
             fortuneResultVC.gender = gender
             
-            fortuneResultVC.navTitle = "\(name) (\(gender))"
+            fortuneResultVC.navTitle = "\(name) (\(gender)) \(strongSelf.userBirthDate) \(strongSelf.userBirthTime)"
             
             StorageManager.shared.create(name: name, gender: gender, solarBirth: fortuneResultVC.birthdayString)
             

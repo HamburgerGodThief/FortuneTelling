@@ -88,7 +88,7 @@ class DatePickerVC: UIViewController {
         
         let birthDate = DateManager.shared.stringToDate(dateStr: birthString)
         
-        for index in 0...9 {
+        for index in 0...10 {
             
             let specificYearString = SpecificYear.shared.getSpecificYears(birthDate: birthDate, selectedStartAge: startBigTenAge + index)
             

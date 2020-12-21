@@ -166,7 +166,7 @@ extension RecordVC: UITableViewDelegate, UITableViewDataSource {
         
         fortuneResultVC.gender = gender
         
-        fortuneResultVC.navTitle = "\(name) (\(gender))"
+        fortuneResultVC.navTitle = "\(name) (\(gender)) \(birthString)"
         
         UserManager.shared.userName = name
         
