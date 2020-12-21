@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t6J-ec-AHY">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--AboutVC-->
+        <scene sceneID="FUK-Nh-caj">
+            <objects>
+                <viewController storyboardIdentifier="AboutVC" id="t6J-ec-AHY" customClass="AboutVC" customModule="FortuneTelling" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D1W-20-u0n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M8I-y6-hBG">
+                                <rect key="frame" x="103.5" y="116" width="207" height="207"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="M8I-y6-hBG" secondAttribute="height" multiplier="1:1" id="frg-Qi-4PT"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4F-pX-nGZ">
+                                <rect key="frame" x="157" y="395" width="100" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3Hj-tx-5ee"/>
+                                    <constraint firstAttribute="height" constant="45" id="Nr6-2b-lu2"/>
+                                </constraints>
+                                <state key="normal" title="Facebook"/>
+                                <connections>
+                                    <action selector="didTouchFBBtn:" destination="t6J-ec-AHY" eventType="touchUpInside" id="Baz-Pa-4a1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmf-zo-fce">
+                                <rect key="frame" x="157" y="512" width="100" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="139-ja-FgI"/>
+                                    <constraint firstAttribute="width" constant="100" id="vDj-7h-3FA"/>
+                                </constraints>
+                                <state key="normal" title="Email 聯絡"/>
+                                <connections>
+                                    <action selector="didTouchMailBtn:" destination="t6J-ec-AHY" eventType="touchUpInside" id="vjW-IP-0vY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JR9-GA-RJb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j4F-pX-nGZ" firstAttribute="top" secondItem="M8I-y6-hBG" secondAttribute="bottom" constant="72" id="0Ia-Dr-xPb"/>
+                            <constraint firstItem="M8I-y6-hBG" firstAttribute="top" secondItem="JR9-GA-RJb" secondAttribute="top" constant="72" id="1h0-l4-l49"/>
+                            <constraint firstItem="M8I-y6-hBG" firstAttribute="width" secondItem="D1W-20-u0n" secondAttribute="width" multiplier="0.5" id="JJb-Ly-qn5"/>
+                            <constraint firstItem="M8I-y6-hBG" firstAttribute="centerX" secondItem="D1W-20-u0n" secondAttribute="centerX" id="JPP-GT-w5d"/>
+                            <constraint firstItem="qmf-zo-fce" firstAttribute="top" secondItem="j4F-pX-nGZ" secondAttribute="bottom" constant="72" id="LDC-uc-B62"/>
+                            <constraint firstItem="qmf-zo-fce" firstAttribute="centerX" secondItem="D1W-20-u0n" secondAttribute="centerX" id="OiO-pf-j2T"/>
+                            <constraint firstItem="j4F-pX-nGZ" firstAttribute="centerX" secondItem="D1W-20-u0n" secondAttribute="centerX" id="mOB-eJ-mcY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="appLogoImg" destination="M8I-y6-hBG" id="R6Z-p3-jxr"/>
+                        <outlet property="emailBtn" destination="qmf-zo-fce" id="zH4-fQ-M7i"/>
+                        <outlet property="facebookBtn" destination="j4F-pX-nGZ" id="15j-Ny-umL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T12-h1-j1R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201" y="96"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -18,6 +18,8 @@ private struct StoryboardCategory {
 
     static let record = "Record"
     
+    static let about = "About"
+    
 }
 
 extension UIStoryboard {
@@ -29,6 +31,8 @@ extension UIStoryboard {
     static var fortuneResult: UIStoryboard { return hBG_Storyboard(name: StoryboardCategory.fortuneResult) }
 
     static var record: UIStoryboard { return hBG_Storyboard(name: StoryboardCategory.record) }
+    
+    static var about: UIStoryboard { return hBG_Storyboard(name: StoryboardCategory.about) }
 
     private static func hBG_Storyboard(name: String) -> UIStoryboard {
 

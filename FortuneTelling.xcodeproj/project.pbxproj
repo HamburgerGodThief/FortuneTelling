@@ -20,6 +20,8 @@
 		6446F99824A47BCC0053B01E /* LunarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6446F99724A47BCC0053B01E /* LunarDate.swift */; };
 		6446F99A24A773C50053B01E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6446F99924A773C50053B01E /* StorageManager.swift */; };
 		64529E1024BC195600E6E336 /* MatchComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64529E0F24BC195600E6E336 /* MatchComment.swift */; };
+		645D881B2590246F00926C16 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 645D881A2590246F00926C16 /* About.storyboard */; };
+		645D881E2590248E00926C16 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645D881D2590248E00926C16 /* AboutVC.swift */; };
 		64B65DC724A7C6AD00397C07 /* YearHeavenEarthly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DC624A7C6AD00397C07 /* YearHeavenEarthly.swift */; };
 		64B65DC924A8B75E00397C07 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DC824A8B75E00397C07 /* String+Extension.swift */; };
 		64B65DCB24A8C28400397C07 /* MonthHeavenEarthly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B65DCA24A8C28400397C07 /* MonthHeavenEarthly.swift */; };
@@ -84,6 +86,8 @@
 		6446F99724A47BCC0053B01E /* LunarDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunarDate.swift; sourceTree = "<group>"; };
 		6446F99924A773C50053B01E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		64529E0F24BC195600E6E336 /* MatchComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchComment.swift; sourceTree = "<group>"; };
+		645D881A2590246F00926C16 /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		645D881D2590248E00926C16 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		64B65DC624A7C6AD00397C07 /* YearHeavenEarthly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearHeavenEarthly.swift; sourceTree = "<group>"; };
 		64B65DC824A8B75E00397C07 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		64B65DCA24A8C28400397C07 /* MonthHeavenEarthly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeavenEarthly.swift; sourceTree = "<group>"; };
@@ -233,6 +237,7 @@
 				64FEF3CF249CCEF600B77E59 /* Record.storyboard */,
 				64FEF3DC249CDA8000B77E59 /* RecordTableViewCell.swift */,
 				64FEF3DD249CDA8000B77E59 /* RecordTableViewCell.xib */,
+				645D881A2590246F00926C16 /* About.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				64FEF3F924A2DEFF00B77E59 /* UserInput */,
 				64B65DE224AC911A00397C07 /* FortuneResult */,
 				64FEF3DA249CD47D00B77E59 /* RecordVC.swift */,
+				645D881D2590248E00926C16 /* AboutVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -369,6 +375,7 @@
 			files = (
 				64FEF3CE249CCEE900B77E59 /* FortuneResult.storyboard in Resources */,
 				64B65DDD24AB700B00397C07 /* bigTenYearsData.json in Resources */,
+				645D881B2590246F00926C16 /* About.storyboard in Resources */,
 				64B65DCF24A9B10B00397C07 /* monthHeavenEarthlyData.json in Resources */,
 				64FEF3BE249CB49100B77E59 /* LaunchScreen.storyboard in Resources */,
 				64B65DD724AA4A4D00397C07 /* ResultCollectionViewCell.xib in Resources */,
@@ -492,6 +499,7 @@
 				640D7E8224B1DE390096F554 /* BirthTimePickerVC.swift in Sources */,
 				64FEF3AF249CB49000B77E59 /* AppDelegate.swift in Sources */,
 				64FEF3E4249F60A500B77E59 /* FortuneResultTableViewCell.swift in Sources */,
+				645D881E2590248E00926C16 /* AboutVC.swift in Sources */,
 				64B65DD124A9B44300397C07 /* DayHeavenEarthly.swift in Sources */,
 				640D7E8A24B2561A0096F554 /* SpecificDay.swift in Sources */,
 				64B65DDF24AC74C000397C07 /* TenGod.swift in Sources */,
