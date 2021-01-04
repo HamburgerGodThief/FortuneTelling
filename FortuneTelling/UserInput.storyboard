@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rgh-Ii-Vhs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rgh-Ii-Vhs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +19,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mRi-Dq-wsP">
                                 <rect key="frame" x="103.5" y="128" width="207" height="207"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mRi-Dq-wsP" secondAttribute="height" multiplier="1:1" id="hgp-P1-TjE"/>
                                 </constraints>
@@ -34,7 +36,7 @@
                                     <segment title="女生"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3U7-J7-ULE">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3U7-J7-ULE">
                                 <rect key="frame" x="111" y="479" width="263" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="出生年月日">
@@ -44,7 +46,7 @@
                                     <action selector="didTouchBirthBtn:" destination="ZxJ-Ee-jej" eventType="touchUpInside" id="Ne8-SJ-eyN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgd-kg-w67">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgd-kg-w67">
                                 <rect key="frame" x="111" y="539" width="263" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="出生時辰">
@@ -72,7 +74,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLr-sF-MFF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLr-sF-MFF">
                                 <rect key="frame" x="165.5" y="810" width="83" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="計算"/>
@@ -80,7 +82,15 @@
                                     <action selector="didTouchCalculateBtn:" destination="ZxJ-Ee-jej" eventType="touchUpInside" id="Rkz-fh-5i2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWo-cI-goP">
+                                <rect key="frame" x="184" y="711" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="testBtn:" destination="ZxJ-Ee-jej" eventType="touchUpInside" id="s0O-ce-x2v"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="7Y3-Nt-ftf"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="mRi-Dq-wsP" firstAttribute="top" secondItem="7Y3-Nt-ftf" secondAttribute="top" constant="40" id="16t-RW-hZW"/>
@@ -100,6 +110,7 @@
                             <constraint firstItem="Qgd-kg-w67" firstAttribute="height" secondItem="qBo-et-O7N" secondAttribute="height" id="WH4-Z5-t05"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="centerY" secondItem="R4G-fU-cBo" secondAttribute="centerY" id="Wxo-lL-gUF"/>
                             <constraint firstItem="8Ii-d4-Nwy" firstAttribute="centerY" secondItem="qBo-et-O7N" secondAttribute="centerY" id="c13-W9-Mtu"/>
+                            <constraint firstItem="YWo-cI-goP" firstAttribute="centerX" secondItem="Cf0-2I-Wyn" secondAttribute="centerX" id="dxe-aw-Eq9"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="height" secondItem="qBo-et-O7N" secondAttribute="height" id="ec0-1R-kJx"/>
                             <constraint firstItem="3U7-J7-ULE" firstAttribute="top" secondItem="Wao-Uo-IXK" secondAttribute="bottom" constant="24" id="fIs-rg-1mb"/>
                             <constraint firstItem="qBo-et-O7N" firstAttribute="top" secondItem="mRi-Dq-wsP" secondAttribute="bottom" constant="24" id="fLN-vt-z4L"/>
@@ -109,10 +120,10 @@
                             <constraint firstItem="mRi-Dq-wsP" firstAttribute="width" secondItem="Cf0-2I-Wyn" secondAttribute="width" multiplier="0.5" id="nwT-py-4uq"/>
                             <constraint firstItem="zLr-sF-MFF" firstAttribute="centerX" secondItem="Cf0-2I-Wyn" secondAttribute="centerX" id="oI6-Wp-AlR"/>
                             <constraint firstItem="7Y3-Nt-ftf" firstAttribute="bottom" secondItem="zLr-sF-MFF" secondAttribute="bottom" constant="16" id="pOR-mA-AzJ"/>
+                            <constraint firstItem="zLr-sF-MFF" firstAttribute="top" secondItem="YWo-cI-goP" secondAttribute="bottom" constant="69" id="rdy-gd-224"/>
                             <constraint firstItem="Wao-Uo-IXK" firstAttribute="height" secondItem="qBo-et-O7N" secondAttribute="height" id="uh5-zC-EE1"/>
                             <constraint firstItem="zLr-sF-MFF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Qgd-kg-w67" secondAttribute="bottom" constant="10" id="wJ8-rY-9XN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="7Y3-Nt-ftf"/>
                     </view>
                     <navigationItem key="navigationItem" id="VBx-OI-l8H"/>
                     <connections>
@@ -122,6 +133,7 @@
                         <outlet property="genderSegControl" destination="Wao-Uo-IXK" id="k4s-cg-4DO"/>
                         <outlet property="lastNameTextField" destination="qBo-et-O7N" id="rjO-J8-a9l"/>
                         <outlet property="logoImg" destination="mRi-Dq-wsP" id="mfw-P6-fhi"/>
+                        <outlet property="testBtn" destination="YWo-cI-goP" id="buW-yx-CZ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P4E-gs-QfB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -143,16 +155,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21t-v4-ksZ">
                                 <rect key="frame" x="0.0" y="626" width="414" height="54"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-pC-f3n">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sH-pC-f3n">
                                         <rect key="frame" x="12" y="12" width="31" height="30"/>
                                         <state key="normal" title="陽曆">
-                                            <color key="titleColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemTealColor"/>
                                         </state>
                                         <connections>
                                             <action selector="didTouchSolarBtn:" destination="K9Q-IO-tIX" eventType="touchUpInside" id="emg-UF-wNx"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBj-7j-phC">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBj-7j-phC">
                                         <rect key="frame" x="63" y="12" width="31" height="30"/>
                                         <state key="normal" title="農曆">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -161,7 +173,7 @@
                                             <action selector="didTouchLunarBtn:" destination="K9Q-IO-tIX" eventType="touchUpInside" id="a8M-lG-nEE"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEs-Af-r10">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEs-Af-r10">
                                         <rect key="frame" x="353" y="10" width="37" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="確定">
@@ -172,7 +184,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="KBj-7j-phC" firstAttribute="leading" secondItem="7sH-pC-f3n" secondAttribute="trailing" constant="20" id="7uw-9u-ufY"/>
                                     <constraint firstItem="7sH-pC-f3n" firstAttribute="leading" secondItem="21t-v4-ksZ" secondAttribute="leading" constant="12" id="EG6-WQ-T0I"/>
@@ -183,6 +195,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="k80-yk-jcF"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vuY-bk-Xob" firstAttribute="height" secondItem="IHH-vK-4JT" secondAttribute="height" multiplier="0.241071" id="3nE-Ho-9y1"/>
@@ -194,7 +207,6 @@
                             <constraint firstItem="21t-v4-ksZ" firstAttribute="height" secondItem="IHH-vK-4JT" secondAttribute="height" multiplier="0.0602679" id="mXX-AM-K8i"/>
                             <constraint firstItem="21t-v4-ksZ" firstAttribute="trailing" secondItem="k80-yk-jcF" secondAttribute="trailing" id="wZA-p6-Xlf"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="k80-yk-jcF"/>
                     </view>
                     <connections>
                         <outlet property="birthdayPickerView" destination="vuY-bk-Xob" id="5iV-Ad-cTS"/>
@@ -222,7 +234,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3qD-PI-8nN">
                                 <rect key="frame" x="0.0" y="626" width="414" height="54"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIy-mx-PRB">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIy-mx-PRB">
                                         <rect key="frame" x="353" y="10" width="37" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="確定">
@@ -233,13 +245,14 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="yIy-mx-PRB" secondAttribute="trailing" constant="24" id="35Z-rq-TVp"/>
                                     <constraint firstItem="yIy-mx-PRB" firstAttribute="centerY" secondItem="3qD-PI-8nN" secondAttribute="centerY" id="VxA-yj-Nz0"/>
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ORz-gD-2LP"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ORz-gD-2LP" firstAttribute="trailing" secondItem="3qD-PI-8nN" secondAttribute="trailing" id="3GQ-Lh-E12"/>
@@ -251,7 +264,6 @@
                             <constraint firstItem="3qD-PI-8nN" firstAttribute="bottom" secondItem="bMU-df-Bl8" secondAttribute="top" id="nwT-yr-EmI"/>
                             <constraint firstItem="3qD-PI-8nN" firstAttribute="leading" secondItem="ORz-gD-2LP" secondAttribute="leading" id="wXg-vg-LtT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ORz-gD-2LP"/>
                     </view>
                     <connections>
                         <outlet property="okBtn" destination="yIy-mx-PRB" id="8aJ-uA-Mmp"/>
@@ -281,4 +293,12 @@
             <point key="canvasLocation" x="60.869565217391312" y="55.580357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

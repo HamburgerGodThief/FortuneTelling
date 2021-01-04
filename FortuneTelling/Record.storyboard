@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SlL-en-nxf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SlL-en-nxf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,20 +19,29 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yKp-MI-pGC">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHa-bY-ktt">
+                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="1Oj-lJ-DcB"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1Oj-lJ-DcB" firstAttribute="trailing" secondItem="yKp-MI-pGC" secondAttribute="trailing" id="7hi-QK-lPz"/>
+                            <constraint firstItem="fHa-bY-ktt" firstAttribute="centerY" secondItem="ko2-7H-0Sw" secondAttribute="centerY" id="T5N-gb-is6"/>
                             <constraint firstItem="1Oj-lJ-DcB" firstAttribute="bottom" secondItem="yKp-MI-pGC" secondAttribute="bottom" id="c3i-qd-Qb4"/>
+                            <constraint firstItem="fHa-bY-ktt" firstAttribute="centerX" secondItem="ko2-7H-0Sw" secondAttribute="centerX" id="gu2-BN-gQ2"/>
                             <constraint firstItem="yKp-MI-pGC" firstAttribute="top" secondItem="1Oj-lJ-DcB" secondAttribute="top" id="iaA-ee-Hmd"/>
                             <constraint firstItem="yKp-MI-pGC" firstAttribute="leading" secondItem="1Oj-lJ-DcB" secondAttribute="leading" id="sLl-xp-T6F"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="1Oj-lJ-DcB"/>
                     </view>
                     <navigationItem key="navigationItem" id="MCr-2H-5q6"/>
                     <connections>
+                        <outlet property="isDataLbl" destination="fHa-bY-ktt" id="eds-2Y-K3D"/>
                         <outlet property="tableView" destination="yKp-MI-pGC" id="ROf-Hl-OS3"/>
                     </connections>
                 </viewController>
@@ -57,4 +68,9 @@
             <point key="canvasLocation" x="82.608695652173921" y="132.58928571428572"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

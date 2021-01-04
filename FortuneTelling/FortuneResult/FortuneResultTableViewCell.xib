@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,105 +18,103 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前時間" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9a-TL-cpY">
-                        <rect key="frame" x="12" y="37.5" width="80" height="21"/>
+                        <rect key="frame" x="12" y="37.5" width="72" height="21"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="庚子" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeQ-Fh-VNL">
-                        <rect key="frame" x="171.5" y="12" width="40" height="25.5"/>
+                        <rect key="frame" x="110" y="12" width="36" height="25.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abI-By-bPY">
-                        <rect key="frame" x="211.5" y="11" width="20" height="28"/>
+                        <rect key="frame" x="146" y="12" width="18" height="25.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="壬午" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="50B-m7-DVx">
-                        <rect key="frame" x="251.5" y="11" width="40" height="28"/>
+                        <rect key="frame" x="175" y="12" width="36" height="25.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6y-Rd-CaP">
-                        <rect key="frame" x="291.5" y="11" width="20" height="28"/>
+                        <rect key="frame" x="211" y="12" width="18" height="25.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="乙未" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kma-Rn-Uye">
-                        <rect key="frame" x="325.5" y="11" width="40" height="28"/>
+                        <rect key="frame" x="240" y="12" width="36" height="25.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVE-Ij-qKO">
-                        <rect key="frame" x="365.5" y="11" width="20" height="28"/>
+                        <rect key="frame" x="276" y="12" width="18" height="25.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7J-Jj-KTi">
-                        <rect key="frame" x="163.5" y="58.5" width="48" height="25.5"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
+                        <rect key="frame" x="102.5" y="58.5" width="43.5" height="25.5"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udo-SA-TRm">
-                        <rect key="frame" x="211.5" y="57.5" width="20" height="28"/>
+                        <rect key="frame" x="146" y="58.5" width="18" height="25.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtn-UM-HEQ">
-                        <rect key="frame" x="291.5" y="57.5" width="20" height="28"/>
+                        <rect key="frame" x="211" y="58.5" width="18" height="25.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOF-gy-JrL">
-                        <rect key="frame" x="365.5" y="57.5" width="20" height="28"/>
+                        <rect key="frame" x="276" y="58.5" width="18" height="25.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZO-tL-6U0">
-                        <rect key="frame" x="279.5" y="57.5" width="12" height="28"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
+                        <rect key="frame" x="200" y="58.5" width="11" height="25.5"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIv-cD-zhW">
-                        <rect key="frame" x="341.5" y="57.5" width="24" height="28"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
+                        <rect key="frame" x="254" y="58.5" width="22" height="25.5"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="19:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTT-FF-st6">
-                        <rect key="frame" x="401.5" y="34" width="61.5" height="28"/>
-                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="20"/>
+                        <rect key="frame" x="306" y="35.5" width="62" height="25.5"/>
+                        <fontDescription key="fontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="f6y-Rd-CaP" firstAttribute="centerY" secondItem="OeQ-Fh-VNL" secondAttribute="centerY" id="1IJ-qv-xxt"/>
-                    <constraint firstItem="zTT-FF-st6" firstAttribute="leading" secondItem="abI-By-bPY" secondAttribute="trailing" constant="170" id="2Vg-NK-Yaw"/>
                     <constraint firstItem="qtn-UM-HEQ" firstAttribute="centerY" secondItem="Udo-SA-TRm" secondAttribute="centerY" id="3JF-UL-qcp"/>
-                    <constraint firstItem="qtn-UM-HEQ" firstAttribute="trailing" secondItem="f6y-Rd-CaP" secondAttribute="trailing" id="3LJ-8B-4c6"/>
                     <constraint firstItem="f6y-Rd-CaP" firstAttribute="leading" secondItem="50B-m7-DVx" secondAttribute="trailing" id="3dd-xY-JC2"/>
                     <constraint firstItem="50B-m7-DVx" firstAttribute="centerY" secondItem="OeQ-Fh-VNL" secondAttribute="centerY" id="3t0-Y9-1Re"/>
                     <constraint firstItem="k9a-TL-cpY" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5ln-Ce-Fr5"/>
@@ -123,26 +122,28 @@
                     <constraint firstItem="zTT-FF-st6" firstAttribute="centerY" secondItem="k9a-TL-cpY" secondAttribute="centerY" id="6qk-TM-QTB"/>
                     <constraint firstItem="OeQ-Fh-VNL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="ADe-gE-4rX"/>
                     <constraint firstItem="Udo-SA-TRm" firstAttribute="trailing" secondItem="abI-By-bPY" secondAttribute="trailing" id="BOx-hs-cpw"/>
-                    <constraint firstItem="zTT-FF-st6" firstAttribute="leading" secondItem="f6y-Rd-CaP" secondAttribute="trailing" constant="90" id="BsH-6S-M8E"/>
                     <constraint firstAttribute="bottom" secondItem="r7J-Jj-KTi" secondAttribute="bottom" constant="12" id="DXv-dV-8uN"/>
                     <constraint firstItem="OOF-gy-JrL" firstAttribute="leading" secondItem="SIv-cD-zhW" secondAttribute="trailing" id="Dwt-39-hOY"/>
+                    <constraint firstItem="qtn-UM-HEQ" firstAttribute="trailing" secondItem="OOF-gy-JrL" secondAttribute="trailing" constant="-65" id="FsT-sn-qLC"/>
                     <constraint firstItem="qtn-UM-HEQ" firstAttribute="leading" secondItem="JZO-tL-6U0" secondAttribute="trailing" id="GMV-8P-dai"/>
-                    <constraint firstItem="r7J-Jj-KTi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="k9a-TL-cpY" secondAttribute="trailing" constant="15" id="HfA-9G-LZf"/>
                     <constraint firstItem="r7J-Jj-KTi" firstAttribute="top" secondItem="k9a-TL-cpY" secondAttribute="bottom" id="IQY-Vx-9C6"/>
+                    <constraint firstItem="f6y-Rd-CaP" firstAttribute="trailing" secondItem="qtn-UM-HEQ" secondAttribute="trailing" id="Iov-jx-u0N"/>
                     <constraint firstItem="abI-By-bPY" firstAttribute="leading" secondItem="OeQ-Fh-VNL" secondAttribute="trailing" id="Nd9-F6-yAn"/>
-                    <constraint firstAttribute="trailing" secondItem="zTT-FF-st6" secondAttribute="trailing" constant="12" id="Qw6-ym-9xJ"/>
+                    <constraint firstItem="Udo-SA-TRm" firstAttribute="trailing" secondItem="qtn-UM-HEQ" secondAttribute="trailing" constant="-65" id="PCg-j9-d4V"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zTT-FF-st6" secondAttribute="trailing" constant="12" id="Qw6-ym-9xJ"/>
                     <constraint firstItem="abI-By-bPY" firstAttribute="centerY" secondItem="OeQ-Fh-VNL" secondAttribute="centerY" id="RVd-gD-ZdS"/>
                     <constraint firstItem="r7J-Jj-KTi" firstAttribute="top" secondItem="OeQ-Fh-VNL" secondAttribute="bottom" constant="21" id="Rei-h1-6fw"/>
                     <constraint firstItem="zTT-FF-st6" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.13" id="WYV-Li-jIl"/>
                     <constraint firstItem="OeQ-Fh-VNL" firstAttribute="bottom" secondItem="k9a-TL-cpY" secondAttribute="top" id="X17-mP-0PU"/>
                     <constraint firstItem="kma-Rn-Uye" firstAttribute="centerY" secondItem="OeQ-Fh-VNL" secondAttribute="centerY" id="Yri-Fc-oyP"/>
                     <constraint firstItem="JZO-tL-6U0" firstAttribute="centerY" secondItem="r7J-Jj-KTi" secondAttribute="centerY" id="ZT6-4p-RBv"/>
+                    <constraint firstItem="k9a-TL-cpY" firstAttribute="trailing" secondItem="Udo-SA-TRm" secondAttribute="trailing" constant="-80" id="bg4-Oe-81k"/>
                     <constraint firstItem="yVE-Ij-qKO" firstAttribute="leading" secondItem="kma-Rn-Uye" secondAttribute="trailing" id="cDE-u8-iaj"/>
                     <constraint firstItem="Udo-SA-TRm" firstAttribute="centerY" secondItem="r7J-Jj-KTi" secondAttribute="centerY" id="fE5-L0-97v"/>
                     <constraint firstItem="k9a-TL-cpY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="g0m-9B-yMM"/>
                     <constraint firstItem="OOF-gy-JrL" firstAttribute="centerY" secondItem="Udo-SA-TRm" secondAttribute="centerY" id="nxa-R0-v3O"/>
                     <constraint firstItem="SIv-cD-zhW" firstAttribute="centerY" secondItem="Udo-SA-TRm" secondAttribute="centerY" id="oh2-WV-b0a"/>
-                    <constraint firstItem="zTT-FF-st6" firstAttribute="leading" secondItem="yVE-Ij-qKO" secondAttribute="trailing" constant="16" id="pRF-jk-xVq"/>
+                    <constraint firstItem="OOF-gy-JrL" firstAttribute="trailing" secondItem="zTT-FF-st6" secondAttribute="leading" constant="-12" id="pAf-lp-mlR"/>
                     <constraint firstItem="Udo-SA-TRm" firstAttribute="leading" secondItem="r7J-Jj-KTi" secondAttribute="trailing" id="rdZ-uw-Udv"/>
                     <constraint firstItem="yVE-Ij-qKO" firstAttribute="centerY" secondItem="OeQ-Fh-VNL" secondAttribute="centerY" id="xjj-rh-Okp"/>
                 </constraints>

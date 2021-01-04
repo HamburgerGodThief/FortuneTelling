@@ -36,6 +36,8 @@ class DatePickerVC: UIViewController {
         
     }
     
+    @IBOutlet weak var okBtn: UIButton!
+    
     weak var delegate: DatePickerVCDelegate?
     
     var pickerViewData: [String] = []
@@ -86,7 +88,7 @@ class DatePickerVC: UIViewController {
         
         let birthDate = DateManager.shared.stringToDate(dateStr: birthString)
         
-        for index in 0...9 {
+        for index in 0...10 {
             
             let specificYearString = SpecificYear.shared.getSpecificYears(birthDate: birthDate, selectedStartAge: startBigTenAge + index)
             
@@ -147,6 +149,12 @@ class DatePickerVC: UIViewController {
         pickerViewData = specificHourForPickerView
 
         pickerView.reloadAllComponents()
+        
+    }
+    
+    @IBAction func didTouchOkBtn(_ sender: Any) {
+                
+        dismiss(animated: true, completion: nil)
         
     }
     

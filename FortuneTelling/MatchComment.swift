@@ -279,6 +279,12 @@ class MatchComment {
                 
             }
             
+            if heavenInt.count == 1 || index == heavenInt.count || index + 1 == heavenInt.count {
+                
+                break
+                
+            }
+            
             if heavenInt[index] + heavenInt[index + 1] == 9 {
                 
                 result.append("\(heaven[index + 1])合\(heaven[index])")

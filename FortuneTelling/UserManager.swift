@@ -50,4 +50,32 @@ class UserManager {
     
     var birthYearEarthlyTenGod: String = ""
     
+    var startBigTenSolarYear: String = ""
+    
+    var startBigTenSolarMonth: String = ""
+    
+    var startBigTenSolarDay: String = ""
+    
+    var startBigTenLunarYear: String = ""
+    
+    var startBigTenLunarMonth: String = ""
+    
+    var startBigTenLunarDay: String = ""
+    
+    var startBigTenTime: String = ""
+    
+    var endBigTenSolarYear: String = ""
+    
+    var endBigTenSolarMonth: String = ""
+    
+    var endBigTenSolarDay: String = ""
+    
+    var endBigTenLunarYear: String = ""
+    
+    var endBigTenLunarMonth: String = ""
+    
+    var endBigTenLunarDay: String = ""
+    
+    var endBigTenTime: String = ""
+    
 }
