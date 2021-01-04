@@ -45,22 +45,22 @@ private enum Tab {
         case .userInput:
             return UITabBarItem(
                 title: "資料輸入",
-                image: UIImage.asset(.Icons_36px_UserInput_Normal),
-                selectedImage: UIImage.asset(.Icons_36px_UserInput_Selected)
+                image: UIImage.init(systemName: "pencil"),
+                selectedImage: UIImage.init(systemName: "pencil")
             )
             
         case .record:
             return UITabBarItem(
                 title: "歷史紀錄",
-                image: UIImage.asset(.Icons_36px_Record_Normal),
-                selectedImage: UIImage.asset(.Icons_36px_Record_Selected)
+                image: UIImage.init(systemName: "doc.plaintext"),
+                selectedImage: UIImage.init(systemName: "doc.plaintext")
             )
             
         case .about:
             return UITabBarItem(
                 title: "關於",
-                image: UIImage.asset(.Icons_36px_Record_Normal),
-                selectedImage: UIImage.asset(.Icons_36px_Record_Selected)
+                image: UIImage.init(systemName: "info.circle"),
+                selectedImage: UIImage.init(systemName: "info.circle")
             )
             
         }

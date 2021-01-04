@@ -24,6 +24,8 @@ enum ImageAsset: String {
     
     case Logo_36px_UserInput
     
+    case AppLogo_36px
+    
 }
 
 // swiftlint:enable identifier_name

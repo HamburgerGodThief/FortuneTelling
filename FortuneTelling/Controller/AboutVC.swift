@@ -16,7 +16,9 @@ class AboutVC: UIViewController {
         
         didSet {
             
-            appLogoImg.image = UIImage.asset(.Logo_36px_UserInput)
+            appLogoImg.image = UIImage.asset(.AppLogo_36px)
+            
+            appLogoImg.layer.cornerRadius = 20
             
         }
         
@@ -47,6 +49,20 @@ class AboutVC: UIViewController {
             emailBtn.tintColor = .white
             
         }
+        
+    }
+    
+    func navConfigure() {
+        
+        navigationController?.navigationBar.isTranslucent = false
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white ]
+        
+        navigationController?.navigationBar.barTintColor = UIColor.assetColor(.MainColor)
+        
+        navigationController?.navigationBar.barStyle = .black
+        
+        title = "關於"
         
     }
             
@@ -129,6 +145,8 @@ class AboutVC: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        navConfigure()
         
     }
     
