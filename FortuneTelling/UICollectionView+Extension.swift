@@ -15,6 +15,7 @@ extension UICollectionView {
         let nib = UINib(nibName: identifier, bundle: bundle)
 
         register(nib, forCellWithReuseIdentifier: identifier)
+        
     }
     
 }
